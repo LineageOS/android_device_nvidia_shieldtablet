@@ -46,6 +46,7 @@ lib/hw/gps.brcm.so
 lib/hw/keystore.tegra.so
 lib/hw/power.tegra.so
 lib/hw/sensors.tegra.so
+lib/libbt-hci.so
 lib/libinvensense_hal.so
 lib/libmllite.so
 lib/libmplmpu.so
@@ -104,6 +105,7 @@ vendor/lib/hw/hwcomposer.tegra.so
 vendor/lib/hw/ts.default.so
 vendor/lib/libardrv_dynamic.so
 vendor/lib/libaudioavp.so
+vendor/lib/libbt-vendor.so
 vendor/lib/libcuda.so
 vendor/lib/libdrmdecrypt.so
 vendor/lib/libEGL_tegra_impl.so
