@@ -17,6 +17,14 @@ etc/bluetooth/bdaddr
 bin/wifi_loader.sh
 bin/wpa_supplicant.sh
 etc/enctune.conf
+etc/firmware/bcm43241.hcd
+etc/firmware/bcm4329.hcd
+etc/firmware/bcm4330.hcd
+etc/firmware/BCM43341A0_001.001.030.0015.0000.hcd
+etc/firmware/BCM43341B0_002.001.014.0008.0011.hcd
+etc/firmware/bcm4335.hcd
+etc/firmware/marvel_p2p.conf
+etc/firmware/marvel_wpa.conf
 etc/firmware/nvavp_aacdec_ucode.bin
 etc/firmware/nvavp_aud_ucode.bin
 etc/firmware/nvavp_mp3dec_ucode.bin
