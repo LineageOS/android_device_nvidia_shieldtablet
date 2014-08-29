@@ -70,9 +70,34 @@ on init
     setprop input.ptr_trk.toolswitch_range 200
     setprop input.ptr_trk.eraserlatch_range 10
     setprop input.ptr_trk.eraserdelay_time 250
+    setprop input.ptr_trk.pinchtozoom_time 1000
+    setprop input.ptr_trk.pinchtozoom_range 1100
+    setprop input.ptr_trk.pinchtozoom_rectX 800
+    setprop input.ptr_trk.pinchtozoom_rectY 1400
+    setprop input.ptr_trk.pinchtozoom_cenX 600
+    setprop input.ptr_trk.pinchtozoom_cenY 960
     setprop input.nonwhitelistedmode 3
     setprop keyguard.no_require_sim true
     setprop persist.tegra.didim.enable 0
+    setprop sys.esrd.powermon_path /sys/bus/i2c/devices/1-0040/iio_device
+    setprop sys.esrd.powermon_channel 0
+    setprop sys.esrd.min_esr 95
+    setprop sys.esrd.max_esr 160
+    setprop sys.esrd.margin 42
+    setprop sys.esrd.nwindow 200
+    setprop sys.esrd.ntry 600
+    setprop sys.esrd.tsample 20
+    setprop sys.esrd.delay_start 900
+    setprop sys.esrd.delay_retry 900
+    setprop sys.esrd.delay_ok 604800
+    setprop sys.esrd.needed_coeff 0.97
+    setprop sys.esrd.needed_var 300
+    setprop sys.esrd.battery_thresh_high 60
+    setprop sys.esrd.battery_thresh_low 15
+    setprop sys.esrd.load_burst_duration 3
+    setprop sys.esrd.check_screen_off 1
+    chown system system /sys/power/sysedp/batmon/esr
+    chown system system /sys/bus/i2c/devices/1-0040/iio_device/running_mode
 
 #ozwpan driver: WiFi direct USB shim driver
     chown system system /dev/ozwpan

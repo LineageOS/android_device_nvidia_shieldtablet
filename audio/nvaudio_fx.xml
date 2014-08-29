@@ -323,10 +323,10 @@
        <Integer32>-256753621</Integer32>
    </bandcoeff44>
    <gain>
-       <Integer32>14082829</Integer32>
-       <Integer32>14082829</Integer32>
-       <Integer32>17729231</Integer32>
-       <Integer32>17729231</Integer32>
+       <Integer32>21071231</Integer32>
+       <Integer32>21071231</Integer32>
+       <Integer32>26527108</Integer32>
+       <Integer32>26527108</Integer32>
    </gain>
    <gainattack48>
        <Integer32>29826</Integer32>
@@ -381,8 +381,8 @@
        <Integer32>11185</Integer32>
    </powertc>
    <powerThreshold>
-       <Integer32>2626683</Integer32>
-       <Integer32>2626683</Integer32>
+       <Integer32>2104770</Integer32>
+       <Integer32>2104770</Integer32>
    </powerThreshold>
    <Impedance>
        <Integer32>536870912</Integer32>
@@ -574,26 +574,26 @@
        <Integer32>1372</Integer32>
        <Integer32>1372</Integer32>
    </AntiResonanceQ>
-   <DRC_MODE>3</DRC_MODE>
+   <DRC_MODE>2</DRC_MODE>
    <inputattack48>
        <Integer32>1581413104</Integer32>
-       <Integer32>1581413104</Integer32>
-       <Integer32>1581413104</Integer32>
+       <Integer32>70402888</Integer32>
+       <Integer32>70402888</Integer32>
    </inputattack48>
    <inputrelease48>
        <Integer32>1581413104</Integer32>
-       <Integer32>1581413104</Integer32>
-       <Integer32>1581413104</Integer32>
+       <Integer32>70402888</Integer32>
+       <Integer32>70402888</Integer32>
    </inputrelease48>
    <inputattack44>
        <Integer32>1644375640</Integer32>
-       <Integer32>1644375640</Integer32>
-       <Integer32>1644375640</Integer32>
+       <Integer32>76516786</Integer32>
+       <Integer32>76516786</Integer32>
    </inputattack44>
    <inputrelease44>
        <Integer32>1644375640</Integer32>
-       <Integer32>1644375640</Integer32>
-       <Integer32>1644375640</Integer32>
+       <Integer32>76516786</Integer32>
+       <Integer32>76516786</Integer32>
    </inputrelease44>
    <DRCgainattack48>
        <Integer32>5718994</Integer32>
@@ -602,8 +602,8 @@
    </DRCgainattack48>
    <DRCgainrelease48>
        <Integer32>1581413104</Integer32>
-       <Integer32>1581413104</Integer32>
-       <Integer32>1581413104</Integer32>
+       <Integer32>28443073</Integer32>
+       <Integer32>28443073</Integer32>
    </DRCgainrelease48>
    <DRCgainattack44>
        <Integer32>6224022</Integer32>
@@ -612,8 +612,8 @@
    </DRCgainattack44>
    <DRCgainrelease44>
        <Integer32>1644375640</Integer32>
-       <Integer32>1644375640</Integer32>
-       <Integer32>1644375640</Integer32>
+       <Integer32>30940243</Integer32>
+       <Integer32>30940243</Integer32>
    </DRCgainrelease44>
    <Thresh_dB>
        <Integer32>100</Integer32>
@@ -634,12 +634,12 @@
        <Integer32>80</Integer32>
        <Integer32>40</Integer32>
        <Integer32>20</Integer32>
-       <Integer32>72</Integer32>
-       <Integer32>52</Integer32>
+       <Integer32>100</Integer32>
+       <Integer32>80</Integer32>
        <Integer32>40</Integer32>
        <Integer32>20</Integer32>
-       <Integer32>72</Integer32>
-       <Integer32>52</Integer32>
+       <Integer32>100</Integer32>
+       <Integer32>80</Integer32>
        <Integer32>40</Integer32>
        <Integer32>20</Integer32>
    </OutThresh_dB>
@@ -649,21 +649,21 @@
        <Integer32>4096</Integer32>
        <Integer32>4096</Integer32>
        <Integer32>819</Integer32>
-       <Integer32>8192</Integer32>
        <Integer32>4096</Integer32>
-       <Integer32>1229</Integer32>
        <Integer32>4096</Integer32>
-       <Integer32>819</Integer32>
-       <Integer32>8192</Integer32>
        <Integer32>4096</Integer32>
-       <Integer32>1229</Integer32>
        <Integer32>4096</Integer32>
-       <Integer32>819</Integer32>
+       <Integer32>4096</Integer32>
+       <Integer32>4096</Integer32>
+       <Integer32>4096</Integer32>
+       <Integer32>4096</Integer32>
+       <Integer32>4096</Integer32>
+       <Integer32>4096</Integer32>
    </DRCRatio>
    <make_up_gain>
        <Integer32>0</Integer32>
-       <Integer32>9</Integer32>
-       <Integer32>13</Integer32>
+       <Integer32>0</Integer32>
+       <Integer32>0</Integer32>
    </make_up_gain>
    <drccoeff48>
        <Integer32>1004644465</Integer32>

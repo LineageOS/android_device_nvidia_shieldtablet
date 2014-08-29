@@ -129,6 +129,8 @@ on boot
 # audio
     chmod 0664 /sys/power/suspend/mode
     chown system audio /sys/power/suspend/mode
+    chmod 0664 /sys/kernel/hdmi_audio_channels/config
+    chown media system /sys/kernel/hdmi_audio_channels/config
 
 # Tegra wakeup monitor
     chown system system /sys/devices/platform/tegra_wakeup_monitor/cmd
@@ -178,6 +180,13 @@ on boot
     chown system system /sys/devices/tegradc.1/enable
     chown system system /sys/devices/platform/host1x/nvavp/boost_sclk
     chown system system /sys/devices/virtual/misc/touch/report_mode
+    chown system system /sys/devices/virtual/misc/touch/selftest_spi_burst_read
+    chown system system /sys/devices/virtual/misc/touch/selftest_spi_burst_write
+    chown system system /sys/devices/virtual/misc/touch/selftest_spi_byte_read
+    chown system system /sys/devices/virtual/misc/touch/selftest_spi_byte_write
+    chown system system /sys/devices/virtual/misc/touch/touchfile_check
+    chown system system /sys/devices/virtual/misc/touch/selftest_enable
+    chown system system /sys/devices/virtual/misc/touch/get_platform_id_gpio
     chown system system /sys/class/input/input1/enabled
     chown system system /sys/class/input/input2/enabled
 
@@ -215,7 +224,7 @@ service set_hwui_params /system/bin/set_hwui_params.sh
     oneshot
 
 # CPU Boost: boost CPU on input events
-service input-cfboost /system/bin/input_cfboost_init.sh -n 2 -t 5000
+service input-cfboost /system/bin/input_cfboost_init.sh
     class main
     user root
     group root

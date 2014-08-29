@@ -5,41 +5,27 @@
     PortName="/dev/ttyTHS1"
     BaudRate="921600"
     LogEnabled="false"
-    LbsSyncLto="false"
+    Log="DAEMON"
+    HttpSyncLto="true"
     LtoSyncThresholdDays="1"
     LogDirectory="/data/gps/log/"
     LtoFileName="lto.dat"
     LtoDir="/data/gps/"
     CtrlPipe="/data/gps/glgpsctrl"
     GpioNStdbyPath="/sys/class/gpio/gpio61/value"
+    SensorsEnable="true"
+    SensorsLog="false"
+    SensorsDebugLog="false"
+    SensorsMask="0x7F"
 
-    SuplLogFullName="/data/gps/supllog.txt"
-    SuplEnable="false"
-    SuplMsbCapable="true"
-    SuplMsaCapable="true"
-    SuplEcidCapable="true"
-    SuplServer="www.spirent-lcs.com"
-    SuplUseApn="false"
-    SuplPort="7275"
-    SuplMinorVersion="0"
-    SuplVersion="2"
-    SuplTlsEnable="true"
-    SuplTlsCertPath="/system/etc/gps/spirentroot.cer"
-    SuplSslMethod="TLSv1_1"
-    SuplLppCapable="true"
     LbsEnable="false"
-    Log="DAEMON"
-    IgnoreJniTime="true"
     AtCmdTransportSocketMode="Client"
 />
-<!--
-    SuplServer="192.168.0.35"
--->
 
 <!-- GPS configuration with standalone 16.8 MHz TCXO  -->
 <gll
     LogPriMask="LOG_DEBUG"
-    LogFacMask="LOG_GLLAPI | LOG_DEVIA | LOG_NMEA | LOG_RAWDATA | LOG_DEVMS | LOG_ASIC_IO | LOG_BBTEST | LOG_DEVET | LOG_MESM | LOG_DEVKF | LOG_DEVJG | LOG_DEVMR"
+    LogFacMask="LOG_DEFAULT"
     FrqPlan="FRQ_PLAN_26MHZ_2PPM"
     RfType="GL_RF_4752_BRCM_EXT_LNA"
 />

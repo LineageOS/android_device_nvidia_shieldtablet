@@ -29,11 +29,11 @@
     <elecCalParam><false/></elecCalParam>
     <transCalParam><false/></transCalParam>
     <internalSpeaker><false/></internalSpeaker>
-    <txAdjustGain>16</txAdjustGain>
-    <rxAdjustGain>-5</rxAdjustGain>
+    <txAdjustGain>-6</txAdjustGain>
+    <rxAdjustGain>-2</rxAdjustGain>
     <audioLoop><undefLoop/></audioLoop>
     <isAecEnabled><true/></isAecEnabled>
-    <echoPathDelay>365</echoPathDelay>
+    <echoPathDelay>42</echoPathDelay>
     <echoTailLength>80</echoTailLength>
     <echoDuplexTuner>2</echoDuplexTuner>
     <isResidualEchoSuppressorEnabled><true/></isResidualEchoSuppressorEnabled>
@@ -48,8 +48,8 @@
     <residualGainTime16k>26</residualGainTime16k>
     <couplingMaxHandset16k>-1800</couplingMaxHandset16k>
     <doubleTalkThreshold16k>21299</doubleTalkThreshold16k>
-    <isBeamformerEnabled><true/></isBeamformerEnabled>
-    <micSeparation>183</micSeparation>
+    <isBeamformerEnabled><false/></isBeamformerEnabled>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoicePrimarymic/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><false/></isBeamsteeringEnabled>
@@ -57,57 +57,57 @@
     <beamsteeringAdaptTime>7500</beamsteeringAdaptTime>
     <closeTalkSourceDistance>70</closeTalkSourceDistance>
     <txIsNoiseReductionEnabled><true/></txIsNoiseReductionEnabled>
-    <txNoiseReductionTargetLevel>-1500</txNoiseReductionTargetLevel>
+  <txNoiseReductionTargetLevel>-2000</txNoiseReductionTargetLevel>
     <isComfortNoiseEnabled><true/></isComfortNoiseEnabled>
     <comfortNoiseLevel>600</comfortNoiseLevel>
     <txIsSpeechEnhancementEnabled><true/></txIsSpeechEnhancementEnabled>
     <txNumBands>6</txNumBands>
     <txBandFrequency8k>
-        <Integer32>100</Integer32>
-        <Integer32>300</Integer32>
-        <Integer32>800</Integer32>
-        <Integer32>1000</Integer32>
-        <Integer32>2200</Integer32>
-        <Integer32>2000</Integer32>
+        <Integer32>200</Integer32>
+        <Integer32>600</Integer32>
+        <Integer32>1200</Integer32>
+        <Integer32>1650</Integer32>
+        <Integer32>1650</Integer32>
+        <Integer32>2400</Integer32>
     </txBandFrequency8k>
     <txBandLevel8k>
-        <Integer32>0</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>200</Integer32>
-        <Integer32>200</Integer32>
-        <Integer32>200</Integer32>
+        <Integer32>-600</Integer32>
+        <Integer32>-500</Integer32>
+        <Integer32>-400</Integer32>
+        <Integer32>1500</Integer32>
+        <Integer32>300</Integer32>
+        <Integer32>300</Integer32>
     </txBandLevel8k>
     <txBandQFactor8k>
         <Integer32>141</Integer32>
+        <Integer32>87</Integer32>
         <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
+        <Integer32>241</Integer32>
+        <Integer32>371</Integer32>
         <Integer32>141</Integer32>
     </txBandQFactor8k>
     <txBandFrequency16k>
-        <Integer32>150</Integer32>
         <Integer32>200</Integer32>
-        <Integer32>1000</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>2000</Integer32>
-        <Integer32>3000</Integer32>
+        <Integer32>600</Integer32>
+        <Integer32>1200</Integer32>
+        <Integer32>1650</Integer32>
+        <Integer32>4100</Integer32>
+        <Integer32>2400</Integer32>
     </txBandFrequency16k>
     <txBandLevel16k>
+        <Integer32>-600</Integer32>
+        <Integer32>-500</Integer32>
+        <Integer32>-400</Integer32>
+        <Integer32>1500</Integer32>
+        <Integer32>500</Integer32>
         <Integer32>300</Integer32>
-        <Integer32>300</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>0</Integer32>
     </txBandLevel16k>
     <txBandQFactor16k>
         <Integer32>141</Integer32>
+        <Integer32>87</Integer32>
         <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
+        <Integer32>241</Integer32>
+        <Integer32>800</Integer32>
         <Integer32>141</Integer32>
     </txBandQFactor16k>
     <txBulkLevel>0</txBulkLevel>
@@ -117,52 +117,52 @@
     <rxIsSpeechEnhancementEnabled><false/></rxIsSpeechEnhancementEnabled>
     <rxNumBands>6</rxNumBands>
     <rxBandFrequency8k>
+        <Integer32>200</Integer32>
+        <Integer32>100</Integer32>
+        <Integer32>100</Integer32>
         <Integer32>400</Integer32>
-        <Integer32>700</Integer32>
-        <Integer32>800</Integer32>
-        <Integer32>1000</Integer32>
-        <Integer32>1900</Integer32>
-        <Integer32>2900</Integer32>
+        <Integer32>900</Integer32>
+        <Integer32>200</Integer32>
     </rxBandFrequency8k>
     <rxBandLevel8k>
-        <Integer32>200</Integer32>
-        <Integer32>-400</Integer32>
-        <Integer32>-500</Integer32>
-        <Integer32>-300</Integer32>
-        <Integer32>-500</Integer32>
-        <Integer32>-500</Integer32>
+        <Integer32>-1000</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>--1500</Integer32>
+        <Integer32>600</Integer32>
+        <Integer32>-700</Integer32>
+        <Integer32>300</Integer32>
     </rxBandLevel8k>
     <rxBandQFactor8k>
-        <Integer32>100</Integer32>
-        <Integer32>100</Integer32>
+        <Integer32>85</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>1000</Integer32>
         <Integer32>141</Integer32>
-        <Integer32>71</Integer32>
         <Integer32>141</Integer32>
-        <Integer32>100</Integer32>
+        <Integer32>85</Integer32>
     </rxBandQFactor8k>
     <rxBandFrequency16k>
+        <Integer32>200</Integer32>
         <Integer32>100</Integer32>
-        <Integer32>800</Integer32>
-        <Integer32>1000</Integer32>
-        <Integer32>2000</Integer32>
-        <Integer32>4200</Integer32>
-        <Integer32>6000</Integer32>
+        <Integer32>100</Integer32>
+        <Integer32>300</Integer32>
+        <Integer32>900</Integer32>
+        <Integer32>200</Integer32>
     </rxBandFrequency16k>
     <rxBandLevel16k>
+        <Integer32>-1000</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
         <Integer32>0</Integer32>
-        <Integer32>-1200</Integer32>
-        <Integer32>-300</Integer32>
-        <Integer32>-200</Integer32>
-        <Integer32>-400</Integer32>
+        <Integer32>-500</Integer32>
         <Integer32>0</Integer32>
     </rxBandLevel16k>
     <rxBandQFactor16k>
-        <Integer32>71</Integer32>
-        <Integer32>101</Integer32>
-        <Integer32>71</Integer32>
+        <Integer32>85</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>500</Integer32>
         <Integer32>141</Integer32>
-        <Integer32>271</Integer32>
-        <Integer32>141</Integer32>
+        <Integer32>85</Integer32>
     </rxBandQFactor16k>
     <bulkIndex>9</bulkIndex>
     <rxBulkLevel>
@@ -189,11 +189,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -213,7 +213,7 @@
     <transCalParam><false/></transCalParam>
     <internalSpeaker><false/></internalSpeaker>
     <txAdjustGain>0</txAdjustGain>
-    <rxAdjustGain>0</rxAdjustGain>
+    <rxAdjustGain>-10</rxAdjustGain>
     <audioLoop><undefLoop/></audioLoop>
     <isAecEnabled><true/></isAecEnabled>
     <echoPathDelay>355</echoPathDelay>
@@ -232,7 +232,7 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>21299</doubleTalkThreshold16k>
     <isBeamformerEnabled><false/></isBeamformerEnabled>
-    <micSeparation>183</micSeparation>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoicePrimarymic/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><false/></isBeamsteeringEnabled>
@@ -293,7 +293,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </txBandQFactor16k>
-    <txBulkLevel>0</txBulkLevel>
+    <txBulkLevel>600</txBulkLevel>
     <txLimiterThreshold>-50</txLimiterThreshold>
     <rxIsNoiseReductionEnabled><true/></rxIsNoiseReductionEnabled>
     <rxNoiseReductionTargetLevel>-1200</rxNoiseReductionTargetLevel>
@@ -347,24 +347,24 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>3</bulkIndex>
+    <bulkIndex>6</bulkIndex>
     <rxBulkLevel>
-        <Integer32>-1200</Integer32>
-        <Integer32>-600</Integer32>
-        <Integer32>-300</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>300</Integer32>
-        <Integer32>600</Integer32>
-        <Integer32>900</Integer32>
-        <Integer32>1200</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1000</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32> 0</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>1000</Integer32>
     </rxBulkLevel>
     <rxLimiterThreshold>-300</rxLimiterThreshold>
     <sidetoneEnable><false/></sidetoneEnable>
@@ -372,11 +372,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -395,11 +395,11 @@
     <elecCalParam><false/></elecCalParam>
     <transCalParam><false/></transCalParam>
     <internalSpeaker><false/></internalSpeaker>
-    <txAdjustGain>4</txAdjustGain>
-    <rxAdjustGain>0</rxAdjustGain>
+  <txAdjustGain>-7</txAdjustGain>
+  <rxAdjustGain>-5</rxAdjustGain>
     <audioLoop><undefLoop/></audioLoop>
     <isAecEnabled><true/></isAecEnabled>
-    <echoPathDelay>92</echoPathDelay>
+    <echoPathDelay>68</echoPathDelay>
     <echoTailLength>320</echoTailLength>
     <echoDuplexTuner>5</echoDuplexTuner>
     <isResidualEchoSuppressorEnabled><true/></isResidualEchoSuppressorEnabled>
@@ -415,8 +415,8 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>19661</doubleTalkThreshold16k>
     <isBeamformerEnabled><true/></isBeamformerEnabled>
-    <micSeparation>183</micSeparation>
-    <arrayMode><qvoicePrimarymic/></arrayMode>
+    <micSeparation>208</micSeparation>
+    <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>90</farTalkTargetAngle>
     <isBeamsteeringEnabled><true/></isBeamsteeringEnabled>
     <spatialRejectionTuner>3</spatialRejectionTuner>
@@ -440,7 +440,7 @@
         <Integer32>0</Integer32>
         <Integer32>0</Integer32>
         <Integer32>0</Integer32>
-        <Integer32>0</Integer32>
+        <Integer32>300</Integer32>
         <Integer32>0</Integer32>
         <Integer32>0</Integer32>
     </txBandLevel8k>
@@ -448,7 +448,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
+        <Integer32>241</Integer32>
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </txBandQFactor8k>
@@ -463,7 +463,7 @@
     <txBandLevel16k>
         <Integer32>0</Integer32>
         <Integer32>0</Integer32>
-        <Integer32>0</Integer32>
+        <Integer32>300</Integer32>
         <Integer32>0</Integer32>
         <Integer32>0</Integer32>
         <Integer32>0</Integer32>
@@ -476,90 +476,90 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </txBandQFactor16k>
-    <txBulkLevel>1200</txBulkLevel>
+    <txBulkLevel>1300</txBulkLevel>
     <txLimiterThreshold>-50</txLimiterThreshold>
     <rxIsNoiseReductionEnabled><true/></rxIsNoiseReductionEnabled>
     <rxNoiseReductionTargetLevel>-1200</rxNoiseReductionTargetLevel>
     <rxIsSpeechEnhancementEnabled><false/></rxIsSpeechEnhancementEnabled>
     <rxNumBands>6</rxNumBands>
     <rxBandFrequency8k>
-        <Integer32>400</Integer32>
-        <Integer32>500</Integer32>
-        <Integer32>1000</Integer32>
-        <Integer32>2200</Integer32>
-        <Integer32>3500</Integer32>
-        <Integer32>1000</Integer32>
-    </rxBandFrequency8k>
-    <rxBandLevel8k>
-        <Integer32>-300</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>-700</Integer32>
-        <Integer32>900</Integer32>
-        <Integer32>-1000</Integer32>
-        <Integer32>0</Integer32>
-    </rxBandLevel8k>
-    <rxBandQFactor8k>
-        <Integer32>143</Integer32>
-        <Integer32>71</Integer32>
-        <Integer32>71</Integer32>
-        <Integer32>300</Integer32>
         <Integer32>200</Integer32>
-        <Integer32>71</Integer32>
-    </rxBandQFactor8k>
-    <rxBandFrequency16k>
         <Integer32>100</Integer32>
         <Integer32>1000</Integer32>
-        <Integer32>2200</Integer32>
-        <Integer32>4000</Integer32>
-        <Integer32>5000</Integer32>
-        <Integer32>6000</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>2800</Integer32>
+        <Integer32>200</Integer32>
+    </rxBandFrequency8k>
+    <rxBandLevel8k>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-800</Integer32>
+        <Integer32>-850</Integer32>
+        <Integer32>1500</Integer32>
+    </rxBandLevel8k>
+    <rxBandQFactor8k>
+        <Integer32>85</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>67</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>85</Integer32>
+    </rxBandQFactor8k>
+    <rxBandFrequency16k>
+        <Integer32>200</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>100</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>2800</Integer32>
+        <Integer32>200</Integer32>
     </rxBandFrequency16k>
     <rxBandLevel16k>
-        <Integer32>0</Integer32>
-        <Integer32>-300</Integer32>
-        <Integer32>900</Integer32>
-        <Integer32>-1000</Integer32>
-        <Integer32>300</Integer32>
-        <Integer32>-300</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-800</Integer32>
+        <Integer32>-850</Integer32>
+        <Integer32>1500</Integer32>
     </rxBandLevel16k>
     <rxBandQFactor16k>
-        <Integer32>141</Integer32>
-        <Integer32>141</Integer32>
-        <Integer32>341</Integer32>
-        <Integer32>141</Integer32>
-        <Integer32>341</Integer32>
-        <Integer32>141</Integer32>
+        <Integer32>85</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>67</Integer32>
+        <Integer32>1000</Integer32>
+        <Integer32>85</Integer32>
     </rxBandQFactor16k>
-    <bulkIndex>15</bulkIndex>
+    <bulkIndex>9</bulkIndex>
     <rxBulkLevel>
-        <Integer32>-1200</Integer32>
-        <Integer32>-600</Integer32>
-        <Integer32>-300</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>300</Integer32>
-        <Integer32>700</Integer32>
-        <Integer32>900</Integer32>
-        <Integer32>1200</Integer32>
+        <Integer32>-750</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-450</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-150</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
         <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>350</Integer32>
+        <Integer32>-1500</Integer32>
+        <Integer32>600</Integer32>
     </rxBulkLevel>
-    <rxLimiterThreshold>-400</rxLimiterThreshold>
+    <rxLimiterThreshold>0</rxLimiterThreshold>
     <sidetoneEnable><false/></sidetoneEnable>
     <sidetonePhase><false/></sidetonePhase>
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -568,9 +568,9 @@
         <fsiProtocol><true/></fsiProtocol>
     </pcmIfCfgPar>
     <externalSpeaker>0</externalSpeaker>
-    <dclEnable><false/></dclEnable>
-    <dclLevel>32767</dclLevel>
-    <dclPeak>29488</dclPeak>
+    <dclEnable><true/></dclEnable>
+    <dclLevel>0</dclLevel>
+    <dclPeak>10000</dclPeak>
 </AudioQVoiceModeParam>
 <AudioQVoiceModeParam>
     <audioMode>3</audioMode>
@@ -598,8 +598,8 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24576</doubleTalkThreshold16k>
     <isBeamformerEnabled><true/></isBeamformerEnabled>
-    <micSeparation>183</micSeparation>
-    <arrayMode><qvoicePrimarymic/></arrayMode>
+    <micSeparation>208</micSeparation>
+    <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>90</farTalkTargetAngle>
     <isBeamsteeringEnabled><true/></isBeamsteeringEnabled>
     <spatialRejectionTuner>3</spatialRejectionTuner>
@@ -682,7 +682,7 @@
         <Integer32>0</Integer32>
     </rxBandLevel8k>
     <rxBandQFactor8k>
-        <Integer32>141</Integer32>
+        <Integer32>143</Integer32>
         <Integer32>71</Integer32>
         <Integer32>71</Integer32>
         <Integer32>71</Integer32>
@@ -691,7 +691,7 @@
     </rxBandQFactor8k>
     <rxBandFrequency16k>
         <Integer32>650</Integer32>
-        <Integer32>1000</Integer32>
+        <Integer32>7500</Integer32>
         <Integer32>1000</Integer32>
         <Integer32>1000</Integer32>
         <Integer32>1000</Integer32>
@@ -738,11 +738,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -780,9 +780,9 @@
     <residualGainTime16k>22</residualGainTime16k>
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24576</doubleTalkThreshold16k>
-    <isBeamformerEnabled><true/></isBeamformerEnabled>
-    <micSeparation>120</micSeparation>
-    <arrayMode><qvoiceEndfire/></arrayMode>
+    <isBeamformerEnabled><false/></isBeamformerEnabled>
+    <micSeparation>208</micSeparation>
+    <arrayMode><qvoicePrimarymic/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><false/></isBeamsteeringEnabled>
     <spatialRejectionTuner>3</spatialRejectionTuner>
@@ -842,7 +842,7 @@
         <Integer32>141</Integer32>
         <Integer32>141</Integer32>
     </txBandQFactor16k>
-    <txBulkLevel>0</txBulkLevel>
+    <txBulkLevel>1000</txBulkLevel>
     <txLimiterThreshold>-50</txLimiterThreshold>
     <rxIsNoiseReductionEnabled><true/></rxIsNoiseReductionEnabled>
     <rxNoiseReductionTargetLevel>-1200</rxNoiseReductionTargetLevel>
@@ -898,22 +898,22 @@
     </rxBandQFactor16k>
     <bulkIndex>3</bulkIndex>
     <rxBulkLevel>
-        <Integer32>-1200</Integer32>
-        <Integer32>-600</Integer32>
-        <Integer32>-300</Integer32>
-        <Integer32>0</Integer32>
-        <Integer32>300</Integer32>
-        <Integer32>600</Integer32>
-        <Integer32>900</Integer32>
-        <Integer32>1200</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
-        <Integer32>1500</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
+        <Integer32>800</Integer32>
     </rxBulkLevel>
     <rxLimiterThreshold>-300</rxLimiterThreshold>
     <sidetoneEnable><false/></sidetoneEnable>
@@ -921,11 +921,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -964,7 +964,7 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24567</doubleTalkThreshold16k>
     <isBeamformerEnabled><false/></isBeamformerEnabled>
-    <micSeparation>120</micSeparation>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><false/></isBeamsteeringEnabled>
@@ -1104,11 +1104,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -1147,7 +1147,7 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24567</doubleTalkThreshold16k>
     <isBeamformerEnabled><false/></isBeamformerEnabled>
-    <micSeparation>120</micSeparation>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><false/></isBeamsteeringEnabled>
@@ -1287,11 +1287,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -1312,7 +1312,7 @@
     <internalSpeaker><false/></internalSpeaker>
     <txAdjustGain>0</txAdjustGain>
     <rxAdjustGain>0</rxAdjustGain>
-    <audioLoop><undefLoop/></audioLoop>
+    <audioLoop>extDigital</audioLoop>
     <isAecEnabled><false/></isAecEnabled>
     <echoPathDelay>335</echoPathDelay>
     <echoTailLength>80</echoTailLength>
@@ -1330,7 +1330,7 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24567</doubleTalkThreshold16k>
     <isBeamformerEnabled><false/></isBeamformerEnabled>
-    <micSeparation>120</micSeparation>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><true/></isBeamsteeringEnabled>
@@ -1470,11 +1470,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -1513,7 +1513,7 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24567</doubleTalkThreshold16k>
     <isBeamformerEnabled><false/></isBeamformerEnabled>
-    <micSeparation>120</micSeparation>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><true/></isBeamsteeringEnabled>
@@ -1653,11 +1653,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -1678,7 +1678,7 @@
     <internalSpeaker><false/></internalSpeaker>
     <txAdjustGain>0</txAdjustGain>
     <rxAdjustGain>0</rxAdjustGain>
-    <audioLoop><undefLoop/></audioLoop>
+    <audioLoop>intDigital</audioLoop>
     <isAecEnabled><false/></isAecEnabled>
     <echoPathDelay>241</echoPathDelay>
     <echoTailLength>80</echoTailLength>
@@ -1696,7 +1696,7 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24567</doubleTalkThreshold16k>
     <isBeamformerEnabled><false/></isBeamformerEnabled>
-    <micSeparation>120</micSeparation>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><true/></isBeamsteeringEnabled>
@@ -1836,11 +1836,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
@@ -1861,7 +1861,7 @@
     <internalSpeaker><false/></internalSpeaker>
     <txAdjustGain>0</txAdjustGain>
     <rxAdjustGain>0</rxAdjustGain>
-    <audioLoop><undefLoop/></audioLoop>
+    <audioLoop>intVocDigital</audioLoop>
     <isAecEnabled><false/></isAecEnabled>
     <echoPathDelay>241</echoPathDelay>
     <echoTailLength>80</echoTailLength>
@@ -1879,7 +1879,7 @@
     <couplingMaxHandset16k>0</couplingMaxHandset16k>
     <doubleTalkThreshold16k>24567</doubleTalkThreshold16k>
     <isBeamformerEnabled><false/></isBeamformerEnabled>
-    <micSeparation>120</micSeparation>
+    <micSeparation>208</micSeparation>
     <arrayMode><qvoiceBroadside/></arrayMode>
     <farTalkTargetAngle>70</farTalkTargetAngle>
     <isBeamsteeringEnabled><true/></isBeamsteeringEnabled>
@@ -2019,11 +2019,11 @@
     <sidetoneGain>3000</sidetoneGain>
     <ttyCtmEnable><false/></ttyCtmEnable>
     <pcmIfCfgPar>
-        <masterNotSlave><true/></masterNotSlave>
+        <masterNotSlave><false/></masterNotSlave>
         <shortNotLong><true/></shortNotLong>
         <wordWidth>16</wordWidth>
         <multiSlot><false/></multiSlot>
-        <pcmBitClk>2048</pcmBitClk>
+        <pcmBitClk>1024</pcmBitClk>
         <freqSample>8</freqSample>
         <compMode>0</compMode>
         <raisingNotFalling><false/></raisingNotFalling>
