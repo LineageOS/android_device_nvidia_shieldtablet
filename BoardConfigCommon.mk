@@ -37,8 +37,8 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_USES_ALSA_AUDIO := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/nvidia/tn8
-TARGET_KERNEL_CONFIG := cyanogenmod_tn8_defconfig
+TARGET_KERNEL_SOURCE := kernel/nvidia/shieldtablet
+TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 12799754240
