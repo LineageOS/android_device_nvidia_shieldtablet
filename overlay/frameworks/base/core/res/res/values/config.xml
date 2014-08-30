@@ -138,10 +138,6 @@
         <item>0</item>
     </integer-array>
 
-    <!-- Eraser Cursor Default Configuration Value -->
-    <add-resource type="integer" name="config_eraserCursor" />
-    <integer name="config_eraserCursor">0</integer>
-
     <!-- Max space (in MB) allocated to DownloadManager to store the downloaded files
          if they are to be stored in DownloadManager's data dir,
          which typically is /data/data/com.android.providers.downloads/files. -->
