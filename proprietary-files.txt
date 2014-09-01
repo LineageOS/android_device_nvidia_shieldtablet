@@ -124,6 +124,7 @@ vendor/lib/libgov_camera.so
 vendor/lib/libgov_combinator.so
 vendor/lib/libgov_force.so
 vendor/lib/libgov_generic.so
+vendor/lib/libgov_gpucompute.so
 vendor/lib/libgov_graphics.so
 vendor/lib/libgov_il.so
 vendor/lib/libgov_tbc.so
