@@ -57,7 +57,6 @@ NV_ECO_PBC_LIMIT 3000 3000 3000
 NV_ECO_THRESHOLD 0 0 0
 NV_ECO_THRESHYST 5 5 5
 /sys/class/graphics/fb0/device/smartdimmer/aggressiveness 27 27 29
-/sys/class/graphics/fb0/device/smartdimmer/enable 1 1 1
 panelresolution=1920X1200
 NV_FPSLIMIT 0 0 30
 NV_MAX_CORES 0 0 2
@@ -79,7 +78,6 @@ NV_ECO_MAX_FREQ 800000 800000 800000
 NV_ECO_PBC_LIMIT 3000 3000 3000
 NV_ECO_THRESHOLD 0 0 0
 NV_ECO_THRESHYST 5 5 5
-/sys/class/graphics/fb0/device/smartdimmer/enable 1 1 1
 panelresolution=-1X-1
 NV_FPSLIMIT 0 0 30
 NV_MAX_CORES 0 0 2
@@ -102,4 +100,3 @@ NV_ECO_PBC_LIMIT 3000 3000 3000
 NV_ECO_THRESHOLD 0 0 0
 NV_ECO_THRESHYST 5 5 5
 /sys/class/graphics/fb0/device/smartdimmer/aggressiveness 27 27 29
-/sys/class/graphics/fb0/device/smartdimmer/enable 1 1 1

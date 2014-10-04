@@ -21,7 +21,7 @@ on init
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdrive
+    export SECONDARY_STORAGE /storage/sdcard1
 
     # Support legacy paths
     symlink /storage/emulated/legacy /sdcard
@@ -33,8 +33,8 @@ on init
     # create directory for mounting usb drives
     mkdir /mnt/media_rw/usbdrive 0700 media_rw media_rw
     mkdir /storage/usbdrive 0700 root root
-    symlink /storage/usbdrive /mnt/usbdrive
-    symlink /mnt/usbdrive /usbdrive
+    symlink /mnt/media_rw/usbdrive /storage/usbdrive
+    symlink /mnt/media_rw/usbdrive /usbdrive
 
     # create directory for mounting calibration partition
     mkdir /mnt/factory 0666 system system
@@ -189,9 +189,6 @@ on boot
     chown system system /sys/devices/virtual/misc/touch/get_platform_id_gpio
     chown system system /sys/class/input/input1/enabled
     chown system system /sys/class/input/input2/enabled
-
-    chown system system /sys/devices/virtual/misc/touch/slowscan_enable
-    chmod 0660 /sys/devices/virtual/misc/touch/slowscan_enable
 
 # nvdps
     chown system system /sys/class/graphics/fb0/device/nvdps

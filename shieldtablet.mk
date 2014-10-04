@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
+    $(LOCAL_PATH)/gps/rootcert.pem:system/etc/gps/rootcert.pem \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
 
 # Bluetooth
