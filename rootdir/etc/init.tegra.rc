@@ -1,4 +1,4 @@
-#Copyright (c) 2011-2013 NVIDIA Corporation.  All Rights Reserved.
+#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -6,8 +6,8 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.nv_dev_board.usb.rc
 import init.${ro.boot.modem}.rc
+import init.comms.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug mode=0755
@@ -39,15 +39,26 @@ on init
     # create directory for mounting calibration partition
     mkdir /mnt/factory 0666 system system
 
+    # create directory for mounting user calibration partition
+    mkdir /mnt/usercalib 0771 system system
+
+    start watchdogd
+
 on fs
 # mount console ramooops
    mount pstore pstore /sys/fs/pstore
 
 on post-fs-data
-    mkdir /data/misc/wifi 0770 wifi wifi
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi
-    mkdir /data/misc/wifi/firmware 0770 wifi wifi
-    start wifiloader
+    # We chown/chmod /mnt/usercalib again so because mount is run as root + defaults
+    chown system system /mnt/usercalib
+    chmod 0771 /mnt/usercalib
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /mnt/usercalib/lost+found 0770 root root
+
+    # Set SELinux security contexts on upgrade or policy update.
+    restorecon_recursive /mnt/usercalib
+
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     mkdir /data/nvcam 0700 media camera
     chown dhcp dhcp /data/misc/dhcp
@@ -63,60 +74,23 @@ on post-fs-data
     # cpu volt cap
     mkdir /data/misc/cvc 0774 system system
 
-    #create gps files
-    mkdir /data/gps
-    mkdir /data/lib_gps
-    chown gps system /data/gps/
-    chown gps system /data/lib_gps/
-    chmod 0770 /data/gps/
-    chmod 0770 /data/lib_gps/
-
-    service start-gps /system/bin/gps_select.sh
-        user root
-        group root
-        class late_start
-        oneshot
-
 # Set up HDCP
 import init.hdcp.rc
 
 on boot
 
-# bluetooth
-    # change back to bluetooth from system
-    chown bluetooth net_bt_stack /data/misc/bluetooth
-
-    # UART device
-    chmod 0660 /dev/ttyHS2
-    chown bluetooth net_bt_stack /dev/ttyHS2
-    chmod 0660 /dev/ttyTHS2
-    chown bluetooth net_bt_stack /dev/ttyTHS2
-
-    # power up/down interface
-    chmod 0660 /sys/class/rfkill/rfkill0/state
-    chmod 0660 /sys/class/rfkill/rfkill0/type
-    write /sys/class/rfkill/rfkill0/state 0
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
-
-    # bluetooth MAC address programming
-    chown bluetooth net_bt_stack ro.bt.bdaddr_path
-    chown bluetooth net_bt_stack /system/etc/bluetooth
-    chown bluetooth net_bt_stack /mnt/factory/bluetooth/bt_mac.txt
-    setprop ro.bt.bdaddr_path "/mnt/factory/bluetooth/bt_mac.txt"
-
 # backlight
     chown system system /sys/class/backlight/pwm-backlight/brightness
 
 # didim
-    chown system system /sys/class/graphics/fb0/device/smartdimmer/enable
-    chown system system /sys/class/graphics/fb0/device/smartdimmer/aggressiveness
-    chown system system /sys/class/graphics/fb0/device/smartdimmer/sd_window
-    chown system system /sys/class/graphics/fb0/device/smartdimmer/sd_window_enable
+    chown system system /sys/devices/platform/host1x/tegradc.0/smartdimmer/enable
+    chown system system /sys/devices/platform/host1x/tegradc.0/smartdimmer/aggressiveness
+    chown system system /sys/devices/platform/host1x/tegradc.0/smartdimmer/sd_window
+    chown system system /sys/devices/platform/host1x/tegradc.0/smartdimmer/sd_window_enable
 
 # CMU
-    chown system system /sys/class/graphics/fb0/device/cmu_enable
-    chown system system /sys/class/graphics/fb1/device/cmu_enable
+    chown system system /sys/devices/platform/host1x/tegradc.0/cmu_enable
+    chown system system /sys/devices/platform/host1x/tegradc.1/cmu_enable
 
 # power
     chown system system /sys/kernel/tegra_cap/core_cap_level
@@ -129,8 +103,6 @@ on boot
 # audio
     chmod 0664 /sys/power/suspend/mode
     chown system audio /sys/power/suspend/mode
-    chmod 0664 /sys/kernel/hdmi_audio_channels/config
-    chown media system /sys/kernel/hdmi_audio_channels/config
 
 # Tegra wakeup monitor
     chown system system /sys/devices/platform/tegra_wakeup_monitor/cmd
@@ -141,57 +113,8 @@ on boot
     chown system system /sys/devices/platform/tegra_wakeup_monitor/add_ports
     chown system system /sys/devices/platform/tegra_wakeup_monitor/del_ports
 
-# Sensor
-    insmod /system/lib/modules/inv-mpu.ko
-    insmod /system/lib/modules/inv-ak8975.ko
-    insmod /system/lib/modules/inv-bmp180.ko
-
-    chown system system /sys/class/invensense/mpu/accl_enable
-    chown system system /sys/class/invensense/mpu/accl_fifo_enable
-    chown system system /sys/class/invensense/mpu/accl_delay
-    chown system system /sys/class/invensense/mpu/accl_max_range
-    chown system system /sys/class/invensense/mpu/enable
-    chown system system /sys/class/invensense/mpu/gyro_enable
-    chown system system /sys/class/invensense/mpu/gyro_fifo_enable
-    chown system system /sys/class/invensense/mpu/gyro_delay
-    chown system system /sys/class/invensense/mpu/gyro_max_range
-    chown system system /sys/class/invensense/mpu/lpa_delay
-    chown system system /sys/class/invensense/mpu/motion_enable
-    chown system system /sys/class/invensense/mpu/motion_threshold
-    chown system system /sys/class/invensense/mpu/power_state
-    chown system system /sys/class/invensense/mpu/key
-
-    chown system system /sys/class/invensense/mpu/akm89xx/akm89xx/enable
-    chown system system /sys/class/invensense/mpu/akm89xx/akm89xx/delay
-    chown system system /sys/class/invensense/mpu/akm89xx/akm89xx/max_range
-    chown system system /sys/class/invensense/mpu/akm89xx/akm89xx/resolution
-
-    chown system system /sys/class/invensense/mpu/bmpX80/bmpX80/enable
-    chown system system /sys/class/invensense/mpu/bmpX80/bmpX80/delay
-    chown system system /sys/class/invensense/mpu/bmpX80/bmpX80/max_range
-    chown system system /sys/class/invensense/mpu/bmpX80/bmpX80/resolution
-
-    chown system system /sys/class/sensors/light/device/amb_clear
-
-# Touch
-    chown system system /sys/class/input/input0/enabled
-
-    chown system system /sys/devices/tegradc.0/enable
-    chown system system /sys/devices/tegradc.1/enable
-    chown system system /sys/devices/platform/host1x/nvavp/boost_sclk
-    chown system system /sys/devices/virtual/misc/touch/report_mode
-    chown system system /sys/devices/virtual/misc/touch/selftest_spi_burst_read
-    chown system system /sys/devices/virtual/misc/touch/selftest_spi_burst_write
-    chown system system /sys/devices/virtual/misc/touch/selftest_spi_byte_read
-    chown system system /sys/devices/virtual/misc/touch/selftest_spi_byte_write
-    chown system system /sys/devices/virtual/misc/touch/touchfile_check
-    chown system system /sys/devices/virtual/misc/touch/selftest_enable
-    chown system system /sys/devices/virtual/misc/touch/get_platform_id_gpio
-    chown system system /sys/class/input/input1/enabled
-    chown system system /sys/class/input/input2/enabled
-
 # nvdps
-    chown system system /sys/class/graphics/fb0/device/nvdps
+    chown system system /sys/devices/platform/host1x/tegradc.0/nvdps
 
 # Default Read Ahead value for sdcards
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
@@ -204,11 +127,8 @@ on boot
     chown system system /sys/class/ozmo_wpan/ozwpan/bind
     chmod 0660 /sys/class/ozmo_wpan/ozwpan/bind
 
-# Load WiFi driver
-    insmod /system/lib/modules/cfg80211.ko
-
-# Wifi support rx-filter
-    setprop wifi.rx-filter 1
+# Set GL driver yield function to sleep for 250us
+    setprop persist.tegra.yieldFunctionSlow 4
 
 # TLK storage service
 import init.tlk.rc
@@ -220,122 +140,24 @@ service set_hwui_params /system/bin/set_hwui_params.sh
     group root
     oneshot
 
-# CPU Boost: boost CPU on input events
-service input-cfboost /system/bin/input_cfboost_init.sh
-    class main
-    user root
-    group root
-    oneshot
+# Enable/disable CMU according to the colorspace
 
-service set_sensor_perm /system/bin/set_light_sensor_perm.sh
-    class main
-    user root
-    group root
-    oneshot
+# BL/Kernel enable CMU as default, skip here
+#on property:persist.sys.dpy0.colorspace=srgb
+#    write /sys/devices/platform/host1x/tegradc.0/cmu_enable 1
 
-on property:ro.debuggable=1
-    # Invensense interface
-    chmod 0666 /sys/class/invensense/mpu/accl_bias
-    chmod 0666 /sys/class/invensense/mpu/accl_enable
-    chmod 0666 /sys/class/invensense/mpu/accl_fifo_enable
-    chmod 0666 /sys/class/invensense/mpu/accl_fs
-    chmod 0666 /sys/class/invensense/mpu/accl_matrix
-    chmod 0666 /sys/class/invensense/mpu/clock_source
-    chmod 0666 /sys/class/invensense/mpu/compass_enable
-    chmod 0666 /sys/class/invensense/mpu/compass_matrix
-    chmod 0666 /sys/class/invensense/mpu/compass_scale
-    chmod 0666 /sys/class/invensense/mpu/dev
-    chmod 0666 /sys/class/invensense/mpu/dmp_firmware
-    chmod 0666 /sys/class/invensense/mpu/enable
-    chmod 0666 /sys/class/invensense/mpu/fifo_rate
-    chmod 0666 /sys/class/invensense/mpu/firmware_loaded
-    chmod 0666 /sys/class/invensense/mpu/flick_axis
-    chmod 0666 /sys/class/invensense/mpu/flick_counter
-    chmod 0666 /sys/class/invensense/mpu/flick_int_on
-    chmod 0666 /sys/class/invensense/mpu/flick_lower
-    chmod 0666 /sys/class/invensense/mpu/flick_message_on
-    chmod 0666 /sys/class/invensense/mpu/flick_upper
-    chmod 0666 /sys/class/invensense/mpu/gyro_enable
-    chmod 0666 /sys/class/invensense/mpu/gyro_fifo_enable
-    chmod 0666 /sys/class/invensense/mpu/gyro_fs
-    chmod 0666 /sys/class/invensense/mpu/gyro_matrix
-    chmod 0666 /sys/class/invensense/mpu/key
-    chmod 0666 /sys/class/invensense/mpu/lpa_freq
-    chmod 0666 /sys/class/invensense/mpu/lpa_mode
-    chmod 0666 /sys/class/invensense/mpu/pedometer_steps
-    chmod 0666 /sys/class/invensense/mpu/pedometer_time
-    chmod 0666 /sys/class/invensense/mpu/power
-    chmod 0666 /sys/class/invensense/mpu/power_state
-    chmod 0666 /sys/class/invensense/mpu/raw_accl
-    chmod 0666 /sys/class/invensense/mpu/raw_gyro
-    chmod 0666 /sys/class/invensense/mpu/reg_dump
-    chmod 0666 /sys/class/invensense/mpu/self_test
-    chmod 0666 /sys/class/invensense/mpu/temp_offset
-    chmod 0666 /sys/class/invensense/mpu/temp_scale
-    chmod 0666 /sys/class/invensense/mpu/temperature
-    chmod 0666 /sys/class/invensense/mpu/uevent
+on property:persist.sys.dpy0.colorspace=native
+    write /sys/devices/platform/host1x/tegradc.0/cmu_enable 0
 
-    # Invensense debug register interface.
-    chmod 0666 /sys/class/invensense/mpu/dbg_reg
-    chmod 0666 /sys/class/invensense/mpu/dbg_dat
+on property:persist.sys.dpy1.colorspace=srgb
+    write /sys/devices/platform/host1x/tegradc.1/cmu_enable 1
+
+on property:persist.sys.dpy1.colorspace=native
+    write /sys/devices/platform/host1x/tegradc.1/cmu_enable 0
 
 on property:ro.debuggable=1
     # EMC debug interface
     chmod 666 /sys/kernel/debug/tegra_emc/eack_state
-
-    # Tethering: disable tethering as no RIL supported
-on property:ro.boot.modem=none
-    setprop ro.tether.denied "true"
-
-service dhcpcd_p2p_wlan0 /system/bin/dhcpcd p2p-wlan0-0
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_p2p_p2p0 /system/bin/dhcpcd p2p-p2p0-0
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_wlan0 /system/bin/dhcpcd -aABKL
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_p2p /system/bin/dhcpcd -aABKL
-    class main
-    disabled
-    oneshot
-
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL -f/system/etc/dhcpcd/dhcpcd.conf
-     class main
-     disabled
-     oneshot
-
-service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
-    class main
-    disabled
-    oneshot
-
-service iprenew_bt-pan /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
-service iprenew_wlan0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
-service iprenew_p2p /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
-service iprenew_eth0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
 
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
@@ -349,19 +171,12 @@ service fuse_usbdrive /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_r
     disabled
 
 
-# bugreport is triggered by the POWER and VOLUME-DOWN and VOLUME-UP keys
+# bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys
 service bugreport /system/bin/dumpstate -d -p -B -o /data/data/com.android.shell/files/bugreports/bugreport
     class main
     disabled
     oneshot
     keycodes 116 115 114
-
-# wifiloader - set the wifi commchip_id accordingly
-service wifiloader /system/bin/wifi_loader.sh
-    class main
-    user root
-    group root
-    oneshot
 
 # Mount usb drives as /usbdrive. Generally usb drives are formatted with FAT
 # filesystem, so we support FAT as of now.
@@ -371,69 +186,13 @@ on device-added-/sys/block/sda
 on device-removed-/sys/block/sda
   umount /mnt/media_rw/usbdrive
 
-# Prepare TF service
-import init.tf.rc
-
-# start the PBC daemon
-service pbc /system/vendor/bin/pbc
-    class main
-    user root
-    group root
-
-#Raydium touch setting
-service rm_ts_service    /vendor/bin/rm_ts_server
-    disabled
-    class late_start
-    user system
-    group system input
-
-on property:ro.boot.touch_vendor_id=0
-    start rm_ts_service
-
 # unified scaling setup
-service ussr_setup /system/bin/ussr_setup.sh
-    class main
-    user root
-    group root
-    oneshot
-
-# unified scaling process
-service ussrd /vendor/bin/ussrd
-    user system
-    group system
-    class main
+import init.ussrd.rc
 
 service cvc /vendor/bin/cvc
     user system
     group system
     class main
-
-service dns_masq /system/bin/dnsmasq --no-daemon --no-resolv --no-poll --dhcp-option-force=43,ANDROID_METERED --dhcp-range=192.168.42.2,192.168.42.254,1h &
-    class main
-    user dhcp
-    group dhcp wifi system
-    disabled
-    oneshot
-
-service wpa_supplicant /system/bin/wpa_supplicant.sh
-#   we will start as root and wpa_supplicant will switch to user wifi
-#   after setting up the capabilities required for WEXT
-#   user wifi
-#   group wifi inet keystore
-    class main
-    socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
-
-service p2p_supplicant /system/bin/wpa_supplicant.sh
-#   we will start as root and wpa_supplicant will switch to user wifi
-#   after setting up the capabilities required for WEXT
-#   user wifi
-#   group wifi inet keystore
-    class main
-    socket wpa_wlan0 dgram 660 wifi wifi
-    disabled
-    oneshot
 
 # Enable rbe
 # thresIncr:50  thresIncrCntMax:6  thresDecr:70  thresDecrCntMax:2
@@ -443,11 +202,7 @@ service wlbwservice /system/bin/wlbwservice -t 50 6 70 2
     user system
     group system inet net_admin
 
-# Enable PowerService
-service powerservice /vendor/bin/powerservice
-    class main
-    user system
-    group system
-
-# Customers should remove this line
-import init.qvs.rc
+# Thie yields each tegra wdt expiration to be at 7.5 secs and fourth expiration for reboot at 30 secs.
+service watchdogd /sbin/watchdogd 10 20
+    class core
+    seclabel u:r:watchdogd:s0

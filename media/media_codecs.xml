@@ -77,53 +77,71 @@ Only the three quirks included above are recognized at this point:
 
 <MediaCodecs>
     <Decoders>
-        <MediaCodec name="OMX.Nvidia.mp4.decode" type="video/mp4v-es" />
-        <MediaCodec name="OMX.Nvidia.h263.decode" type="video/3gpp" />
-        <MediaCodec name="OMX.Nvidia.h264.decode" type="video/avc" />
-        <MediaCodec name="OMX.Nvidia.vp8.decode" type="video/x-vnd.on2.vp8" />
-
-        <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg" />
-        <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
-        <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
-        <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
-        <MediaCodec name="OMX.google.g711.alaw.decoder" type="audio/g711-alaw" />
-        <MediaCodec name="OMX.google.g711.mlaw.decoder" type="audio/g711-mlaw" />
-        <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
-
-        <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" />
-        <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" />
-        <MediaCodec name="OMX.google.h264.decoder" type="video/avc" />
-        <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" />
-        <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" />
-
-        <!-- ffmpeg audio codecs -->
-        <MediaCodec name="OMX.ffmpeg.ra.decoder" type="audio/vnd.rn-realaudio"/>
-        <MediaCodec name="OMX.ffmpeg.flac.decoder" type="audio/flac"/>
-        <MediaCodec name="OMX.ffmpeg.mp2.decoder" type="audio/mpeg-L2"/>
-        <MediaCodec name="OMX.ffmpeg.ac3.decoder" type="audio/ac3"/>
-        <MediaCodec name="OMX.ffmpeg.ape.decoder" type="audio/x-ape"/>
-        <MediaCodec name="OMX.ffmpeg.dts.decoder" type="audio/vnd.dts"/>
-        <MediaCodec name="OMX.ffmpeg.atrial.decoder" type="audio/ffmpeg"/>
-
-        <!-- ffmpeg video codecs -->
-        <MediaCodec name="OMX.ffmpeg.mpeg2v.decoder" type="video/mpeg2"/>
-        <MediaCodec name="OMX.ffmpeg.wmv.decoder" type="video/x-ms-wmv"/>
-        <MediaCodec name="OMX.ffmpeg.rv.decoder" type="video/vnd.rn-realvideo"/>
-        <MediaCodec name="OMX.ffmpeg.vc1.decoder" type="video/vc1"/>
-        <MediaCodec name="OMX.ffmpeg.flv1.decoder" type="video/x-flv"/>
-        <MediaCodec name="OMX.ffmpeg.divx.decoder" type="video/divx"/>
-        <MediaCodec name="OMX.ffmpeg.hevc.decoder" type="video/hevc"/>
-        <MediaCodec name="OMX.ffmpeg.vtrial.decoder" type="video/ffmpeg"/>
+        <MediaCodec name="OMX.Nvidia.mp4.decode" type="video/mp4v-es" >
+            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="244800" />
+            <Limit name="bitrate" range="1-10000000" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Nvidia.h263.decode" type="video/3gpp" >
+            <Limit name="size" min="32x32" max="720x576" />
+            <Limit name="alignment" value="2x2" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Nvidia.h264.decode" type="video/avc" >
+            <Limit name="size" min="32x32" max="3840x2176" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="783360" />
+            <Limit name="bitrate" range="1-62500000" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Nvidia.h264.decode.secure" type="video/avc" >
+            <Limit name="size" min="32x32" max="3840x2176" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="783360" />
+            <Limit name="bitrate" range="1-62500000" />
+            <Feature name="adaptive-playback" />
+            <Feature name="secure-playback" required="true" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Nvidia.vp8.decode" type="video/x-vnd.on2.vp8" >
+            <Limit name="size" min="32x32" max="3840x2176" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="783360" />
+            <Limit name="bitrate" range="1-62500000" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Nvidia.h265.decode" type="video/hevc" >
+            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="783360" />
+            <Limit name="bitrate" range="1-10000000" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
     </Decoders>
 
     <Encoders>
-        <MediaCodec name="OMX.Nvidia.mp4.encoder" type="video/mp4v-es" />
-        <MediaCodec name="OMX.Nvidia.h263.encoder" type="video/3gpp" />
-        <MediaCodec name="OMX.Nvidia.h264.encoder" type="video/avc" />
-
-        <MediaCodec name="OMX.google.amrnb.encoder" type="audio/3gpp" />
-        <MediaCodec name="OMX.google.amrwb.encoder" type="audio/amr-wb" />
-        <MediaCodec name="OMX.google.aac.encoder" type="audio/mp4a-latm" />
-        <MediaCodec name="OMX.google.flac.encoder" type="audio/flac" />
+        <MediaCodec name="OMX.Nvidia.h264.encoder" type="video/avc" >
+            <Limit name="size" min="48x48" max="3840x2176" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="783360" />
+            <Limit name="bitrate" range="1-50000000" />
+        </MediaCodec>
+        <MediaCodec name="OMX.Nvidia.vp8.encoder" type="video/x-vnd.on2.vp8" >
+            <Limit name="size" min="48x48" max="3840x2176" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="783360" />
+            <Limit name="bitrate" range="1-50000000" />
+        </MediaCodec>
     </Encoders>
+    <Include href="media_codecs_google_audio.xml" />
+    <Include href="media_codecs_google_video.xml" />
+    <Include href="media_codecs_ffmpeg.xml" />
 </MediaCodecs>

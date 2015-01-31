@@ -7,11 +7,17 @@
 #is strictly prohibited.
 
 on early-init
-    export TOUCH_DATA_DIR /data/touchscreen
+    export TOUCH_DATA_DIR /data/misc/touchscreen
     export TOUCH_CONF_DIR /mnt/factory/touchscreen
-    export MPU_DATA_DIR /data/mpu
+    export MPU_DATA_DIR /data/misc/mpu
     export MPU_CONF_DIR /mnt/factory/mpu
 
 on post-fs-data
-    mkdir /data/mpu 0755 system system
-    mkdir /data/touchscreen 0755 system system
+    mkdir /mnt/usercalib/touchscreen 0755 system system
+    symlink /mnt/usercalib/touchscreen /data/misc/touchscreen
+    chown system system /data/misc/touchscreen
+    chmod 0755 /data/misc/touchscreen
+    mkdir /mnt/usercalib/mpu 0755 system system
+    symlink /mnt/usercalib/mpu /data/misc/mpu
+    chown system system /data/misc/mpu
+    chmod 0755 /data/misc/mpu

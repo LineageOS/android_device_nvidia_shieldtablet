@@ -138,21 +138,6 @@
         <item>0</item>
     </integer-array>
 
-    <!-- Max space (in MB) allocated to DownloadManager to store the downloaded files
-         if they are to be stored in DownloadManager's data dir,
-         which typically is /data/data/com.android.providers.downloads/files. -->
-    <integer name="config_downloadDataDirSize">200</integer>
-
-    <!-- When the free space available in DownloadManager's data dir falls
-         below the percentage value specified by this param, DownloadManager
-         starts removing files to try to make percentage of available
-         free space above this threshold value. -->
-    <integer name="config_downloadDataDirLowSpaceThreshold">10</integer>
-
-    <!-- When a database query is executed, the results retuned are paginated
-         in pages of size (in KB) indicated by this value -->
-    <integer name="config_cursorWindowSize">2048</integer>
-
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
@@ -178,5 +163,35 @@
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
+    <!-- Whether UI for multi user should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
+     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
+     <integer name="config_shutdownBatteryTemperature">600</integer>
+
+     <!-- Configure mobile tcp buffer sizes in the form:
+         rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
+         If no value is found for the rat-name in use, the system default will be applied.
+    -->
+    <add-resource type="array" name="config_mobile_tcp_buffers"/>
+    <string-array name="config_mobile_tcp_buffers">
+        <item>gprs:4092,8760,48000,4096,8760,48000</item>
+        <item>edge:4093,26280,70800,4096,16384,70800</item>
+        <item>umts:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hsdpa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hsupa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hspa:4094,87380,1220608,4096,16384,1220608</item>
+        <item>hspap:4094,87380,1220608,4096,16384,1220608</item>
+        <item>lte:524288,1048576,2097152,262144,524288,1048576</item>
+    </string-array>
+
+     <!-- Boolean indicating associated scan are allowed -->
+     <bool translatable="false" name="config_wifi_framework_enable_associated_autojoin_scan">false</bool>
+
+     <!-- Boolean indicating associated network selection is allowed -->
+     <bool translatable="false" name="config_wifi_framework_enable_associated_network_selection">false</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
+    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
 </resources>

@@ -1,4 +1,4 @@
-#Copyright (c) 2013 NVIDIA Corporation.  All Rights Reserved.
+#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -6,14 +6,7 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-on boot
-
-# TLK storage service
-service tlk_daemon /vendor/bin/tlk_daemon --storagedir /data
-    class main
-    user system
-    group keystore
-    oneshot
-
-on post-fs-data
-    mkdir /data/tlk 0700 system keystore
+# Thie yields each tegra wdt expiration to be at 7.5 secs and fourth expiration for reboot at 30 secs.
+service watchdogd /sbin/watchdogd 10 20
+    class default
+    seclabel u:r:watchdogd:s0

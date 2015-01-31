@@ -16,14 +16,14 @@ key 172   HOME
 key 113   VOLUME_MUTE
 key 115   VOLUME_UP
 key 114   VOLUME_DOWN
-key 116   BLAKE_POWER
+key 116   BUTTON_16
 
 #legacy blake support
 key 316   BACK
 key 319   HOME
 key 306   VOLUME_UP
 key 309   VOLUME_DOWN
-key 313   BLAKE_POWER
+key 313   BUTTON_16
 
 # NVIDIA gamepad generates 16 bits values for the 6 axis
 # Left (0x00, 0x01) and right (0x03, 0x04) and trigger (0x02, 0x05) analog control stick.

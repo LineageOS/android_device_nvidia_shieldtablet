@@ -25,42 +25,42 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
-TARGET_CPU_SMP := true
 
 # Board
 TARGET_BOARD_PLATFORM := tegra
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-# Audio
-BOARD_USES_ALSA_AUDIO := true
-
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/nvidia/shieldtablet
 TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
-BOARD_KERNEL_CMDLINE := "androidboot.selinux=permissive"
+BOARD_KERNEL_CMDLINE := "androidboot.selinux=disabled"
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 12799754240
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1342177280
 BOARD_FLASH_BLOCK_SIZE := 4096
 
-# Recovery
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/backlight/pwm-backlight/brightness\"
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/shieldtablet/recovery/recovery_keys.c
-TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/recovery.fstab
-
-# Graphics
-USE_OPENGL_RENDERER := true
-
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/shieldtablet/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/nvidia/shieldtablet/bluetooth/vnd_shieldtablet.txt
+
+# Graphics
+USE_OPENGL_RENDERER := true
+BOARD_DISABLE_TRIPLE_BUFFERED_DISPLAY_SURFACES := true
+
+# Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+# Per-application sizes for shader cache
+MAX_EGL_CACHE_SIZE := 4194304
+MAX_EGL_CACHE_ENTRY_SIZE := 262144
+
+# Recovery
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+TARGET_RECOVERY_DEVICE_DIRS += device/nvidia/shieldtablet
+TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/rootdir/etc/fstab.tn8
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
@@ -71,8 +71,7 @@ BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
 WIFI_DRIVER_FW_PATH_STA          := "/data/misc/wifi/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/data/misc/wifi/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/data/misc/wifi/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
-WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 
 BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
