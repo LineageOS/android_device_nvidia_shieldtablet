@@ -33,7 +33,7 @@ TARGET_NO_RADIOIMAGE := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/nvidia/shieldtablet
-TARGET_KERNEL_CONFIG := tegra12_android_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
 BOARD_KERNEL_CMDLINE := "androidboot.selinux=disabled"
 
 TARGET_USERIMAGES_USE_EXT4 := true
