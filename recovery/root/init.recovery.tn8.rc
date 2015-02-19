@@ -6,7 +6,9 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-# Thie yields each tegra wdt expiration to be at 7.5 secs and fourth expiration for reboot at 30 secs.
+import init.ray_touch.rc
+
+# This yields each tegra wdt expiration to be at 7.5 secs and fourth expiration for reboot at 30 secs.
 service watchdogd /sbin/watchdogd 10 20
     class default
     seclabel u:r:watchdogd:s0

@@ -1,0 +1,20 @@
+#Copyright (c) 2011-2013 NVIDIA Corporation.  All Rights Reserved.
+#
+#NVIDIA Corporation and its licensors retain all intellectual property and
+#proprietary rights in and to this software and related documentation.  Any
+#use, reproduction, disclosure or distribution of this software and related
+#documentation without an express license agreement from NVIDIA Corporation
+#is strictly prohibited.
+
+on init
+
+    # create directory for mounting factory partition
+    mkdir /mnt/factory 0666 system system
+
+on boot
+
+    # Touch
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro
+
+#Raydium touch setting
+service rm_ts_runner    /system/bin/rm_ts_runner.sh

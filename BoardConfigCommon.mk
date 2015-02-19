@@ -75,3 +75,12 @@ WIFI_DRIVER_FW_PATH_P2P          := "/data/misc/wifi/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
 
 BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
+
+# TWRP
+DEVICE_RESOLUTION := 1200x1920
+BOARD_HAS_FLIPPED_SCREEN := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_BRIGHTNESS_PATH := /sys/class/backlight/pwm-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
