@@ -20,6 +20,7 @@ etc/firmware/nvavp_os_0ff00000.bin
 etc/firmware/nvavp_os_8ff00000.bin
 etc/firmware/nvavp_os_eff00000.bin
 etc/firmware/nvavp_os_f7e00000.bin
+etc/firmware/nvavp_vid_ucode.bin
 etc/firmware/nvavp_vid_ucode_alt.bin
 etc/firmware/tegra12x/nvhost_msenc031.fw
 etc/firmware/tegra12x/nvhost_tsec.fw
