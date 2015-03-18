@@ -34,7 +34,7 @@ TARGET_NO_RADIOIMAGE := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/nvidia/shieldtablet
 TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
-BOARD_KERNEL_CMDLINE := "androidboot.selinux=disabled"
+BOARD_KERNEL_CMDLINE := "androidboot.selinux=permissive"
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 12799754240
@@ -75,6 +75,50 @@ WIFI_DRIVER_FW_PATH_P2P          := "/data/misc/wifi/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
 
 BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
+BOARD_SEPOLICY_UNION += \
+	te_macros \
+	app.te \
+	bluetooth.te \
+	bootanim.te \
+	cvc.te \
+	device.te \
+	domain.te \
+	drmserver.te \
+	file_contexts \
+	file.te \
+	genfs_contexts \
+	gpload.te \
+	gpsd.te \
+	hostapd.te \
+	installd.te \
+	mediaserver.te \
+	netd.te \
+	platform_app.te \
+	property_contexts \
+	property.te \
+	raydium.te \
+	recovery.te \
+	service.te \
+	service_contexts \
+	set_hwui.te \
+	shell.te \
+	surfaceflinger.te \
+	system_app.te \
+	system_server.te \
+	tee.te \
+	ueventd.te \
+	untrusted_app.te \
+	usb.te \
+	ussrd.te \
+	ussr_setup.te \
+	vold.te \
+	wifi_loader.te \
+	wpa.te \
+	zygote.te \
+	healthd.te
 
 # TWRP
 DEVICE_RESOLUTION := 1200x1920
