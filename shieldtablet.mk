@@ -149,6 +149,10 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
+# Enable USB OTG interface
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=1
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
