@@ -6,7 +6,18 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.ray_touch.rc
+on init
+
+    # create directory for mounting factory partition
+    mkdir /mnt/factory 0666 system system
+
+on boot
+
+    # Touch
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro
+
+#Raydium touch setting
+service rm_ts_runner    /system/bin/rm_ts_runner.sh
 
 # This yields each tegra wdt expiration to be at 7.5 secs and fourth expiration for reboot at 30 secs.
 service watchdogd /sbin/watchdogd 10 20

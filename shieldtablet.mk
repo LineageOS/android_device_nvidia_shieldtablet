@@ -37,6 +37,7 @@ PRODUCT_PACKAGES += \
     init.tegra.rc \
     init.tlk.rc \
     init.tn8.rc \
+    init.recovery.tn8.rc \
     init.tn8.usb.rc \
     init.tn8_common.rc \
     init.tn8_emmc.rc \
