@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter shieldtablet,$(TARGET_DEVICE)),)
 
-LOCAL_PATH := $(call my-dir)
+#
+# mock_modem
+#
+type mock_modem, domain;
+type mock_modem_exec, exec_type, file_type;
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+init_daemon_domain(mock_modem)
 
-endif
+# /data/rfs access
+allow mock_modem radio_data_icera_file:dir create_dir_perms;
+allow mock_modem radio_data_icera_file:file create_file_perms;
+allow mock_modem radio_data_icera_file:lnk_file create_file_perms;

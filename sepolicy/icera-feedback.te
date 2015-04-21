@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter shieldtablet,$(TARGET_DEVICE)),)
 
-LOCAL_PATH := $(call my-dir)
+#
+# icera-feedback
+#
+type icera-feedback, domain;
+type icera-feedback_exec, exec_type, file_type;
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+# don't use init_daemon_domain(), conflicts with app_domain()
+domain_auto_trans(init, icera-feedback_exec, icera-feedback)
+app_domain(icera-feedback)
 
-endif
+# logwrapper usage
+allow icera-feedback devpts:chr_file rw_file_perms;
+
+allow icera-feedback system_file:file x_file_perms;
+allow icera-feedback shell_exec:file rx_file_perms;
+allow icera-feedback zygote_exec:file rx_file_perms;

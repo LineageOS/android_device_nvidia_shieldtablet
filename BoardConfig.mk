@@ -80,6 +80,7 @@ BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
 BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
 BOARD_SEPOLICY_UNION += \
 	te_macros \
+	agpsd.te \
 	app.te \
 	bluetooth.te \
 	bootanim.te \
@@ -87,14 +88,22 @@ BOARD_SEPOLICY_UNION += \
 	device.te \
 	domain.te \
 	drmserver.te \
+	fild.te \
 	file_contexts \
 	file.te \
 	genfs_contexts \
 	gpload.te \
 	gpsd.te \
+	healthd.te\
 	hostapd.te \
+	icera-crashlogs.te \
+	icera-feedback.te \
+	icera-loader.te \
+	icera-switcherd.te \
+	init.te \
 	installd.te \
 	mediaserver.te \
+	mock_modem.te \
 	netd.te \
 	platform_app.te \
 	property_contexts \
@@ -117,6 +126,10 @@ BOARD_SEPOLICY_UNION += \
 	vold.te \
 	wifi_loader.te \
 	wpa.te \
-	zygote.te \
-	healthd.te
+	zygote.te
+
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_tn8
+TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.c
 

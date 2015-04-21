@@ -1,0 +1,185 @@
+# Copyright (c) 2012-2014 NVIDIA Corporation.  All Rights Reserved.
+#
+# NVIDIA Corporation and its licensors retain all intellectual property and
+# proprietary rights in and to this software and related documentation.  Any
+# use, reproduction, disclosure or distribution of this software and related
+# documentation without an express license agreement from NVIDIA Corporation
+# is strictly prohibited.
+
+on init
+
+# Export the global environment for code coverage
+    export GCOV_PREFIX /data/coverage
+    export GCOV_PREFIX_STRIP 0
+
+# rild
+    chown radio system /dev/ttyGS0
+    chown radio system /dev/ttyGS1
+    chmod 660 /dev/ttyGS0
+    chmod 660 /dev/ttyGS1
+
+on boot
+# BB Reset GPIO access for user radio
+    chown radio system /sys/class/gpio/gpio147/value
+# SAR Detection GPIO access for user system
+    chown system system /sys/class/gpio/gpio50/value
+# EDP access for user radio
+    chown radio system /sys/power/sysedp/consumer_register
+    chown radio system /sys/power/sysedp/consumer_unregister
+    chown radio system /sys/devices/platform/tegra_usb_modem_power/sysedp_state
+
+    write /proc/sys/net/core/rmem_default 2097152
+    write /proc/sys/net/core/rmem_max 2097152
+
+on post-fs-data
+# BB remote file system
+    mkdir /data/rfs
+    mkdir /data/rfs/ril 0770 root radio
+    mkdir /data/rfs/data
+    mkdir /data/rfs/data/debug
+    chown radio system /data/rfs/data
+    chown radio system /data/rfs/data/modem
+    chown radio log /data/rfs/data/debug
+    symlink /system/vendor/firmware/data/config /data/rfs/data/config
+    symlink /system/vendor/firmware/app /data/rfs/app
+    symlink /mnt/modem/data/factory /data/rfs/data/factory
+    symlink /mnt/modem/data/modem /data/rfs/data/modem
+    symlink /mnt/modem/data/persistent /data/rfs/data/persistent
+    chmod 775 /data/rfs/data/debug
+    setprop gsm.rfs.created 1
+
+# BB mapping symbolic name to the logging ttyACM port
+    symlink /dev/ttyACM3 /dev/log_modem
+# BB mapping symbolic name to the at ttyACM port
+    symlink /dev/ttyACM2 /dev/at_modem
+
+# crashlogs service
+service icera-crashlogs /vendor/bin/icera-crashlogs
+    user root
+    group root
+    disabled
+    oneshot
+
+# AT port forwarding service
+service at-port-forward /vendor/bin/at-port-forward
+    user radio
+    group radio system
+    disabled
+
+# Modem logging port forwarding service
+service log-port-forward /vendor/bin/log-port-forward
+    user radio
+    group radio system
+    disabled
+
+# Packet RNDIS forward activation
+service tm-rndis-start /system/bin/nwifup
+    user root
+    group root
+    disabled
+    oneshot
+
+# Packet RNDIS forward deactivation
+service tm-rndis-stop /system/bin/nwifdown
+    user root
+    group root
+    disabled
+    oneshot
+
+# Mock modem service
+service mock_modem /vendor/bin/mock_modem
+    class main
+    user radio
+    group radio system
+    socket mock_modem stream 0666 radio system
+    disabled
+
+on property:gsm.modem.logging=1
+    start icera-crashlogs
+
+on property:gsm.modem.crashlogs=1
+    start icera-crashlogs
+
+# test mode for RIL: Should probably be removed from production phones
+service ril-daemon-test /system/bin/rild
+    socket rild-testmode stream 666 root radio
+    socket rild-debug stream 660 radio system
+    user root
+    group radio cache inet misc audio sdcard_rw sdcard_r
+    disabled
+
+on property:gsm.modem.icera.testmode.rndis=0
+    start tm-rndis-stop
+
+on property:gsm.modem.icera.testmode.rndis=1
+    start tm-rndis-start
+
+on property:gsm.modem.ril.enabled=0
+    stop ril-daemon
+    stop agps-daemon
+
+on property:gsm.modem.ril.enabled=1
+    stop ril-daemon
+    start ril-daemon
+    stop agps-daemon
+    start agps-daemon
+
+on property:gsm.modem.riltest.enabled=0
+    stop ril-daemon-test
+
+on property:gsm.modem.riltest.enabled=1
+    stop ril-daemon-test
+    start ril-daemon-test
+
+service icera-feedback /vendor/bin/icera-feedback
+    user shell
+    group shell log
+    disabled
+    oneshot
+
+on property:gsm.modem.feedback=1
+    start icera-feedback
+
+# Start Icera switcher daemon
+service icera-switcher /vendor/bin/icera-switcherd
+    class main
+    user radio
+    group log usb
+
+# Icera firmware update
+service icera-loader /vendor/bin/icera-loader /dev/ttyACM0
+    class main
+    user root
+    group radio
+    disabled
+    oneshot
+
+# Start AGPS daemon
+service agps-daemon /vendor/bin/agpsd
+    class main
+    user radio
+    socket at_pal seqpacket 0666 radio system
+    group system
+
+on property:gsm.modem.update=1
+    start icera-loader
+
+on property:ril.testmode=2
+    setprop ril.mock_modem.socketname "mock_modem"
+    start mock_modem
+    stop ril-daemon
+    stop agps-daemon
+    start ril-daemon-test
+
+on property:ril.testmode=1
+    setprop ril.mock_modem.socketname ""
+    stop ril-daemon
+    stop ril-daemon-test
+    stop mock_modem
+    start ril-daemon-test
+
+on property:ril.testmode=0
+    setprop ril.mock_modem.socketname ""
+    stop ril-daemon-test
+    stop mock_modem
+    start ril-daemon

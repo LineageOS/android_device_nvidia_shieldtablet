@@ -68,3 +68,13 @@ allow system_app cvc_data_file:file rw_file_perms;
 allow system_app sysfs_touch_calib:file rw_file_perms;
 allow system_app user_calib_file:dir create_dir_perms;
 allow system_app user_calib_file:file create_file_perms;
+
+#
+# system_app - icera modem specific policies
+#
+
+# For IDA - need read access to /data/rfs/data/debug
+r_dir_file(system_app, radio_data_icera_file)
+
+# NvMTT - connect to rild-testmode socket
+unix_socket_connect(system_app, rild_tm, rild)

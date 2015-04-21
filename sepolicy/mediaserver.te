@@ -34,3 +34,10 @@ allow_use_phs(mediaserver)
 
 # Mediaserver are expected to be able to rw all sysfs files
 allow mediaserver sysfs_touch_calib:file rw_file_perms;
+
+#
+# media server - modem audio HAL
+#
+
+# AT channel ports (ACM, SHM...)
+allow mediaserver radio_device:chr_file rw_file_perms;

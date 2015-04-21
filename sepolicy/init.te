@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter shieldtablet,$(TARGET_DEVICE)),)
+#
+# init - icera modem specific policies
+#
 
-LOCAL_PATH := $(call my-dir)
+# init.rc used to create tree structure in /data/rfs/...
+allow init radio_data_icera_file:dir create_dir_perms;
+allow init radio_data_icera_file:file create_file_perms;
+allow init radio_data_icera_file:lnk_file create_file_perms;
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
-
-endif

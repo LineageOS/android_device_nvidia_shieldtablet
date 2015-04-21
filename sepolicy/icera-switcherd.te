@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The Android Open Source Project
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter shieldtablet,$(TARGET_DEVICE)),)
 
-LOCAL_PATH := $(call my-dir)
+#
+# icera-switcherd
+#
+type icera-switcherd, domain;
+type icera-switcherd_exec, exec_type, file_type;
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+init_daemon_domain(icera-switcherd)
 
-endif
+allow icera-switcherd ctl_rildaemon_prop:property_service set;
+allow icera-switcherd device:dir read;
+unix_socket_connect(icera-switcherd, property, init)
+allow icera-switcherd radio_prop:property_service set;
+allow icera-switcherd usb_device:chr_file rw_file_perms;
+allow icera-switcherd usb_device:dir r_dir_perms;
+

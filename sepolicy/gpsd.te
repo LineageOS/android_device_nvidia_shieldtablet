@@ -36,3 +36,5 @@ unix_socket_connect(gpsd, property, init);
 # Perform binder IPC to system_server
 binder_call(gpsd, system_server);
 binder_use(gpsd);
+
+unix_socket_connect(gpsd, agpsd, agpsd)

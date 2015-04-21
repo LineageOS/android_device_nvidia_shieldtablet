@@ -99,3 +99,15 @@ type sysfs_slowscan, fs_type, sysfs_type;
 
 # Touch specific file
 type touch_private_file, file_type, data_file_type;
+
+# /data/rfs/...
+type radio_data_icera_file, file_type, data_file_type;
+
+# /dev/socket/rild-testmode (NvMTT)
+type rild_tm_socket, file_type;
+
+# /dev/socket/mock_modem (NvMTT RIL tests)
+type mock_modem_socket, file_type;
+
+# /dev/socket/at_pal (agpsd)
+type agpsd_socket, file_type;

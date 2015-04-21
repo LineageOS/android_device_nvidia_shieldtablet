@@ -150,3 +150,52 @@
 
 /dev/touch							u:object_r:touch_device:s0
 /system/vendor/bin/rm_ts_server					u:object_r:raydium_exec:s0
+
+#
+# common declarations
+#
+/data/rfs(/.*)?                                    u:object_r:radio_data_icera_file:s0
+
+#
+# icera-crashlogs daemon binaries
+#
+/system/vendor/bin/icera-crashlogs                 u:object_r:icera-crashlogs_exec:s0
+
+#
+# icera-feedback binaries
+#
+/system/vendor/bin/icera-feedback                  u:object_r:icera-feedback_exec:s0
+
+#
+# icera-loader daemon binaries
+#
+/system/vendor/bin/icera-loader                    u:object_r:icera-loader_exec:s0
+
+#
+# icera-switcher daemon binaries
+#
+/system/vendor/bin/icera-switcherd                 u:object_r:icera-switcherd_exec:s0
+
+#
+# fil daemon binaries
+#
+/system/vendor/bin/fild                            u:object_r:fild_exec:s0
+
+#
+# ril daemon binaries
+# rild_exec declared in external/sepolicy/file_contexts
+#
+
+/dev/socket/rild-testmode                          u:object_r:rild_tm_socket:s0
+
+#
+# mock_modem daemon binary and socket
+#
+/system/vendor/bin/mock_modem                      u:object_r:mock_modem_exec:s0
+/dev/socket/mock_modem                             u:object_r:mock_modem_socket:s0
+
+#
+# agpsd daemon binary and socket
+#
+/system/vendor/bin/agpsd                           u:object_r:agpsd_exec:s0
+/dev/socket/at_pal                                 u:object_r:agpsd_socket:s0
