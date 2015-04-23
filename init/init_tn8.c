@@ -67,27 +67,23 @@ void vendor_load_properties()
         property_set("ro.build.description", "wx_na_wf-user 5.0.1 LRX22C 29979_515.3274 release-keys");
         property_set("ro.product.model", "wx_na_wf");
     } else if (strstr(board_info, "0x04d2")) {
-        /* Data Only */
+        /* Data Only, can't tell the difference from command line only, use NA */
         gsm_properties();
         property_set("ro.build.fingerprint", "nvidia/wx_na_do/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
         property_set("ro.build.description", "wx_na_do-user 5.0.1 LRX22C 29979_515.3274 release-keys");
-        property_set("ro.product.device", "wx_na_do");
         property_set("ro.product.model", "wx_na_do");
-    } else { //if (strstr(board_info, "0x????"))
-        /* Rest of World Data Only */
-        gsm_properties();
-        property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
+
+        // TODO: Parse /mnt/factory/wifi/country.txt to determine country, if /mnt/factory is mounted yet
+	/*property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
         property_set("ro.build.description", "wx_un_do-user 5.0.1 LRX22C 29979_515.3274 release-keys");
-        property_set("ro.product.device", "wx_un_do");
-        property_set("ro.product.model", "wx_un_do");
-    } /*else { //if (strstr(board_info, "0x????")) */
-        /* Rest of World Voice */
-        /* gsm_properties();
+        property_set("ro.product.model", "wx_un_do");*/
+    } else { //if (strstr(board_info, "0x????"))
+        /* Rest of World Voice (Device never got released, but is partially in upstream source) */
+        gsm_properties();
         property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
         property_set("ro.build.description", "wx_un_mo-user 5.0.1 LRX22C 29979_515.3274 release-keys");
-        property_set("ro.product.device", "wx_un_mo");
         property_set("ro.product.model", "wx_un_mo");
-    }*/
+    }
 
     if (board_info)
         free(board_info);
@@ -109,6 +105,7 @@ void gsm_properties()
     property_set("mdc_initial_max_retry", "10");
     property_set("setprop agpsd.socket_path", "/dev/socket/at_pal");
     property_set("agpsd.dev_path", "/dev/ttyACM4");
+    property_set("rild.libpath", "libril-icera.so");
     property_set("rild.libargs", "-e rmnet0 -e rmnet0:0 -e rmnet0:1 -n");
     property_set("gsm.modem.crashlogs.directory", "/data/rfs/data/debug");
     property_set("ril.maxretries", "15");
