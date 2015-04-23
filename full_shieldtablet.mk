@@ -30,5 +30,5 @@ $(call inherit-product, device/nvidia/shieldtablet/device.mk)
 PRODUCT_NAME := full_shieldtablet
 PRODUCT_DEVICE := shieldtablet
 PRODUCT_BRAND := nvidia
-PRODUCT_MANUFACTURER := NVIDIA
-PRODUCT_MODEL := SHIELD Tablet
+PRODUCT_MANUFACTURER := nvidia
+PRODUCT_MODEL := shieldtablet

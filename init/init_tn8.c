@@ -42,7 +42,7 @@ void vendor_load_properties()
     char model[PROP_VALUE_MAX];
     char devicename[PROP_VALUE_MAX];
     int rc;
-    FILE  *fp;
+    FILE  *fp = NULL;
     char  *board_info = NULL;
     size_t len = 0;
     size_t read;
@@ -55,7 +55,7 @@ void vendor_load_properties()
     fp = fopen("/proc/cmdline", "r");
     if (fp == NULL)
          return;
-    while ((read = getline(&board_info, &len, fp)) != -1) {
+    while ((read = getline(&board_info, &len, fp)) != (size_t)-1) {
         if (strstr(board_info, "board_info"))
             break;
     }
@@ -67,16 +67,11 @@ void vendor_load_properties()
         property_set("ro.build.description", "wx_na_wf-user 5.0.1 LRX22C 29979_515.3274 release-keys");
         property_set("ro.product.model", "wx_na_wf");
     } else if (strstr(board_info, "0x04d2")) {
-        /* Data Only, can't tell the difference from command line only, use NA */
+        /* Data Only, Can't tell the difference from cmdline, so just using wx_un_do. It's the same hardware for both versions */
         gsm_properties();
-        property_set("ro.build.fingerprint", "nvidia/wx_na_do/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
-        property_set("ro.build.description", "wx_na_do-user 5.0.1 LRX22C 29979_515.3274 release-keys");
-        property_set("ro.product.model", "wx_na_do");
-
-        // TODO: Parse /mnt/factory/wifi/country.txt to determine country, if /mnt/factory is mounted yet
-	/*property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
+        property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
         property_set("ro.build.description", "wx_un_do-user 5.0.1 LRX22C 29979_515.3274 release-keys");
-        property_set("ro.product.model", "wx_un_do");*/
+        property_set("ro.product.model", "wx_un_do");
     } else { //if (strstr(board_info, "0x????"))
         /* Rest of World Voice (Device never got released, but is partially in upstream source) */
         gsm_properties();

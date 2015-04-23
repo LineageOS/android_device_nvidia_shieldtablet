@@ -3,7 +3,6 @@ wifi.interface=wlan0
 ap.interface=wlan0
 persist.tegra.nvmmlite = 1
 persist.wlan.ti.calibrated = 0
-ro.sf.override_null_lcd_density = 1
 ro.sf.lcd_density=320
 persist.tegra.compositor=glcomposer
 ro.input.noresample=1
