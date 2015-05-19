@@ -90,6 +90,7 @@ void vendor_load_properties()
 
 void gsm_properties()
 {
+    property_set("cm.icera.enabled", "1");
     property_set("ro.modem.do", "1");
     property_set("ril.icera-config-args", "notifier:ON,datastall:ON,lwaactivate");
     property_set("gsm.modem.power.device", "/sys/class/gpio/gpio147/value,0,1");
@@ -98,7 +99,7 @@ void gsm_properties()
     property_set("gsm.modem.edp.state", "/sys/devices/platform/tegra_usb_modem_power/sysedp_state");
     property_set("ro.ril.devicename", "/dev/ttyACM0");
     property_set("mdc_initial_max_retry", "10");
-    property_set("setprop agpsd.socket_path", "/dev/socket/at_pal");
+    property_set("agpsd.socket_path", "/dev/socket/at_pal");
     property_set("agpsd.dev_path", "/dev/ttyACM4");
     property_set("rild.libpath", "libril-icera.so");
     property_set("rild.libargs", "-e rmnet0 -e rmnet0:0 -e rmnet0:1 -n");

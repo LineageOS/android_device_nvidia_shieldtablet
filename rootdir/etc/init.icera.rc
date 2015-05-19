@@ -145,6 +145,7 @@ service icera-switcher /vendor/bin/icera-switcherd
     class main
     user radio
     group log usb
+    disabled
 
 # Icera firmware update
 service icera-loader /vendor/bin/icera-loader /dev/ttyACM0
@@ -160,6 +161,15 @@ service agps-daemon /vendor/bin/agpsd
     user radio
     socket at_pal seqpacket 0666 radio system
     group system
+    disabled
+
+on cm.icera.enabled=1
+    start icera-switcher
+    start agps-daemon
+
+on cm.icera.enabled=0
+    stop icera-switcher
+    stop agps-daemon
 
 on property:gsm.modem.update=1
     start icera-loader
