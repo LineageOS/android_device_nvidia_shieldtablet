@@ -1,5 +1,4 @@
 bin/glgps_nvidiaTegra2android
-bin/gpslogd
 bin/gps_select.sh
 bin/set_hwui_params.sh
 bin/ussr_setup.sh
