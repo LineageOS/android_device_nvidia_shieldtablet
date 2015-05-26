@@ -19,6 +19,7 @@ on post-fs-data
     write /sys/class/gpio/gpio61/value 0
     chown root system /sys/class/gpio/gpio61/value
     chmod 0664 /sys/class/gpio/gpio61/value
+    chmod 0664 /sys/kernel/cluster/active
     start start-gps
 
 on init
@@ -41,3 +42,8 @@ on init
     setprop sys.esrd.check_screen_off 1
     chown system system /sys/power/sysedp/batmon/esr
     chown system system /sys/bus/i2c/devices/1-0040/iio_device/running_mode
+
+on boot
+    #change vm memory parameter
+    write /proc/sys/vm/lowmem_reserve_ratio 128 128 32
+    write /proc/sys/vm/swappiness 100
