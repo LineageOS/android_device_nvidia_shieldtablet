@@ -190,6 +190,7 @@ vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped
 vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped
 vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin
 vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped
+vendor/app/BlakePairing/BlakePairing.apk
 vendor/bin/blake
 vendor/lib/libblake_jni.so
 vendor/lib/liblota.so
