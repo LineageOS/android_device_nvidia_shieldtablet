@@ -19,7 +19,7 @@ on post-fs-data
     write /sys/class/gpio/gpio61/value 0
     chown root system /sys/class/gpio/gpio61/value
     chmod 0664 /sys/class/gpio/gpio61/value
-    chmod 0664 /sys/kernel/cluster/active
+    chmod 0644 /sys/kernel/cluster/active
     start start-gps
 
 on init
