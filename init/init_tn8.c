@@ -63,21 +63,21 @@ void vendor_load_properties()
 
     if (strstr(board_info, "0x00ea")) {
         /* Wi-Fi Only */
-        property_set("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
-        property_set("ro.build.description", "wx_na_wf-user 5.0.1 LRX22C 29979_515.3274 release-keys");
+        property_set("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:5.1/LMY47H/32256_546.1774:user/release-keys");
+        property_set("ro.build.description", "wx_na_wf-user 5.1 LMY47H 32256_546.1774 release-keys");
         property_set("ro.product.model", "wx_na_wf");
         property_set("ro.radio.noril", "true");
     } else if (strstr(board_info, "0x04d2")) {
         /* Data Only, Can't tell the difference from cmdline, so just using wx_un_do. It's the same hardware for both versions */
         gsm_properties();
-        property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
-        property_set("ro.build.description", "wx_un_do-user 5.0.1 LRX22C 29979_515.3274 release-keys");
+        property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:5.1/LMY47H/32256_546.1774:user/release-keys");
+        property_set("ro.build.description", "wx_un_do-user 5.1 LMY47H 32256_546.1774 release-keys");
         property_set("ro.product.model", "wx_un_do");
     } else { //if (strstr(board_info, "0x????"))
         /* Rest of World Voice (Device never got released, but is partially in upstream source) */
         gsm_properties();
-        property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:5.0.1/LRX22C/29979_515.3274:user/release-keys");
-        property_set("ro.build.description", "wx_un_mo-user 5.0.1 LRX22C 29979_515.3274 release-keys");
+        property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:5.1/LMY47H/32256_546.1774:user/release-keys");
+        property_set("ro.build.description", "wx_un_mo-user 5.1 LMY47H 32256_546.1774 release-keys");
         property_set("ro.product.model", "wx_un_mo");
     }
 
