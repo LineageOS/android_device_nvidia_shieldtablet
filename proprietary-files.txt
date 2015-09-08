@@ -57,6 +57,7 @@ vendor/bin/rm_test
 vendor/bin/rm_ts_server
 vendor/bin/tegrastats
 vendor/bin/tlk_daemon
+vendor/bin/tsechdcp_test
 vendor/bin/ussrd
 vendor/firmware/bcm43241/fw_bcmdhd.bin
 vendor/lib/drm/libdrmwvmplugin.so
@@ -104,6 +105,7 @@ vendor/lib/libnvddk_vic.so
 vendor/lib/libnvfusebypass.so
 vendor/lib/libnvglsi.so
 vendor/lib/libnvgr.so
+vendor/lib/libnvhdcp.so
 vendor/lib/libnvhwc_service.so
 vendor/lib/libnvisp.so
 vendor/lib/libnvisp_v3.so
