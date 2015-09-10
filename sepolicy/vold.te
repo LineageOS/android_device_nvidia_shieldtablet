@@ -14,3 +14,4 @@
 
 allow vold fuse_device:chr_file rw_file_perms;
 allow vold media_rw_data_file:dir { r_dir_perms mounton };
+allow vold vold_tmpfs:file create_file_perms;

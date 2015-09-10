@@ -40,7 +40,9 @@
                         android:mtpReserve="100" />
     <storage android:mountPoint="/storage/sdcard1"
                         android:storageDescription="@string/storage_sd_card"
-                        android:removable="true" />
+                        android:primary="false"
+                        android:removable="true"
+                        android:allowMassStorage="true" />
     <storage android:mountPoint="/storage/usbdrive"
                         android:storageDescription="@string/storage_usb"
                         android:removable="true" />
