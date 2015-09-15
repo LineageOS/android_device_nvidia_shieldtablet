@@ -130,11 +130,11 @@ Only the three quirks included above are recognized at this point:
              <Limit name="bitrate" range="8000-384000" />
         </MediaCodec>
 
-        <MediaCodec name="OMX.Nvidia.eaacp.decoder" type="audio/mp4a-latm" >
+        <!--<MediaCodec name="OMX.Nvidia.eaacp.decoder" type="audio/mp4a-latm" >
              <Limit name="channel-count" max="6" />
              <Limit name="sample-rate" ranges="16000,22050,24000,32000,44100,48000" />
              <Limit name="bitrate" range="8000-384000" />
-        </MediaCodec>
+        </MediaCodec>-->
 
         <MediaCodec name="OMX.Nvidia.mjpeg.decoder" type="video/mjpeg" >
             <Limit name="block-size" value="16x16" />
