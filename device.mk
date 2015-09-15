@@ -164,3 +164,6 @@ PRODUCT_COPY_FILES += \
 # Wireless Controller
 $(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
 
+# Console Mode
+$(call inherit-product-if-exists, vendor/nvidia/shield_common/consolemode-blobs.mk)
+
