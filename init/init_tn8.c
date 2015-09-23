@@ -110,7 +110,7 @@ void vendor_load_properties()
         case wx_na_wf:
             /* Wi-Fi Only */
             property_set("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:5.1.1/LMY48C/36442_589.1541:user/release-keys");
-            property_set("ro.build.description", "wx_na_wf-user 5.1 5.1.1 LMY48C 36442_589.1541 release-keys");
+            property_set("ro.build.description", "wx_na_wf-user 5.1.1 LMY48C 36442_589.1541 release-keys");
             property_set("ro.product.model", "wx_na_wf");
             property_set("ro.radio.noril", "true");
             break;
@@ -120,7 +120,7 @@ void vendor_load_properties()
             gsm_properties();
             property_set("ro.modem.do", "1");
             property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:5.1.1/LMY48C/36442_589.1541:user/release-keys");
-            property_set("ro.build.description", "wx_un_do-user 5.1 5.1.1 LMY48C 36442_589.1541 release-keys");
+            property_set("ro.build.description", "wx_un_do-user 5.1.1 LMY48C 36442_589.1541 release-keys");
             property_set("ro.product.model", "wx_un_do");
             break;
 
@@ -129,7 +129,7 @@ void vendor_load_properties()
             gsm_properties();
             property_set("ro.modem.vc", "1");
             property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:5.1.1/LMY48C/36442_589.1541:user/release-keys");
-            property_set("ro.build.description", "wx_un_mo-user 5.1 5.1.1 LMY48C 36442_589.1541 release-keys");
+            property_set("ro.build.description", "wx_un_mo-user 5.1.1 LMY48C 36442_589.1541 release-keys");
             property_set("ro.product.model", "wx_un_mo");
             break;
     }
