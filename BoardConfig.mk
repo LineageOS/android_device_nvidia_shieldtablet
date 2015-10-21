@@ -34,6 +34,7 @@ TARGET_NO_RADIOIMAGE := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/nvidia/shieldtablet
 TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
+BOARD_KERNEL_CMDLINE := androidboot.hardware=tn8
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 12799754240
@@ -86,58 +87,9 @@ BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
-BOARD_SEPOLICY_UNION += \
-	te_macros \
-	agpsd.te \
-	app.te \
-	bluetooth.te \
-	bootanim.te \
-	cvc.te \
-	device.te \
-	domain.te \
-	drmserver.te \
-	fild.te \
-	file_contexts \
-	file.te \
-	genfs_contexts \
-	gpload.te \
-	gpsd.te \
-	healthd.te\
-	hostapd.te \
-	icera-crashlogs.te \
-	icera-feedback.te \
-	icera-loader.te \
-	icera-switcherd.te \
-	init.te \
-	installd.te \
-	mediaserver.te \
-	mock_modem.te \
-	netd.te \
-	platform_app.te \
-	property_contexts \
-	property.te \
-	raydium.te \
-	recovery.te \
-	service.te \
-	service_contexts \
-	set_hwui.te \
-	shell.te \
-	surfaceflinger.te \
-	system_app.te \
-	system_server.te \
-	tee.te \
-	ueventd.te \
-	untrusted_app.te \
-	usb.te \
-	ussrd.te \
-	ussr_setup.te \
-	vold.te \
-	wifi_loader.te \
-	wpa.te \
-	zygote.te
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_tn8
-TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.c
+TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 
