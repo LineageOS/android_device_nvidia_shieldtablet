@@ -15,11 +15,6 @@
 #
 # rild - radio interface layer daemon
 #
-type rild, domain;
-type rild_exec, exec_type, file_type;
-
-init_daemon_domain(rild)
-net_domain(rild)
 
 unix_socket_connect(rild, property, init)
 allow rild radio_prop:property_service set;

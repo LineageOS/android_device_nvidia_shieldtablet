@@ -20,7 +20,7 @@ allow gpsd sysfs_gpio:{ file lnk_file } rw_file_perms;
 allow gpsd sysfs_wake_lock:file rw_file_perms;
 
 # Allow gpsd access to create and write to /data/gps/
-allow gpsd self:capability { dac_override chown fsetid };
+#allow gpsd self:capability { dac_override chown fsetid };
 allow gpsd gps_data_file:dir create_dir_perms;
 
 # Allow gpsd write to properties

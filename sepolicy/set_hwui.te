@@ -18,6 +18,6 @@ type set_hwui_exec, exec_type, file_type;
 init_daemon_domain(set_hwui)
 unix_socket_connect(set_hwui, property, init)
 
-allow set_hwui default_prop:property_service set;
+#allow set_hwui default_prop:property_service set;
 allow set_hwui shell_exec:file read;
 allow set_hwui system_file:file execute_no_trans;
