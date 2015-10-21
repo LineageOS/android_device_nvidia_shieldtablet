@@ -186,7 +186,7 @@
     </string-array>
 
     <!-- Boolean indicating associated scan are allowed -->
-    <bool translatable="false" name="config_wifi_framework_enable_associated_autojoin_scan">false</bool>
+    <!--<bool translatable="false" name="config_wifi_framework_enable_associated_autojoin_scan">false</bool>-->
 
     <!-- Boolean indicating associated network selection is allowed -->
     <bool translatable="false" name="config_wifi_framework_enable_associated_network_selection">false</bool>
