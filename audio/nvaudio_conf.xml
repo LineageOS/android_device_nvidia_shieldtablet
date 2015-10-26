@@ -62,7 +62,7 @@
     <param name="compress_offload" val="0"/>
     <param name="ulp formats" val="mp3 aac"/>
     <param name="ulp rates" val="48000 44100"/>
-    <param name="nvoice" val="1"/>
+    <param name="nvoice" val="0"/>
     <param name="HW Rates" val="48000 44100"/>
     <param name="flags" val="AUDIO_OUTPUT_FLAG_PRIMARY"/>
 
