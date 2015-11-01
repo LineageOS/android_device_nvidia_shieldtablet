@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudio-resampler \
     libaudiospdif \
+    libtinyalsa \
     libtinycompress \
     tinycap \
     tinymix \
