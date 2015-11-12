@@ -1,0 +1,6 @@
+[
+ {
+   "repository": "android_hardware_nvidia_power",
+   "target_path": "hardware/nvidia/power"
+ }
+]
