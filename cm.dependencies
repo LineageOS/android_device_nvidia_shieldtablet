@@ -2,5 +2,9 @@
  {
    "repository": "android_kernel_nvidia_shieldtablet",
    "target_path": "kernel/nvidia/shieldtablet"
+ },
+ {
+   "repository": "android_hardware_nvidia_power",
+   "target_path": "hardware/nvidia/power"
  }
 ]
