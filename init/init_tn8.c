@@ -26,7 +26,9 @@
  */
 
 #include <stdlib.h>
+#include <errno.h>
 
+#include "init.h"
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
@@ -34,7 +36,26 @@
 #include <stdio.h>
 #include <string.h>
 
-void gsm_properties();
+void gsm_properties()
+{
+    property_set("cm.icera.enabled", "1");
+    property_set("ril.icera-config-args", "notifier:ON,datastall:ON,lwaactivate");
+    property_set("gsm.modem.power.device", "/sys/class/gpio/gpio147/value,0,1");
+    property_set("gsm.modem.SARdet.device", "/sys/class/gpio/gpio50/value");
+    property_set("gsm.modem.edp.device", "/sys/power/sysedp");
+    property_set("gsm.modem.edp.state", "/sys/devices/platform/tegra_usb_modem_power/sysedp_state");
+    property_set("ro.ril.devicename", "/dev/ttyACM0");
+    property_set("mdc_initial_max_retry", "10");
+    property_set("agpsd.socket_path", "/dev/socket/at_pal");
+    property_set("agpsd.dev_path", "/dev/ttyACM4");
+    property_set("rild.libpath", "libril-icera.so");
+    property_set("rild.libargs", "-e rmnet0 -e rmnet0:0 -e rmnet0:1 -n");
+    property_set("gsm.modem.crashlogs.directory", "/data/rfs/data/debug");
+    property_set("ril.maxretries", "15");
+    property_set("gsm.modem.powercontrol", "enabled");
+    property_set("ro.ril.wake_lock_timeout", "200000");
+    property_set("ro.telephony.default_network", "9");
+}
 
 void vendor_load_properties()
 {
@@ -139,23 +160,26 @@ void vendor_load_properties()
     ERROR("Setting build properties for %s model\n", model);
 }
 
-void gsm_properties()
+int vendor_handle_control_message(const char *msg, const char *arg)
 {
-    property_set("cm.icera.enabled", "1");
-    property_set("ril.icera-config-args", "notifier:ON,datastall:ON,lwaactivate");
-    property_set("gsm.modem.power.device", "/sys/class/gpio/gpio147/value,0,1");
-    property_set("gsm.modem.SARdet.device", "/sys/class/gpio/gpio50/value");
-    property_set("gsm.modem.edp.device", "/sys/power/sysedp");
-    property_set("gsm.modem.edp.state", "/sys/devices/platform/tegra_usb_modem_power/sysedp_state");
-    property_set("ro.ril.devicename", "/dev/ttyACM0");
-    property_set("mdc_initial_max_retry", "10");
-    property_set("agpsd.socket_path", "/dev/socket/at_pal");
-    property_set("agpsd.dev_path", "/dev/ttyACM4");
-    property_set("rild.libpath", "libril-icera.so");
-    property_set("rild.libargs", "-e rmnet0 -e rmnet0:0 -e rmnet0:1 -n");
-    property_set("gsm.modem.crashlogs.directory", "/data/rfs/data/debug");
-    property_set("ril.maxretries", "15");
-    property_set("gsm.modem.powercontrol", "enabled");
-    property_set("ro.ril.wake_lock_timeout", "200000");
-    property_set("ro.telephony.default_network", "9");
+    struct service *sf_svc = NULL;
+    struct service *zg_svc = NULL;
+
+    if (!strcmp(msg,"restart") && !strcmp(arg,"consolemode")) {
+        sf_svc = service_find_by_name("surfaceflinger");
+        zg_svc = service_find_by_name("zygote");
+
+        if (sf_svc && zg_svc) {
+            service_stop(zg_svc);
+            service_stop(sf_svc);
+            service_start(sf_svc, NULL);
+            service_start(zg_svc, NULL);
+        } else {
+            ERROR("Required services not found to toggle console mode");
+        }
+
+        return 0;
+    }
+
+    return -EINVAL;
 }
