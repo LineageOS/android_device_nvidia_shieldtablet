@@ -7,7 +7,6 @@ ro.sf.lcd_density=320
 persist.tegra.compositor=glcomposer
 ro.input.noresample=1
 ro.com.google.clientidbase=android-nvidia
-ro.zygote.disable_gl_preload=true
 pbc.enabled=0
 pbc.log=0
 pbc.board_power_threshold=20000
@@ -21,12 +20,13 @@ pbc.dram.power=/sys/bus/i2c/devices/7-0049/power1_input
 pbc.gpu.power=/sys/bus/i2c/devices/7-004b/power1_input
 pbc.gpu.cap=/dev/gpu_freq_max
 pbc.gpu.cap.af=/sys/devices/platform/host1x/gk20a.0/devfreq/gk20a.0/available_frequencies
-af.resampler.quality = 4
+af.resampler.quality=7
+af.fast_downmix=1
+af.thread.throttle=0
 persist.tegra.didim.enable = 1
 persist.tegra.didim.video = 5
 persist.tegra.didim.normal = 3
 persist.sys.usb.config=mtp
-persist.sys.isUsbOtgEnabled=1
 
 # Widevine drm
 drm.service.enabled=true
