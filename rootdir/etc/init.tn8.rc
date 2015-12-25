@@ -11,7 +11,11 @@ import init.tn8_common.rc
 import init.t124.rc
 import init.cal.rc
 import init.tn8.usb.rc
-import init.ray_touch.rc
+import init.ray_st8.rc
+import init.ndiscovery.rc
+
+on fs
+    setprop ro.gpsstatus.changed true
 
 on post-fs-data
     write /sys/class/gpio/export 61
@@ -43,7 +47,5 @@ on init
     chown system system /sys/power/sysedp/batmon/esr
     chown system system /sys/bus/i2c/devices/1-0040/iio_device/running_mode
 
-on boot
-    #change vm memory parameter
-    write /proc/sys/vm/lowmem_reserve_ratio 128 128 32
-    write /proc/sys/vm/swappiness 100
+on property:sys.boot_completed=1
+    write /sys/class/tty/ttyS0/console_write_enable 0

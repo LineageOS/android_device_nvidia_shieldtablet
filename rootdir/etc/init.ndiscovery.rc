@@ -1,0 +1,12 @@
+#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
+#
+#NVIDIA Corporation and its licensors retain all intellectual property and
+#proprietary rights in and to this software and related documentation.  Any
+#use, reproduction, disclosure or distribution of this software and related
+#documentation without an express license agreement from NVIDIA Corporation
+#is strictly prohibited.
+
+on init
+    mkdir /mnt/remote 0755 system system
+    mkdir /mnt/remote/79a35232-07f9-4230-9df3-4256560ddbd2 0755 system system
+

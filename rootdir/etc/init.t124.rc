@@ -45,12 +45,18 @@ on boot
     write /sys/module/input_cfboost/parameters/boost_gpu 540000
     write /sys/module/input_cfboost/parameters/boost_time 160
     write /sys/module/input_cfboost/parameters/boost_cpus 3
-    write /sys/block/mmcblk0/queue/scheduler "deadline"
-    write /sys/block/mmcblk0/queue/nr_requests 4
+
 on init
     # Mount a tmpfs into /mnt/tmp for hosting nvram, phs shared memory
     mkdir /mnt/tmp 0770 system system
     mount tmpfs tmpfs /mnt/tmp mode=0775,gid=1003
 
+    start watchdogd
+
 #set GPS GPIO property, which is used in gps_select
     setprop ro.gps.gpio 61
+
+# Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
+service watchdogd /sbin/watchdogd 10 110
+    class core
+    seclabel u:r:watchdogd:s0

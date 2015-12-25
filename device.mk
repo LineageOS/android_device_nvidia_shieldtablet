@@ -33,7 +33,8 @@ PRODUCT_PACKAGES += \
     init.comms.rc \
     init.icera.rc \
     init.hdcp.rc \
-    init.ray_touch.rc \
+    init.ndiscovery.rc \
+    init.ray_st8.rc \
     init.t124.rc \
     init.tegra.rc \
     init.tlk.rc \

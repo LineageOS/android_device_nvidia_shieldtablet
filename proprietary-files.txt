@@ -1,3 +1,4 @@
+bin/bt_loader.sh
 bin/glgps_nvidiaTegra2android
 bin/gps_select.sh
 bin/set_hwui_params.sh
@@ -41,6 +42,7 @@ vendor/bin/raydium_selftest
 vendor/bin/rm_panel_setting.ini
 vendor/bin/rm_test
 vendor/bin/rm_ts_server
+vendor/bin/ss_status.sh
 vendor/bin/tegrastats
 vendor/bin/tlk_daemon
 vendor/bin/tsechdcp_test
