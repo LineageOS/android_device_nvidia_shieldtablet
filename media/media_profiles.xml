@@ -24,7 +24,7 @@
                          ExportVideoProfile+)>
   <!ELEMENT CamcorderProfiles (EncoderProfile+, ImageEncoding+, ImageDecoding, Camera)>
   <!ELEMENT EncoderProfile (Video, Audio)>
-  <!ATTLIST EncoderProfile quality (timelapse1080p|timelapse720p|timelapse480p|timelapsehigh|timelapselow|480p|qcif|high|low|1080p) #REQUIRED>
+  <!ATTLIST EncoderProfile quality (timelapse2160p|timelapse1080p|timelapse720p|timelapse480p|timelapsehigh|timelapselow|480p|qcif|high|low|1080p) #REQUIRED>
   <!ATTLIST EncoderProfile fileFormat (mp4|3gp) #REQUIRED>
   <!ATTLIST EncoderProfile duration (30|60) #REQUIRED>
   <!ELEMENT Video EMPTY>
@@ -119,8 +119,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
@@ -164,8 +164,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="720p" fileFormat="3gp" duration="30">
@@ -179,8 +179,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="1080p" fileFormat="3gp" duration="30">
@@ -194,8 +194,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
@@ -219,9 +219,9 @@
 
     <EncoderProfile quality="timelapsehigh" fileFormat="3gp" duration="30">
       <Video codec="h264"
-             bitRate="14000000"
-             width="1920"
-             height="1080"
+             bitRate="20000000"
+             width="3840"
+             height="2160"
              frameRate="30"
              profile="8"
              numBFrames="0" />
@@ -232,8 +232,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
@@ -289,8 +289,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
@@ -308,8 +308,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse1080p" fileFormat="3gp" duration="30">
@@ -327,8 +327,27 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="timelapse2160p" fileFormat="3gp" duration="30">
+      <Video codec="h264"
+             bitRate="20000000"
+             width="3840"
+             height="2160"
+             frameRate="30"
+             profile="8"
+             numBFrames="0" />
+
+      <!--
+            The Audio part of the profile will not be used since time lapse mode
+            does not capture audio
+      -->
+      <Audio codec="aac"
+             bitRate="96000"
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <ImageEncoding quality="90" />
@@ -367,8 +386,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
@@ -412,8 +431,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="720p" fileFormat="3gp" duration="30">
@@ -427,8 +446,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="1080p" fileFormat="3gp" duration="30">
@@ -442,8 +461,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
@@ -480,8 +499,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
@@ -537,8 +556,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
@@ -556,8 +575,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <ImageEncoding quality="90" />
@@ -596,8 +615,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="qcif" fileFormat="3gp" duration="30">
@@ -641,8 +660,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="720p" fileFormat="3gp" duration="30">
@@ -656,8 +675,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="1080p" fileFormat="3gp" duration="30">
@@ -671,8 +690,8 @@
 
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapselow" fileFormat="3gp" duration="30">
@@ -709,8 +728,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapseqcif" fileFormat="3gp" duration="30">
@@ -766,8 +785,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse720p" fileFormat="3gp" duration="30">
@@ -785,8 +804,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse1080p" fileFormat="3gp" duration="30">
@@ -804,8 +823,8 @@
       -->
       <Audio codec="aac"
              bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <ImageEncoding quality="90" />
@@ -843,7 +862,7 @@
   <AudioEncoderCap name="aac" enabled="true"
       minBitRate="8000" maxBitRate="320000"
       minSampleRate="8000" maxSampleRate="48000"
-      minChannels="1" maxChannels="1" />
+      minChannels="1" maxChannels="2" />
 
   <AudioEncoderCap name="amrwb" enabled="true"
         minBitRate="6600" maxBitRate="23050"
@@ -855,8 +874,8 @@
       minSampleRate="8000" maxSampleRate="8000"
       minChannels="1" maxChannels="1" />
 
-  <VideoDecoderCap name="wmv" enabled="false"/>
-  <AudioDecoderCap name="wma" enabled="false"/>
+  <VideoDecoderCap name="wmv" enabled="true"/>
+  <AudioDecoderCap name="wma" enabled="true"/>
   <VideoEditorCap maxInputFrameWidth="1920"
     maxInputFrameHeight="1080"
     maxOutputFrameWidth="1920"

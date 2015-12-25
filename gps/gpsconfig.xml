@@ -5,21 +5,21 @@
     PortName="/dev/ttyTHS1"
     BaudRate="921600"
     LogEnabled="false"
-    Log="DAEMON"
+    Log="FILE"
     HttpSyncLto="true"
     LtoSyncThresholdDays="1"
-    LogDirectory="/data/gps/log/"
+    LogDirectory="/data/system/gps/log/"
     LtoFileName="lto.dat"
-    LtoDir="/data/gps/"
-    CtrlPipe="/data/gps/glgpsctrl"
+    LtoDir="/data/system/gps/"
+    CtrlPipe="/data/system/gps/glgpsctrl"
     GpioNStdbyPath="/sys/class/gpio/gpio61/value"
-    SensorsEnable="true"
+    SensorsEnable="false"
     SensorsLog="false"
     SensorsDebugLog="false"
     SensorsMask="0x7F"
 
     LbsEnable="false"
-    AtCmdTransportSocketMode="Client"
+    SuplEnable="false"
 />
 
 <!-- GPS configuration with standalone 16.8 MHz TCXO  -->

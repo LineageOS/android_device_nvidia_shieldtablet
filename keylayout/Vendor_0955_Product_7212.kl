@@ -1,0 +1,17 @@
+# Copyright (c) 2013, NVIDIA CORPORATION.  All rights reserved.
+# NVIDIA Normalized Gamepad
+
+key 172   HOME
+key 158   BACK
+
+key 103   DPAD_UP
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+key 108   DPAD_DOWN
+key 353   DPAD_CENTER
+
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+
+key 217   VOICE_ASSIST
+
