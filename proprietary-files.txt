@@ -152,6 +152,12 @@ vendor/lib/para_10_09_01_c0.so
 vendor/lib/para_10_09_02_c0.so
 vendor/lib/para_10_0a_00_b0.so
 vendor/lib/para_10_0b_00_a0.so
+vendor/lib/libnvrm_gpu.so
+vendor/lib/libnvcamlog.so
+vendor/lib/libnvcamerautils.so
+vendor/lib/libnvfnet.so
+vendor/lib/libnvfnetstorehdfx.so
+vendor/bin/ss_status
 etc/ril_atc.config
 vendor/bin/crash-check-arm
 vendor/bin/downloader
