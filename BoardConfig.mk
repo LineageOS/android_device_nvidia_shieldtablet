@@ -50,8 +50,6 @@ TARGET_POWERHAL_VARIANT := tegra
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
-# Remove if/when M libs are released
-TARGET_TINY_ALSA_IGNORE_SILENCE_SIZE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
