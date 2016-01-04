@@ -27,6 +27,7 @@ persist.tegra.didim.enable = 1
 persist.tegra.didim.video = 5
 persist.tegra.didim.normal = 3
 persist.sys.usb.config=mtp
+ro.hardware.sensors=default.mpl520.nvs
 
 # Widevine drm
 drm.service.enabled=true
