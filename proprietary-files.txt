@@ -29,6 +29,7 @@ etc/hdcpsrm/hdcp2xtest.srm
 etc/nvram_43241.txt
 etc/ussrd.conf
 lib/hw/gps.brcm.so
+lib/hw/sensors.default.mpl520.nvs.so
 lib/libmllite.so
 lib/libmplmpu.so
 lib/libopencv24_tegra.so
