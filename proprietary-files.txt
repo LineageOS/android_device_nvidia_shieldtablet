@@ -38,6 +38,8 @@ lib/hw/sensors.default.mpl520.nvs.so
 lib/libmllite.so
 lib/libmplmpu.so
 lib/libopencv24_tegra.so
+lib/libsensors_hal.nvs.so
+lib/libsensors_fusion.mpl520.nvs.so
 lib/libtbb.so
 lib/nvcms/device.cfg
 vendor/bin/btmacwriter
