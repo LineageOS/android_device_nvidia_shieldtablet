@@ -20,10 +20,6 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
-
-    <!-- This device is not "voice capable"; it's data-only. -->
-    <bool name="config_voice_capable">false</bool>
-
     <!-- XXXXX NOTE THE FOLLOWING RESOURCES USE THE WRONG NAMING CONVENTION.
          Please don't copy them, copy anything else. -->
 
@@ -144,24 +140,6 @@
         <item>0</item>
     </integer-array>
 
-    <!-- Screen brightness used to dim the screen when the user activity
-         timeout expires.  May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">10</integer>
-
-    <!-- Sets the minimum and maximum tilt tolerance for each possible rotation.
-         See comments in framework config.xml.
-
-         This has been tuned to support the shallow angle of the keyboard folio
-         with a typical tilt of 66 to 69 degrees.
-    -->
-    <integer-array name="config_autoRotationTiltTolerance">
-        <!-- rotation:   0 (natural)    --> <item>-25</item> <item>72</item>
-        <!-- rotation:  90 (rotate CCW) --> <item>-25</item> <item>72</item>
-        <!-- rotation: 180 (reverse)    --> <item>-25</item> <item>60</item>
-        <!-- rotation: 270 (rotate CW)  --> <item>-25</item> <item>72</item>
-    </integer-array>
-
     <!-- Eraser Cursor Default Configuration Value -->
     <add-resource type="integer" name="config_eraserCursor" />
     <integer name="config_eraserCursor">0</integer>
@@ -171,7 +149,7 @@
     <integer name="config_cursorWindowSize">2048</integer>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
-    <bool name="config_unplugTurnsOnScreen">false</bool>
+    <bool name="config_unplugTurnsOnScreen">true</bool>
 
     <!-- Enable electronBeam animation instead of fading off. -->
     <bool name="config_animateScreenLights">false</bool>
