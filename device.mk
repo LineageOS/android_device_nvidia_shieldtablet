@@ -130,6 +130,7 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += libcam
 
 # Wifi
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
