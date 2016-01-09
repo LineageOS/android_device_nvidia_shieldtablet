@@ -16,7 +16,7 @@
 | Release Date            | July 29, 2014                     |
 
 ## Device Picture
-![Nvidia SHIELD Tablet ](http://shield.nvidia.co.uk/images/home-page-sections/shield-tablet-controller-header-image.png "Nvidia SHIELD Tablet")
+![Nvidia SHIELD Tablet ](http://kodinow.com/wp-content/uploads/2015/09/Nvidia-tablet-679x369.png "Nvidia SHIELD Tablet")
 
 ## Copyright
 
