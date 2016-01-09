@@ -1,0 +1,41 @@
+# Copyright (c) 2014, NVIDIA CORPORATION.  All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# rild - radio interface layer daemon
+#
+
+# NIC configuration (netlink)
+allow rild self:udp_socket { create ioctl };
+
+# sysfs access
+allow rild sysfs_radio:file rw_file_perms;
+allow rild sysfs_radio:dir r_dir_perms;
+allow rild sysfs_radio:lnk_file r_file_perms;
+allow rild sysfs_sysedp:file rw_file_perms;
+allow rild sysfs_sysedp:dir r_dir_perms;
+allow rild sysfs_gpio:file rw_file_perms;
+allow rild sysfs_gpio:dir r_dir_perms;
+allow rild sysfs_gpio:lnk_file r_file_perms;
+allow rild sysfs_nvi2c:file rw_file_perms;
+allow rild sysfs_nvi2c:dir r_dir_perms;
+allow rild sysfs_nvi2c:lnk_file r_file_perms;
+
+# /data/rfs access
+allow rild radio_data_icera_file:dir create_dir_perms;
+allow rild radio_data_icera_file:file create_file_perms;
+allow rild radio_data_icera_file:lnk_file create_file_perms;
+
+# mock_modem socket (NvMTT RIL tests)
+unix_socket_connect(rild, mock_modem, mock_modem)

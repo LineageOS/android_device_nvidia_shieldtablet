@@ -89,7 +89,10 @@ WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
+BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy/common \
+                       device/nvidia/shieldtablet/sepolicy/icera \
+                       device/nvidia/shieldtablet/sepolicy/product \
+                       device/nvidia/shieldtablet/sepolicy/raydium
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true

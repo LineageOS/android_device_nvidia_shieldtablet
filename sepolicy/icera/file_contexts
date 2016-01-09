@@ -1,0 +1,92 @@
+# Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+#
+# common declarations
+#
+/data/rfs(/.*)?                                    u:object_r:radio_data_icera_file:s0
+
+# single flash - persistent modem partition (RF calibration, IMEI...)
+/mnt/modem(/.*)?                                   u:object_r:radio_data_icera_file:s0
+
+
+#
+# config_modem service (single-flash only)
+#
+(/system)?/vendor/bin/ceres_mdm_boot_cfg.sh           u:object_r:config_modem_exec:s0
+
+#
+# icera-crashlogs daemon binaries
+#
+(/system)?/vendor/bin/icera-crashlogs              u:object_r:icera-crashlogs_exec:s0
+
+#
+# icera-feedback binaries
+#
+(/system)?/vendor/bin/icera-feedback               u:object_r:icera-feedback_exec:s0
+
+#
+# icera-loader daemon binaries
+#
+(/system)?/vendor/bin/icera-loader                 u:object_r:icera-loader_exec:s0
+
+#
+# icera-switcher daemon binaries
+#
+(/system)?/vendor/bin/icera-switcherd              u:object_r:icera-switcherd_exec:s0
+
+#
+# fil daemon binaries
+#
+(/system)?/vendor/bin/fild                         u:object_r:fild_exec:s0
+
+#
+# ril daemon binaries
+# rild_exec declared in external/sepolicy/file_contexts
+#
+
+/dev/socket/rild-testmode                          u:object_r:rild_tm_socket:s0
+
+#
+# mock_modem daemon binary and socket
+#
+(/system)?/vendor/bin/mock_modem                   u:object_r:mock_modem_exec:s0
+/dev/socket/mock_modem                             u:object_r:mock_modem_socket:s0
+
+#
+# modemnic binary
+#
+(/system)?/vendor/bin/modemnic                     u:object_r:modemnic_exec:s0
+
+
+#
+# modem sysfs
+#
+
+# single flash
+/sys/class/misc/sim(/.*)?                          u:object_r:sysfs_radio:s0
+/sys/devices/platform/tegra_bb\.[0-9](/.*)?        u:object_r:sysfs_radio:s0
+/sys/devices/platform/tegra_bbc_proxy(/.*)?        u:object_r:sysfs_radio:s0
+/sys/devices/platform/modem-thermal(/.*)?          u:object_r:sysfs_radio:s0
+
+
+#
+# modem devices
+#
+
+# single flash
+/dev/ttySHM.*                                      u:object_r:radio_device:s0
+/dev/tegra_bb_ipc.*                                u:object_r:radio_device:s0
+/dev/tegra_bb_priv.*                               u:object_r:radio_device:s0
