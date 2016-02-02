@@ -56,6 +56,7 @@ on init
     setprop input.nonwhitelistedmode 3
     setprop keyguard.no_require_sim true
     setprop persist.tegra.didim.enable 0
+    write /d/tegra_actmon/cpu_emc/avg_act_threshold 50000
 
 service charger /charger
     class charger
