@@ -190,6 +190,7 @@ vendor/lib/para_10_0b_00_a0.so
 etc/ril_atc.config
 vendor/bin/crash-check-arm
 vendor/bin/downloader
+vendor/bin/modemnic
 vendor/bin/icera-crashlogs
 vendor/bin/icera-loader
 vendor/bin/icera_log_serial_arm

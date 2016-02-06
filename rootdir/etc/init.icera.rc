@@ -12,12 +12,6 @@ on init
     export GCOV_PREFIX /data/coverage
     export GCOV_PREFIX_STRIP 0
 
-# rild
-    chown radio system /dev/ttyGS0
-    chown radio system /dev/ttyGS1
-    chmod 660 /dev/ttyGS0
-    chmod 660 /dev/ttyGS1
-
 on boot
 # BB Reset GPIO access for user radio
     chown radio system /sys/class/gpio/gpio147/value
@@ -60,6 +54,13 @@ service icera-crashlogs /vendor/bin/icera-crashlogs
     disabled
     oneshot
 
+# modemnic service
+service modemnic /vendor/bin/modemnic
+    user root
+    group root
+    disabled
+    oneshot
+
 # AT port forwarding service
 service at-port-forward /vendor/bin/at-port-forward
     user radio
@@ -73,14 +74,14 @@ service log-port-forward /vendor/bin/log-port-forward
     disabled
 
 # Packet RNDIS forward activation
-service tm-rndis-start /system/bin/nwifup
+service tm-rndis-start /vendor/bin/nwifup
     user root
     group root
     disabled
     oneshot
 
 # Packet RNDIS forward deactivation
-service tm-rndis-stop /system/bin/nwifdown
+service tm-rndis-stop /vendor/bin/nwifdown
     user root
     group root
     disabled
@@ -100,6 +101,9 @@ on property:gsm.modem.logging=1
 on property:gsm.modem.crashlogs=1
     start icera-crashlogs
 
+on property:ril.modemnic=1
+    start modemnic
+
 # test mode for RIL: Should probably be removed from production phones
 service ril-daemon-test /system/bin/rild
     socket rild-testmode stream 666 root radio
@@ -116,13 +120,10 @@ on property:gsm.modem.icera.testmode.rndis=1
 
 on property:gsm.modem.ril.enabled=0
     stop ril-daemon
-    stop agps-daemon
 
 on property:gsm.modem.ril.enabled=1
     stop ril-daemon
     start ril-daemon
-    stop agps-daemon
-    start agps-daemon
 
 on property:gsm.modem.riltest.enabled=0
     stop ril-daemon-test
@@ -155,21 +156,11 @@ service icera-loader /vendor/bin/icera-loader /dev/ttyACM0
     disabled
     oneshot
 
-# Start AGPS daemon
-service agps-daemon /vendor/bin/agpsd
-    class main
-    user radio
-    socket at_pal seqpacket 0666 radio system
-    group system
-    disabled
-
 on cm.icera.enabled=1
     start icera-switcher
-    start agps-daemon
 
 on cm.icera.enabled=0
     stop icera-switcher
-    stop agps-daemon
 
 on property:gsm.modem.update=1
     start icera-loader
