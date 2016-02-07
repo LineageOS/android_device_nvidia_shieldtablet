@@ -14,13 +14,13 @@ on init
 
 on boot
 # BB Reset GPIO access for user radio
-    chown radio system /sys/class/gpio/gpio147/value
-# SAR Detection GPIO access for user system
-    chown system system /sys/class/gpio/gpio50/value
+    chown radio system /sys/devices/platform/tegra_usb_modem_power/modem_reset/value
 # EDP access for user radio
     chown radio system /sys/power/sysedp/consumer_register
     chown radio system /sys/power/sysedp/consumer_unregister
-    chown radio system /sys/devices/platform/tegra_usb_modem_power/sysedp_state
+    chown radio system /sys/devices/platform/sysedp_modem/sysedp_state
+    chown radio system /sys/devices/platform/modem-thermal/temp
+    chown radio system /sys/devices/platform/modem-thermal/sensors_active
 
     write /proc/sys/net/core/rmem_default 2097152
     write /proc/sys/net/core/rmem_max 2097152
