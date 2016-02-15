@@ -73,3 +73,12 @@ r_dir_file(system_server, factoryconfig_file)
 
 # Storage stub file
 allow system_server storage_stub_file:dir getattr;
+
+allow system_server self:capability sys_module;
+auditallow system_server self:capability sys_module;
+
+# configfs
+allow system_server configfs:dir r_dir_perms;
+
+# hand shake property between system and vold
+allow system_server handshake_sys_vold_prop:property_service set;

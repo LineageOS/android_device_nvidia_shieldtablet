@@ -42,3 +42,6 @@ type bdaddr_path_prop, property_type;
 
 # Factory
 type factory_prop, property_type;
+
+# For handshake between sytem process and vold
+type handshake_sys_vold_prop, property_type;

@@ -65,3 +65,6 @@ persist.nvda.adb.tcp.port        u:object_r:system_prop:s0
 
 # factory
 factory.                           u:object_r:factory_prop:s0
+
+# handshake property between system server and vold
+hssv.fw_restart_done            u:object_r:handshake_sys_vold_prop:s0

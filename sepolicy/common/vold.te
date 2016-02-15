@@ -57,3 +57,9 @@ allow vold self:capability net_raw;
 allow vold mnt_media_rw_stub_file:dir r_dir_perms;
 
 allow vold storage_stub_file:dir r_dir_perms;
+
+# Request various crypto modules.
+allow vold kernel:system module_request;
+
+# hand shake property between system and vold
+allow vold handshake_sys_vold_prop:property_service set;
