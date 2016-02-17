@@ -180,9 +180,6 @@
 /data/misc/mediaserver(/.*)?		u:object_r:media_data_file:s0
 #GPS
 /data/system/gps(/.*)?			u:object_r:gps_data_file:s0
-# Keyguard wallpaper data
-/data/system/users/[0-9]+/keyguard_wallpaper	u:object_r:wallpaper_file:s0
-/data/system/users/[0-9]+/home_wallpaper	u:object_r:wallpaper_file:s0
 # NVSensor socket file
 /data/misc/nvsipc(/.*)?			u:object_r:nvs_socket:s0
 
