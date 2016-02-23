@@ -31,3 +31,13 @@ ro.hardware.sensors=default.mpl520.nvs
 
 # Widevine drm
 drm.service.enabled=true
+
+# usb vendor and product ID definition
+ro.nv.usb.vid=0955
+ro.nv.usb.pid.mtp=7102
+ro.nv.usb.pid.mtp.adb=7100
+ro.nv.usb.pid.rndis=7103
+ro.nv.usb.pid.rndis.acm.adb=af00
+ro.nv.usb.pid.rndis.adb=7103
+ro.nv.usb.pid.ptp=7102
+ro.nv.usb.pid.ptp.adb=7100
