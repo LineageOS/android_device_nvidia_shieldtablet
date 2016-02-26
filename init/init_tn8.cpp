@@ -152,6 +152,7 @@ void vendor_load_properties()
             break;
     }
 
+    property_set("ro.build.product", "shieldtablet");
     property_set("ro.product.device", "shieldtablet");
     property_get("ro.product.model", model);
     ERROR("Setting build properties for %s model\n", model);

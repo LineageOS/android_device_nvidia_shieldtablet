@@ -14,10 +14,7 @@
 # limitations under the License.
 #
 
-# This variable is set first, so it can be overridden
-# by BoardConfigVendor.mk
-
-TARGET_SPECIFIC_HEADER_PATH := device/nvidia/shieldtablet/include
+-include device/nvidia/shield-common/BoardConfigCommon.mk
 
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
@@ -32,7 +29,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/nvidia/shieldtablet
+TARGET_KERNEL_SOURCE := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=tn8 androidboot.selinux=permissive
 
@@ -54,7 +51,7 @@ BOARD_USES_ALSA_AUDIO := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/shieldtablet/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/nvidia/shieldtablet/comms
 # At least when debugging is enabled, we have the same crash as manta
 BCM_BLUETOOTH_MANTA_BUG := true
 
@@ -71,8 +68,7 @@ MAX_EGL_CACHE_ENTRY_SIZE := 262144
 
 # Recovery
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-TARGET_RECOVERY_DEVICE_DIRS += device/nvidia/shieldtablet
-TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/rootdir/etc/fstab.tn8
+TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
@@ -91,10 +87,7 @@ WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy/common \
-                       device/nvidia/shieldtablet/sepolicy/icera \
-                       device/nvidia/shieldtablet/sepolicy/product \
-                       device/nvidia/shieldtablet/sepolicy/raydium
+BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true

@@ -29,6 +29,6 @@ $(call inherit-product, device/nvidia/shieldtablet/device.mk)
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_shieldtablet
 PRODUCT_DEVICE := shieldtablet
-PRODUCT_BRAND := nvidia
-PRODUCT_MANUFACTURER := nvidia
-PRODUCT_MODEL := shieldtablet
+PRODUCT_BRAND := NVIDIA
+PRODUCT_MANUFACTURER := NVIDIA
+PRODUCT_MODEL := SHIELD Tablet

@@ -6,13 +6,11 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.tn8_emmc.rc
+import init.tegra.rc
 import init.tn8_common.rc
 import init.t124.rc
 import init.cal.rc
-import init.tn8.usb.rc
-import init.ray_st8.rc
-import init.ndiscovery.rc
+import init.ray_touch.rc
 
 on fs
     setprop ro.gpsstatus.changed true
