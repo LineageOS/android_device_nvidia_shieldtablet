@@ -120,8 +120,3 @@ PRODUCT_PACKAGES += power.tegra
 $(call inherit-product-if-exists, vendor/nvidia/shield_common/consolemode-blobs.mk)
 
 $(call inherit-product, device/nvidia/shield-common/shield.mk)
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1
