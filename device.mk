@@ -119,4 +119,7 @@ PRODUCT_PACKAGES += power.tegra
 # Console Mode
 $(call inherit-product-if-exists, vendor/nvidia/shield_common/consolemode-blobs.mk)
 
+# Stock Camera
+$(call inherit-product-if-exists, vendor/nvidia/shield_common/nvcamera-blobs.mk)
+
 $(call inherit-product, device/nvidia/shield-common/shield.mk)
