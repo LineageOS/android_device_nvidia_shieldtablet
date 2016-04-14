@@ -42,6 +42,7 @@ on init
     setprop sys.esrd.check_screen_off 1
     chown system system /sys/power/sysedp/batmon/esr
     chown system system /sys/bus/i2c/devices/1-0040/iio_device/running_mode
+    write /proc/sys/vm/page-cluster 0
 
 on fs
     mount_all /vendor/etc/fstab.tn8
