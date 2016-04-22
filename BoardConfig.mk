@@ -32,9 +32,9 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/nvidia/shieldtablet/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/nvidia/shieldtablet
 TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 12799754240
