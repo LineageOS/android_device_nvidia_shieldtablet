@@ -9,10 +9,10 @@ ro.hardware.sensors=default.mpl520.nvs
 
 # usb vendor and product ID definition
 ro.nv.usb.vid=0955
-ro.nv.usb.pid.mtp=7102
-ro.nv.usb.pid.mtp.adb=7100
-ro.nv.usb.pid.rndis=7103
-ro.nv.usb.pid.rndis.acm.adb=af00
-ro.nv.usb.pid.rndis.adb=7103
-ro.nv.usb.pid.ptp=7102
-ro.nv.usb.pid.ptp.adb=7100
+ro.nv.usb.pid.mtp=CF07
+ro.nv.usb.pid.mtp.adb=CF05
+ro.nv.usb.pid.rndis=CF08
+ro.nv.usb.pid.rndis.acm.adb=CF08
+ro.nv.usb.pid.rndis.adb=CF08
+ro.nv.usb.pid.ptp=CF07
+ro.nv.usb.pid.ptp.adb=CF05
