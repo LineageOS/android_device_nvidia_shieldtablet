@@ -1,4 +1,4 @@
-#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
+#Copyright (c) 2011-2015 NVIDIA Corporation.  All Rights Reserved.
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -20,7 +20,7 @@ on boot
 #Raydium touch setting
 service rm-runner    /system/bin/rm-runner.sh
 
-# This yields each tegra wdt expiration to be at 7.5 secs and fourth expiration for reboot at 30 secs.
-service watchdogd /sbin/watchdogd 10 20
+# Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
+service watchdogd /sbin/watchdogd 10 110
     class default
     seclabel u:r:watchdogd:s0
