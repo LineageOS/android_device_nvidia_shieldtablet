@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2015 NVIDIA Corporation.  All Rights Reserved.
+<!-- Copyright (c) 2015-2016 NVIDIA Corporation.  All Rights Reserved.
 
      NVIDIA Corporation and its licensors retain all intellectual property and
      proprietary rights in and to this software and related documentation.  Any
@@ -18,7 +18,7 @@
                 bps="16"
                 period_size="512"
                 period_count="4"
-                start_threshold="2047"
+                start_threshold="127"
                 stop_threshold="-1"
                 silence_threshold="0"
                 silence_size="-1"
@@ -33,6 +33,18 @@
                 period_count="4"
                 start_threshold="1"
                 stop_threshold="4096"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="fast-capture"
+                device_id="0"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="128"
+                period_count="4"
+                start_threshold="1"
+                stop_threshold="512"
                 silence_threshold="0"
                 avail_min="1"/>
 
@@ -121,11 +133,15 @@
                 avail_min="1"
                 devices="builtin-mic|headset-mic"/>
 
+    <param name="capture-init-silence-dmic" val="60"/>
+    <param name="capture-init-silence-hsmic" val="100"/>
     <param name="nvoice" val="1"/>
     <!--Speaker protection flag:
       None -> Disable speaker protection
       CPU  -> CPU based speaker protection-->
     <param name="spkprot-flag" val="CPU"/>
+    <param name="low latency devices" val="headphone|headset|speaker"/>
+    <param name="low latency period_size" val="128"/>
 
     <!-- reset controls -->
     <ctl name="Int Spk Switch" val="0"/>
