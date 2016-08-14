@@ -129,7 +129,7 @@ void vendor_load_properties()
             /* Wi-Fi Only */
             property_set("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:6.0.1/MRA58K/40827_726.6502:user/release-keys");
             property_set("ro.build.description", "wx_na_wf-user 6.0.1 MRA58K 40827_726.6502 release-keys");
-            property_set("ro.product.model", "wx_na_wf");
+            property_set("ro.product.name", "wx_na_wf");
             property_set("ro.radio.noril", "true");
             break;
 
@@ -139,7 +139,7 @@ void vendor_load_properties()
             property_set("ro.modem.do", "1");
             property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:6.0.1/MRA58K/40827_726.6502:user/release-keys");
             property_set("ro.build.description", "wx_un_do-user 6.0.1 MRA58K 40827_726.6502 release-keys");
-            property_set("ro.product.model", "wx_un_do");
+            property_set("ro.product.name", "wx_un_do");
             break;
 
         case wx_un_mo:
@@ -148,13 +148,14 @@ void vendor_load_properties()
             property_set("ro.modem.vc", "1");
             property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:6.0.1/MRA58K/40827_726.6502:user/release-keys");
             property_set("ro.build.description", "wx_un_mo-user 6.0.1 MRA58K 40827_726.6502 release-keys");
-            property_set("ro.product.model", "wx_un_mo");
+            property_set("ro.product.name", "wx_un_mo");
             break;
     }
 
     property_set("ro.build.product", "shieldtablet");
     property_set("ro.product.device", "shieldtablet");
-    property_get("ro.product.model", model);
+    property_set("ro.product.model", "SHIELD Tablet");
+    property_get("ro.product.name", model);
     ERROR("Setting build properties for %s model\n", model);
 }
 
