@@ -116,6 +116,9 @@ PRODUCT_PACKAGES += rild
 # Power
 PRODUCT_PACKAGES += power.tegra
 
+# Browser
+PRODUCT_PACKAGES += Gello
+
 # Wireless Controller
 #$(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
 
