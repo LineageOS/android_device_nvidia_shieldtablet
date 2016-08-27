@@ -37,6 +37,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.tn8 \
+    init.recovery.tn8.rc \
     init.tn8.rc \
     init.tn8_common.rc \
     power.tn8.rc \
