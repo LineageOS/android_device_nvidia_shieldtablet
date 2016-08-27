@@ -28,6 +28,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)
 
+# System Properties
+-include $(COMMON_PATH)/system_prop.mk
+
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
 
 # Overlay
