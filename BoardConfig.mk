@@ -94,3 +94,4 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_tn8
 TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 
+TARGET_RELEASETOOLS_EXTENSIONS := device/nvidia/shieldtablet/releasetools
