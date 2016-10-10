@@ -72,6 +72,9 @@ MAX_EGL_CACHE_ENTRY_SIZE := 262144
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
+# Sensors
+BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
+
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
