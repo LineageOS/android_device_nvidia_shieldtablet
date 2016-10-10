@@ -27,6 +27,8 @@ on post-fs-data
     start start-gps
 
 on init
+    export LD_SHIM_LIBS /system/lib/libicuuc.so|libshim_icu55.so
+
     setprop sys.esrd.powermon_path /sys/bus/i2c/devices/1-0040/iio_device
     setprop sys.esrd.powermon_channel 0
     setprop sys.esrd.min_esr 95
