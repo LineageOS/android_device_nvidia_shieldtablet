@@ -33,6 +33,7 @@
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
+#include "service.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -56,9 +57,8 @@ void gsm_properties()
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char model[PROP_VALUE_MAX];
-    int rc;
+    std::string platform = "";
+    std::string model = "";
     FILE  *fp = NULL;
     char  *board_info = NULL;
     char  *override = NULL;
@@ -71,14 +71,14 @@ void vendor_load_properties()
     };
     int detected_model = wx_unknown;
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
+    platform = property_get("ro.board.platform");
+    if (strncmp(platform.c_str(), ANDROID_TARGET, PROP_VALUE_MAX))
         return;
 
     // Check for persistent model override
     fp = fopen("/data/property/persist.cm.shield.model", "r");
     if (fp) {
-        while ((getline(&override, &len, fp)) != (size_t)-1) {
+        while ((getline(&override, &len, fp)) != (ssize_t)-1) {
             if (strstr(override, "wx_"))
                 break;
         }
@@ -94,7 +94,7 @@ void vendor_load_properties()
                 detected_model = wx_un_mo;
 
             if (detected_model == wx_unknown)
-                ERROR("Invalid model override value given: %s\n");
+                ERROR("Invalid model override value given: %s\n", override);
             else
                 ERROR("Overriding device model to %s\n", override);
 
@@ -108,7 +108,7 @@ void vendor_load_properties()
         fp = fopen("/proc/cmdline", "r");
         if (fp == NULL)
             return;
-        while ((getline(&board_info, &len, fp)) != (size_t)-1) {
+        while ((getline(&board_info, &len, fp)) != (ssize_t)-1) {
             if (strstr(board_info, "board_info"))
                 break;
         }
@@ -155,24 +155,24 @@ void vendor_load_properties()
     property_set("ro.build.product", "shieldtablet");
     property_set("ro.product.device", "shieldtablet");
     property_set("ro.product.model", "SHIELD Tablet");
-    property_get("ro.product.name", model);
-    ERROR("Setting build properties for %s model\n", model);
+    model = property_get("ro.product.name");
+    ERROR("Setting build properties for %s model\n", model.c_str());
 }
 
-int vendor_handle_control_message(const char *msg, const char *arg)
+int vendor_handle_control_message(const std::string &msg, const std::string &arg)
 {
-    struct service *sf_svc = NULL;
-    struct service *zg_svc = NULL;
+    Service *sf_svc = NULL;
+    Service *zg_svc = NULL;
 
-    if (!strcmp(msg,"restart") && !strcmp(arg,"consolemode")) {
-        sf_svc = service_find_by_name("surfaceflinger");
-        zg_svc = service_find_by_name("zygote");
+    if (!msg.compare("restart") && !arg.compare("consolemode")) {
+        sf_svc = ServiceManager::GetInstance().FindServiceByName("surfaceflinger");
+        zg_svc = ServiceManager::GetInstance().FindServiceByName("zygote");
 
         if (sf_svc && zg_svc) {
-            service_stop(zg_svc);
-            service_stop(sf_svc);
-            service_start(sf_svc, NULL);
-            service_start(zg_svc, NULL);
+            zg_svc->Stop();
+            sf_svc->Stop();
+            sf_svc->Start();
+            zg_svc->Start();
         } else {
             ERROR("Required services not found to toggle console mode");
         }
