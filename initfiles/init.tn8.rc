@@ -26,6 +26,11 @@ on post-fs-data
     chmod 0644 /sys/kernel/cluster/active
     start start-gps
 
+on firmware_mounts_complete
+    symlink /system/vendor/firmware/bcm43241/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd.bin
+    symlink /system/vendor/firmware/bcm43241/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin
+    symlink /system/etc/nvram_43241.txt /data/misc/wifi/firmware/nvram.txt
+
 on init
     export LD_SHIM_LIBS /system/lib/libicuuc.so|libshim_icu55.so:/system/lib/hw/camera.tegra.so|libshim_nvcamera.so:/system/lib/libgui.so|libshim_gpsd.so
 
