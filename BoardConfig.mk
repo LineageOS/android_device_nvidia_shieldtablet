@@ -28,6 +28,9 @@ TARGET_BOARD_PLATFORM := tegra
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
+# Camera
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+
 # Kernel
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
