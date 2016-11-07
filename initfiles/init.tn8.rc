@@ -32,7 +32,7 @@ on firmware_mounts_complete
     symlink /system/etc/nvram_43241.txt /data/misc/wifi/firmware/nvram.txt
 
 on init
-    export LD_SHIM_LIBS /system/lib/libicuuc.so|libshim_icu55.so:/system/lib/hw/camera.tegra.so|libshim_nvcamera.so:/system/lib/libgui.so|libshim_gpsd.so
+    export LD_SHIM_LIBS /system/lib/libicuuc.so|libshim_icu55.so:/system/lib/libcamera_client.so|libshim_nvcamera.so:/system/lib/libgui.so|libshim_gpsd.so
 
     setprop sys.esrd.powermon_path /sys/bus/i2c/devices/1-0040/iio_device
     setprop sys.esrd.powermon_channel 0
