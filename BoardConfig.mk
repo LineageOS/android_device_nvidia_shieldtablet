@@ -16,6 +16,8 @@
 
 -include device/nvidia/shield-common/BoardConfigCommon.mk
 
+TARGET_SPECIFIC_HEADER_PATH := device/nvidia/shieldtablet/include
+
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
