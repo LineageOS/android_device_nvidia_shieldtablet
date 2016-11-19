@@ -120,7 +120,8 @@ PRODUCT_PACKAGES += power.tegra
 # Compatibility
 PRODUCT_PACKAGES += libshim_icu55 \
                     libshim_nvcamera \
-                    libshim_gpsd
+                    libshim_gpsd \
+                    libshim_wvm
 
 # Wireless Controller
 #$(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
