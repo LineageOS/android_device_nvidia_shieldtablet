@@ -27,7 +27,7 @@ on post-fs-data
     start start-gps
 
 on init
-    export LD_SHIM_LIBS /system/lib/libicuuc.so|libshim_icu55.so:/system/lib/libcamera_client.so|libshim_nvcamera.so:/system/lib/libgui.so|libshim_gpsd.so
+    export LD_SHIM_LIBS /system/lib/libicuuc.so|libshim_icu55.so:/system/lib/libcamera_client.so|libshim_nvcamera.so:/system/lib/libgui.so|libshim_gpsd.so:/system/vendor/lib/libwvm.so|libshim_wvm.so
 
     setprop sys.esrd.powermon_path /sys/bus/i2c/devices/1-0040/iio_device
     setprop sys.esrd.powermon_channel 0
