@@ -39,6 +39,7 @@ KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 TARGET_KERNEL_SOURCE := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG := cyanogenmod_shieldtablet_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=tn8
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
