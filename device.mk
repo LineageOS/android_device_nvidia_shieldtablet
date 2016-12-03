@@ -119,6 +119,9 @@ PRODUCT_PACKAGES += power.tegra
 # Browser
 PRODUCT_PACKAGES += Gello
 
+# Low memory killer daemon
+PRODUCT_PACKAGES += lmkd
+
 # Wireless Controller
 #$(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
 
