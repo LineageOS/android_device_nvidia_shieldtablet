@@ -114,9 +114,6 @@ PRODUCT_PACKAGES += \
 # Radio Interface
 PRODUCT_PACKAGES += rild
 
-# Power
-PRODUCT_PACKAGES += power.tegra
-
 # Wireless Controller
 #$(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
 
