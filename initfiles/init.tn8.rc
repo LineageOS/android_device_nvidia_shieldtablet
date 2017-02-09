@@ -1,4 +1,4 @@
-#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
+#Copyright (c) 2011-2016, NVIDIA CORPORATION. All rights reserved.
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -11,9 +11,6 @@ import init.tn8_common.rc
 import init.t124.rc
 import init.cal.rc
 import init.ray_touch.rc
-
-on fs
-    setprop ro.gpsstatus.changed true
 
 on post-fs-data
     write /sys/class/gpio/export 61

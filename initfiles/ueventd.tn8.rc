@@ -1,7 +1,8 @@
-/dev/tegra-throughput	0666	system	system
+/dev/tegra-throughput   0666    system  system
 /dev/nvmap      0666    system  system
-/dev/tegra_avpchannel   0660    media   media
-/dev/tegra_audio_avpchannel	0660	media	media
+/dev/tegra_avpchannel   0660    media   drmrpc
+/dev/tegra_audio_avpchannel 0660    media   media
+/dev/tegra_cec  0660    system  system
 /dev/ov2710     0660    media   camera
 /dev/imx091     0660    media   camera
 /dev/ov7695     0660    media   camera
@@ -58,27 +59,27 @@
 /dev/touch      0660    system  system
 /dev/ion        0666    system  system
 /dev/timerinfo  0440    system  system
-/dev/cpu_freq_min	0660	system	system
-/dev/cpu_freq_max	0660	system	system
-/dev/gpu_freq_min	0660	system	system
-/dev/gpu_freq_max	0660	system	system
-/dev/emc_freq_min	0660	system	system
-/dev/min_online_cpus	0660	system	system
-/dev/max_online_cpus	0660	system	system
-/dev/quadd	0660	shell	shell
-/dev/quadd_auth	0660	system	system
-/sys/devices/virtual/input/input*	enabled	0660	system	system
-/dev/gps	0664	system	system
+/dev/cpu_freq_min   0660    system  system
+/dev/cpu_freq_max   0660    system  system
+/dev/gpu_freq_min   0660    system  system
+/dev/gpu_freq_max   0660    system  system
+/dev/emc_freq_min   0660    system  system
+/dev/min_online_cpus    0660    system  system
+/dev/max_online_cpus    0660    system  system
+/dev/quadd  0660    shell   shell
+/dev/quadd_auth 0660    system  system
+/sys/devices/virtual/input/input*   enabled 0660    system  system
+/dev/gps    0664    system  system
 /sys/power/sysedp/consumers/icemdm state 0660 radio system
 /dev/hidraw*    0660    system  system
 /dev/input/event*   0660    system  input
-/sys/devices/platform/ozwpan/usb*	mode	0660	system	system
-/dev/ttyTHS1	0664	root	system
-/dev/ttyTHS2	0660	bluetooth	net_bt_stack
+/sys/devices/platform/ozwpan/usb*   mode    0660    system  system
+/dev/ttyTHS1    0664    root    system
+/dev/ttyTHS2    0660    bluetooth   net_bt_stack
 # pmqos
-/dev/constraint_cpu_freq 0660 root system
-/dev/constraint_gpu_freq 0660 root system
-/dev/constraint_online_cpus 0660 root system
+/dev/constraint_cpu_freq 0660 system system
+/dev/constraint_gpu_freq 0660 system system
+/dev/constraint_online_cpus 0660 system system
 # cpu cores
 /sys/devices/system/cpu/cpu* cpuquiet/active 0664 system system
 /sys/devices/system/cpu/cpu* cpufreq/scaling_governor 0664 system system
@@ -97,236 +98,239 @@
 /sys/devices/platform/host1x gk20a.0/blcg_enable 0664 system system
 /sys/devices/platform/host1x tegradc.0/enable 0664 system system
 # sensors
-/dev/iio:device*																0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	enable							0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	buffer/enable					0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	buffer/length					0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_timestamp_en	0660	system	system
+/dev/iio:device*                                                                0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* enable                          0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* buffer/enable                   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* buffer/length                   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_timestamp_en   0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	self_test						0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	dmp_firmware					0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* self_test                       0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* dmp_firmware                    0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_accel_x_en		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_accel_y_en		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_accel_z_en		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_accel_status_en 0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_flush					0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_batch_flags			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_batch_period			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_batch_timeout			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_sampling_frequency		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_x_offset				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_y_offset				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_accel_z_offset				0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_accel_x_en     0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_accel_y_en     0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_accel_z_en     0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_accel_status_en 0660   system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_flush                  0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_batch_flags            0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_batch_period           0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_batch_timeout          0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_sampling_frequency     0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_x_offset               0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_y_offset               0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_accel_z_offset               0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_anglvel_x_en	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_anglvel_y_en	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_anglvel_z_en	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_anglvel_status_en 0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_flush				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_batch_flags			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_batch_period			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_batch_timeout		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_sampling_frequency	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_x_offset				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_y_offset				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_anglvel_z_offset				0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_anglvel_x_en   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_anglvel_y_en   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_anglvel_z_en   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_anglvel_status_en 0660 system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_flush                0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_batch_flags          0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_batch_period         0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_batch_timeout        0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_sampling_frequency   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_x_offset             0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_y_offset             0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_anglvel_z_offset             0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_magn_x_en		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_magn_y_en		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_magn_z_en		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_magn_status_en	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_magn_flush					0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_magn_batch_flags				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_magn_batch_period			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_magn_batch_timeout			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_magn_sampling_frequency		0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_magn_x_en      0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_magn_y_en      0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_magn_z_en      0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_magn_status_en 0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_magn_flush                   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_magn_batch_flags             0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_magn_batch_period            0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_magn_batch_timeout           0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_magn_sampling_frequency      0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_pressure_en	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_pressure_flush				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_pressure_batch_flags			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_pressure_batch_period		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_pressure_batch_timeout		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_pressure_sampling_frequency	0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_pressure_en    0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_pressure_flush               0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_pressure_batch_flags         0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_pressure_batch_period        0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_pressure_batch_timeout       0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_pressure_sampling_frequency  0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_temp_en		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_temp_flush					0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_temp_batch_flags				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_temp_batch_period			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_temp_batch_timeout			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_temp_sampling_frequency		0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_temp_en        0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_temp_flush                   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_temp_batch_flags             0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_temp_batch_period            0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_temp_batch_timeout           0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_temp_sampling_frequency      0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_illuminance_en	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_illuminance_flush			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_illuminance_batch_flags		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_illuminance_batch_period		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_illuminance_batch_timeout	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_illuminance_sampling_frequency 0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_illuminance_en 0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_illuminance_flush            0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_illuminance_batch_flags      0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_illuminance_batch_period     0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_illuminance_batch_timeout    0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_illuminance_sampling_frequency 0660  system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_proximity_en	0660	system  system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_proximity_flush				0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_proximity_batch_flags		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_proximity_batch_period		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_proximity_batch_timeout		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_proximity_sampling_frequency	0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_proximity_en   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_proximity_flush              0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_proximity_batch_flags        0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_proximity_batch_period       0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_proximity_batch_timeout      0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_proximity_sampling_frequency 0660    system  system
 
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	scan_elements/in_motion_en		0660	system  system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_motion_flush					0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_motion_batch_period			0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	in_motion_batch_timeout			0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* scan_elements/in_motion_en      0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_motion_flush                 0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_motion_batch_period          0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* in_motion_batch_timeout         0660    system  system
 
-/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00*	scan_elements/in_orientation_x_en 0660	system  system
-/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00*	scan_elements/in_orientation_y_en 0660	system  system
-/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00*	scan_elements/in_orientation_z_en 0660	system  system
-/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00*	in_orientation_flush			0660	system	system
-/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00*	in_orientation_batch_period		0660	system	system
-/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00*	in_orientation_batch_timeout	0660	system	system
-
-# For HAL MA514
-# For LTR558
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	proximity_enable	0660	system	system
-
-# Sensor - For InvenSense Input driver
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/accl_enable	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/accl_fifo_enable	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/accl_delay	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/accl_max_range	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/enable		0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/gyro_enable	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/gyro_fifo_enable	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/gyro_delay	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/gyro_max_range	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/lpa_delay	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/motion_enable	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/motion_threshold	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/power_state	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	invensense/mpu/key		0660	system	system
-
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*	akm89xx/enable	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*	akm89xx/delay	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*	akm89xx/max_range	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*	akm89xx/resolution	0660	system	system
-
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	bmpX80/enable	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	bmpX80/delay	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	bmpX80/max_range	0660	system	system
-/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00*	bmpX80/resolution	0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	enable							0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	buffer/enable					0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	buffer/length					0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_timestamp_en	0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	self_test						0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	dmp_firmware					0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_accel_x_en		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_accel_y_en		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_accel_z_en		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_accel_status_en 0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_flush					0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_batch_flags			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_batch_period			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_batch_timeout			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_sampling_frequency		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_x_offset				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_y_offset				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_accel_z_offset				0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_x_en	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_y_en	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_z_en	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_status_en 0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_flush				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_batch_flags			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_batch_period			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_batch_timeout		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_sampling_frequency	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_x_offset				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_y_offset				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_anglvel_z_offset				0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_magn_x_en		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_magn_y_en		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_magn_z_en		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_magn_status_en	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_magn_flush					0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_magn_batch_flags				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_magn_batch_period			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_magn_batch_timeout			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_magn_sampling_frequency		0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_pressure_en	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_pressure_flush				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_pressure_batch_flags			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_pressure_batch_period		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_pressure_batch_timeout		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_pressure_sampling_frequency	0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_temp_en		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_temp_flush					0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_temp_batch_flags				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_temp_batch_period			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_temp_batch_timeout			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_temp_sampling_frequency		0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_illuminance_en	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_illuminance_flush			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_illuminance_batch_flags		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_illuminance_batch_period		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_illuminance_batch_timeout	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_illuminance_sampling_frequency 0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_proximity_en	0660	system  system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_proximity_flush				0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_proximity_batch_flags		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_proximity_batch_period		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_proximity_batch_timeout		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_proximity_sampling_frequency	0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_motion_en		0660	system  system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_motion_flush					0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_motion_batch_period			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_motion_batch_timeout			0660	system	system
-
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_orientation_x_en 0660	system  system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_orientation_y_en 0660	system  system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	scan_elements/in_orientation_z_en 0660	system  system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_orientation_flush			0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_orientation_batch_period		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	in_orientation_batch_timeout	0660	system	system
+/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00* scan_elements/in_orientation_x_en 0660  system  system
+/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00* scan_elements/in_orientation_y_en 0660  system  system
+/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00* scan_elements/in_orientation_z_en 0660  system  system
+/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00* in_orientation_flush            0660    system  system
+/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00* in_orientation_batch_period     0660    system  system
+/sys/devices/platform/tegra12.i2c.0/i2c-0/0-00* in_orientation_batch_timeout    0660    system  system
 
 # For HAL MA514
 # For LTR558
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	proximity_enable	0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* proximity_enable    0660    system  system
 
 # Sensor - For InvenSense Input driver
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/accl_enable	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/accl_fifo_enable	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/accl_delay	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/accl_max_range	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/enable		0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/gyro_enable	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/gyro_fifo_enable	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/gyro_delay	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/gyro_max_range	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/lpa_delay	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/motion_enable	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/motion_threshold	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/power_state	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	invensense/mpu/key		0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/accl_enable  0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/accl_fifo_enable 0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/accl_delay   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/accl_max_range   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/enable       0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/gyro_enable  0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/gyro_fifo_enable 0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/gyro_delay   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/gyro_max_range   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/lpa_delay    0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/motion_enable    0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/motion_threshold 0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/power_state  0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* invensense/mpu/key      0660    system  system
 
-/sys/devices/platform/7000c000.i2c/i2c-0/0-000*	akm89xx/enable	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-000*	akm89xx/delay	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-000*	akm89xx/max_range	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-000*	akm89xx/resolution	0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*    akm89xx/enable  0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*    akm89xx/delay   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*    akm89xx/max_range   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-000*    akm89xx/resolution  0660    system  system
 
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	bmpX80/enable	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	bmpX80/delay	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	bmpX80/max_range	0660	system	system
-/sys/devices/platform/7000c000.i2c/i2c-0/0-00*	bmpX80/resolution	0660	system	system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* bmpX80/enable   0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* bmpX80/delay    0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* bmpX80/max_range    0660    system  system
+/sys/devices/platform/tegra12-i2c.0/i2c-0/0-00* bmpX80/resolution   0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  enable                          0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  buffer/enable                   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  buffer/length                   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_timestamp_en   0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  self_test                       0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  dmp_firmware                    0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_accel_x_en     0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_accel_y_en     0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_accel_z_en     0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_accel_status_en 0660   system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_flush                  0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_batch_flags            0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_batch_period           0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_batch_timeout          0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_sampling_frequency     0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_x_offset               0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_y_offset               0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_accel_z_offset               0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_anglvel_x_en   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_anglvel_y_en   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_anglvel_z_en   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_anglvel_status_en 0660 system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_flush                0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_batch_flags          0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_batch_period         0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_batch_timeout        0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_sampling_frequency   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_x_offset             0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_y_offset             0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_anglvel_z_offset             0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_magn_x_en      0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_magn_y_en      0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_magn_z_en      0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_magn_status_en 0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_magn_flush                   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_magn_batch_flags             0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_magn_batch_period            0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_magn_batch_timeout           0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_magn_sampling_frequency      0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_pressure_en    0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_pressure_flush               0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_pressure_batch_flags         0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_pressure_batch_period        0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_pressure_batch_timeout       0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_pressure_sampling_frequency  0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_temp_en        0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_temp_flush                   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_temp_batch_flags             0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_temp_batch_period            0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_temp_batch_timeout           0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_temp_sampling_frequency      0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_illuminance_en 0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_illuminance_flush            0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_illuminance_batch_flags      0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_illuminance_batch_period     0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_illuminance_batch_timeout    0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_illuminance_sampling_frequency 0660  system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_proximity_en   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_proximity_flush              0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_proximity_batch_flags        0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_proximity_batch_period       0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_proximity_batch_timeout      0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_proximity_sampling_frequency 0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_motion_en      0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_motion_flush                 0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_motion_batch_period          0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_motion_batch_timeout         0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_orientation_x_en 0660  system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_orientation_y_en 0660  system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  scan_elements/in_orientation_z_en 0660  system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_orientation_flush            0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_orientation_batch_period     0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  in_orientation_batch_timeout    0660    system  system
+
+# For HAL MA514
+# For LTR558
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  proximity_enable    0660    system  system
+
+# Sensor - For InvenSense Input driver
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/accl_enable  0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/accl_fifo_enable 0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/accl_delay   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/accl_max_range   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/enable       0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/gyro_enable  0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/gyro_fifo_enable 0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/gyro_delay   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/gyro_max_range   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/lpa_delay    0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/motion_enable    0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/motion_threshold 0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/power_state  0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  invensense/mpu/key      0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-000* akm89xx/enable  0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-000* akm89xx/delay   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-000* akm89xx/max_range   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-000* akm89xx/resolution  0660    system  system
+
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  bmpX80/enable   0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  bmpX80/delay    0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  bmpX80/max_range    0660    system  system
+/sys/devices/platform/7000c000.i2c/i2c-0/0-00*  bmpX80/resolution   0660    system  system
+
+# For CEC device
+/sys/devices/platform/tegra_cec cec_logical_addr_config 0660 system system
 
 #Move usb camera node to camera dir
 subsystem video4linux
-	devname uevent_devname
-	dirname /dev/camera
+    devname uevent_devname
+    dirname /dev/camera

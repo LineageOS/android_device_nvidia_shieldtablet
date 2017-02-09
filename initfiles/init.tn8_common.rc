@@ -1,4 +1,4 @@
-#Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
+#Copyright (c) 2011-2016 NVIDIA Corporation.  All Rights Reserved.
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -25,6 +25,12 @@ on fs
 on post-fs-data
     symlink /system/vendor/bin/FinalTestThresholdManage.ini /data/FinalTestThresholdManage.ini	26
     symlink /system/vendor/bin/rm_panel_setting.ini /data/rm_panel_setting.ini
+
+on post-fs-data
+    # Set SELinux security contexts for NvCPL keylayout files.
+    mkdir /data/system/devices 0774 system system
+    mkdir /data/system/devices/keylayout 0774 system system
+    restorecon_recursive /data/system/devices/keylayout
 
 on boot
     #max resolution supported for Miracast is 720p, represented interms of macroblocks
@@ -57,6 +63,7 @@ on init
     setprop input.nonwhitelistedmode 3
     setprop keyguard.no_require_sim true
     setprop persist.tegra.didim.enable 0
+    write /d/tegra_actmon/cpu_emc/avg_act_threshold 50000
 
 service charger /charger
     class charger
