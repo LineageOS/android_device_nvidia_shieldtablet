@@ -284,19 +284,19 @@
                 rate="48000"
                 channels="2"
                 bps="16"
-                period_size="512"
+                period_size="1024"
                 period_count="4"/>
 
     <pcm_config name="rsubmix-capture"
                 rate="48000"
                 channels="2"
                 bps="16"
-                period_size="512"
+                period_size="1024"
                 period_count="4"/>
   </card>
 
   <card name="dummy">
-    <pcm_config name="usb-blake-playback"
+    <pcm_config name="usb-controller-remote-playback"
                 rate="32000"
                 channels="2"
                 bps="16"
@@ -308,7 +308,7 @@
                 silence_size="-1"
                 avail_min="1"/>
 
-    <pcm_config name="usb-blake-capture"
+    <pcm_config name="usb-controller-remote-capture"
                 rate="16000"
                 channels="1"
                 bps="16"
