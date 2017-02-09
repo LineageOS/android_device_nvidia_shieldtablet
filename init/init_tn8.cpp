@@ -127,8 +127,8 @@ void vendor_load_properties()
     switch (detected_model) {
         case wx_na_wf:
             /* Wi-Fi Only */
-            property_set("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:6.0.1/MRA58K/40827_726.6502:user/release-keys");
-            property_set("ro.build.description", "wx_na_wf-user 6.0.1 MRA58K 40827_726.6502 release-keys");
+            property_set("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
+            property_set("ro.build.description", "wx_na_wf-user 7.0 NRD90M 1928188_841.9637 release-keys");
             property_set("ro.product.name", "wx_na_wf");
             property_set("ro.radio.noril", "true");
             break;
@@ -137,8 +137,8 @@ void vendor_load_properties()
             /* Data Only, Can't tell the difference from cmdline, so just using wx_un_do. It's the same hardware for both versions */
             gsm_properties();
             property_set("ro.modem.do", "1");
-            property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:6.0.1/MRA58K/40827_726.6502:user/release-keys");
-            property_set("ro.build.description", "wx_un_do-user 6.0.1 MRA58K 40827_726.6502 release-keys");
+            property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
+            property_set("ro.build.description", "wx_un_do-user 7.0 NRD90M 1928188_841.9637 release-keys");
             property_set("ro.product.name", "wx_un_do");
             break;
 
@@ -146,8 +146,8 @@ void vendor_load_properties()
             /* Rest of World Voice (Device never got released, but is partially in upstream source) */
             gsm_properties();
             property_set("ro.modem.vc", "1");
-            property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:6.0.1/MRA58K/40827_726.6502:user/release-keys");
-            property_set("ro.build.description", "wx_un_mo-user 6.0.1 MRA58K 40827_726.6502 release-keys");
+            property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
+            property_set("ro.build.description", "wx_un_mo-user 7.0 NRD90M 1928188_841.9637 release-keys");
             property_set("ro.product.name", "wx_un_mo");
             break;
     }
