@@ -5,7 +5,7 @@ persist.tegra.didim.enable = 1
 persist.tegra.didim.video = 5
 persist.tegra.didim.normal = 3
 
-ro.hardware.sensors=default.mpl520.nvs
+ro.hardware.sensors=default.api_v1.3.mpl520.nvs
 
 # usb vendor and product ID definition
 ro.nv.usb.vid=0955
