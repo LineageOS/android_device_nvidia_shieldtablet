@@ -32,8 +32,6 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_INFO_FILE := device/nvidia/shieldtablet/board-info.txt
 
 # Kernel
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
-KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 TARGET_KERNEL_SOURCE := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG := lineageos_shieldtablet_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=tn8
