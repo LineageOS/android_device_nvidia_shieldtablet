@@ -114,13 +114,4 @@ PRODUCT_PACKAGES += \
 # Radio Interface
 PRODUCT_PACKAGES += rild
 
-# Wireless Controller
-#$(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
-
-# Console Mode
-$(call inherit-product-if-exists, vendor/nvidia/shield_common/consolemode-blobs.mk)
-
-# Stock Camera
-$(call inherit-product-if-exists, vendor/nvidia/shield_common/nvcamera-blobs.mk)
-
 $(call inherit-product, device/nvidia/shield-common/shield.mk)
