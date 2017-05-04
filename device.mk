@@ -118,7 +118,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     media_codecs.xml \
     media_codecs_performance.xml \
-    media_profiles.xml
+    media_profiles_V1_0.xml
 
 # NVIDIA specific permissions
 PRODUCT_COPY_FILES += \
