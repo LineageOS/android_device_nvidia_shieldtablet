@@ -140,34 +140,34 @@ void vendor_load_properties()
     switch (detected_model) {
         case wx_na_wf:
             /* Wi-Fi Only */
-            property_set("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
-            property_set("ro.build.description", "wx_na_wf-user 7.0 NRD90M 1928188_841.9637 release-keys");
-            property_set("ro.product.name", "wx_na_wf");
+            property_override("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
+            property_override("ro.build.description", "wx_na_wf-user 7.0 NRD90M 1928188_841.9637 release-keys");
+            property_override("ro.product.name", "wx_na_wf");
             property_set("ro.radio.noril", "true");
             break;
 
         case wx_un_do:
             /* Data Only, Can't tell the difference from cmdline, so just using wx_un_do. It's the same hardware for both versions */
             gsm_properties();
+            property_override("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
+            property_override("ro.build.description", "wx_un_do-user 7.0 NRD90M 1928188_841.9637 release-keys");
+            property_override("ro.product.name", "wx_un_do");
             property_set("ro.modem.do", "1");
-            property_set("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
-            property_set("ro.build.description", "wx_un_do-user 7.0 NRD90M 1928188_841.9637 release-keys");
-            property_set("ro.product.name", "wx_un_do");
             break;
 
         case wx_un_mo:
             /* Rest of World Voice (Device never got released, but is partially in upstream source) */
             gsm_properties();
+            property_override("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
+            property_override("ro.build.description", "wx_un_mo-user 7.0 NRD90M 1928188_841.9637 release-keys");
+            property_override("ro.product.name", "wx_un_mo");
             property_set("ro.modem.vc", "1");
-            property_set("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
-            property_set("ro.build.description", "wx_un_mo-user 7.0 NRD90M 1928188_841.9637 release-keys");
-            property_set("ro.product.name", "wx_un_mo");
             break;
     }
 
-    property_set("ro.build.product", "shieldtablet");
-    property_set("ro.product.device", "shieldtablet");
-    property_set("ro.product.model", "SHIELD Tablet");
+    property_override("ro.build.product", "shieldtablet");
+    property_override("ro.product.device", "shieldtablet");
+    property_override("ro.product.model", "SHIELD Tablet");
     model = property_get("ro.product.name");
     ERROR("Setting build properties for %s model\n", model.c_str());
 }

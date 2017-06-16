@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2014 The CyanogenMod Project
+#               2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -89,7 +90,6 @@ BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
 BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
 
 # Vendor Init
-TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_tn8
 TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 
