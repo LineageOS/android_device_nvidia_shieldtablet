@@ -39,6 +39,12 @@
 #include <stdio.h>
 #include <string.h>
 
+#define ANDROID_BUILD_VERSION "7.0"
+#define ANDROID_BUILD_RELEASE "NRD90M"
+#define NVIDIA_BUILD_VERSION "1928188_841.9637"
+#define FINGERPRINT_VERSION ANDROID_BUILD_VERSION "/" ANDROID_BUILD_RELEASE "/" NVIDIA_BUILD_VERSION
+#define DESCRIPTION_VERSION ANDROID_BUILD_VERSION " " ANDROID_BUILD_RELEASE " " NVIDIA_BUILD_VERSION
+
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
@@ -140,31 +146,28 @@ void vendor_load_properties()
     switch (detected_model) {
         case wx_na_wf:
             /* Wi-Fi Only */
-            property_override("ro.build.fingerprint", "nvidia/wx_na_wf/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
-            property_override("ro.build.description", "wx_na_wf-user 7.0 NRD90M 1928188_841.9637 release-keys");
-            property_override("ro.product.name", "wx_na_wf");
+            model = "wx_na_wf";
             property_set("ro.radio.noril", "true");
             break;
 
         case wx_un_do:
             /* Data Only, Can't tell the difference from cmdline, so just using wx_un_do. It's the same hardware for both versions */
+            model = "wx_un_do";
             gsm_properties();
-            property_override("ro.build.fingerprint", "nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
-            property_override("ro.build.description", "wx_un_do-user 7.0 NRD90M 1928188_841.9637 release-keys");
-            property_override("ro.product.name", "wx_un_do");
             property_set("ro.modem.do", "1");
             break;
 
         case wx_un_mo:
             /* Rest of World Voice (Device never got released, but is partially in upstream source) */
+            model = "wx_un_mo";
             gsm_properties();
-            property_override("ro.build.fingerprint", "nvidia/wx_un_mo/shieldtablet:7.0/NRD90M/1928188_841.9637:user/release-keys");
-            property_override("ro.build.description", "wx_un_mo-user 7.0 NRD90M 1928188_841.9637 release-keys");
-            property_override("ro.product.name", "wx_un_mo");
             property_set("ro.modem.vc", "1");
             break;
     }
 
+    property_override("ro.build.fingerprint", ("NVIDIA/" + model + "/shieldtablet:" + FINGERPRINT_VERSION + ":user/release-keys").c_str());
+    property_override("ro.build.description", (model + "-user " + DESCRIPTION_VERSION + " release-keys").c_str());
+    property_override("ro.product.name", model.c_str());
     property_override("ro.build.product", "shieldtablet");
     property_override("ro.product.device", "shieldtablet");
     property_override("ro.product.model", "SHIELD Tablet");
