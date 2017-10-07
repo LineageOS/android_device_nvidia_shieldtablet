@@ -94,8 +94,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/camera/nvcamera.conf:system/etc/nvcamera.conf \
-    $(LOCAL_PATH)/camera/model_frontal.xml:system/etc/model_frontal.xml
+    $(LOCAL_PATH)/camera/nvcamera.conf:system/etc/nvcamera.conf
 
 # Wifi
 PRODUCT_COPY_FILES += \
