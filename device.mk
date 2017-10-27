@@ -24,6 +24,8 @@ TARGET_TEGRA_VERSION := t124
 TARGET_TEGRA_MODEM := icera
 TARGET_TEGRA_TOUCH := raydium
 
+$(call inherit-product, device/nvidia/shield-common/shield.mk)
+
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
@@ -112,5 +114,3 @@ PRODUCT_PACKAGES += \
 
 # Radio Interface
 PRODUCT_PACKAGES += rild
-
-$(call inherit-product, device/nvidia/shield-common/shield.mk)
