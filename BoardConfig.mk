@@ -93,3 +93,7 @@ BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
 TARGET_INIT_VENDOR_LIB := libinit_tn8
 TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 
+# TWRP Support
+ifeq ($(WITH_TWRP),true)
+-include device/nvidia/shieldtablet/twrp/twrp.mk
+endif
