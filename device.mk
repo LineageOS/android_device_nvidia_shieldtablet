@@ -94,6 +94,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/comms/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     $(LOCAL_PATH)/comms/gps.conf:system/etc/gps.conf
 
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
 # Bluetooth
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/comms/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
@@ -103,6 +106,10 @@ PRODUCT_PACKAGES += Snap
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/nvcamera.conf:system/etc/nvcamera.conf
 
+PRODUCT_PACKAGES += \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl
+
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/comms/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
@@ -110,6 +117,7 @@ PRODUCT_COPY_FILES += \
 
 # Light
 PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl \
     lights.tegra
 
 # Charger
@@ -119,3 +127,7 @@ PRODUCT_PACKAGES += \
 
 # Radio Interface
 PRODUCT_PACKAGES += rild
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
