@@ -75,7 +75,7 @@
 /dev/input/event*   0660    system  input
 /sys/devices/platform/ozwpan/usb*   mode    0660    system  system
 /dev/ttyTHS1    0664    root    system
-/dev/ttyTHS2    0660    bluetooth   net_bt_stack
+/dev/ttyTHS2    0660    bluetooth   bluetooth
 # pmqos
 /dev/constraint_cpu_freq 0660 system system
 /dev/constraint_gpu_freq 0660 system system
