@@ -96,6 +96,9 @@ BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
 TARGET_INIT_VENDOR_LIB := libinit_shield libinit_tn8
 TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 
+# Vendor Inputhook
+TARGET_INPUTHOOK_VENDOR_LIB += libinputhook_shield_touchrotate
+
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
 -include device/nvidia/shieldtablet/twrp/twrp.mk
