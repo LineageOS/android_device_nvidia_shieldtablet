@@ -97,6 +97,9 @@ BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
 TARGET_INIT_VENDOR_LIB := libinit_shield libinit_tn8
 TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
+
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
 -include device/nvidia/shieldtablet/twrp/twrp.mk
