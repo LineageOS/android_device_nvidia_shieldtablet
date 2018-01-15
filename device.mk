@@ -24,6 +24,13 @@ TARGET_TEGRA_VERSION := t124
 TARGET_TEGRA_MODEM := icera
 TARGET_TEGRA_TOUCH := raydium
 
+# ATV Support
+ifeq ($(ALTERNATE_BUILD),true)
+$(call inherit-product, device/nvidia/shieldtablet/device_atv.mk)
+else
+$(call inherit-product, device/nvidia/shieldtablet/device_tablet.mk)
+endif
+
 $(call inherit-product, device/nvidia/shield-common/shield.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -57,9 +64,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml

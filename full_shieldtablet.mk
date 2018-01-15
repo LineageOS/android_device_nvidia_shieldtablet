@@ -22,7 +22,11 @@
 #
 
 # Inherit from those products. Most specific first.
+ifeq ($(ALTERNATE_BUILD),true)
+$(call inherit-product, device/google/atv/products/atv_base.mk)
+else
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+endif
 # Inherit from shieldtablet device
 $(call inherit-product, device/nvidia/shieldtablet/device.mk)
 
