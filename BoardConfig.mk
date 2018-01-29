@@ -88,7 +88,7 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path
 WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
 WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 
-BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/cmhw/
+BOARD_HARDWARE_CLASS := device/nvidia/shieldtablet/lineagehw/
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/nvidia/shieldtablet/sepolicy
