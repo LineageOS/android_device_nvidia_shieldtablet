@@ -17,8 +17,6 @@
 
 -include device/nvidia/shield-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/nvidia/shieldtablet/include
-
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -99,6 +97,9 @@ TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
+
+# Zygote whitelist extra paths
+ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",
 
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
