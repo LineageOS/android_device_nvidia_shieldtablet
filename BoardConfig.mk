@@ -98,6 +98,9 @@ TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# Forced shims
+TARGET_LD_SHIM_LIBS += /system/lib/libinputflinger.so|libshim_inputhooks_touch.so
+
 # Zygote whitelist extra paths
 ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",
 
