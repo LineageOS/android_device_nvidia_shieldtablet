@@ -17,6 +17,10 @@ ro.nv.usb.pid.rndis.adb=CF08
 ro.nv.usb.pid.ptp=CF07
 ro.nv.usb.pid.ptp.adb=CF05
 
+# Audio
+ro.af.client_heap_size_kbyte=8192
+ro.audio.usb.period_us=5000
+
 ro.bt.bdaddr_path=/mnt/factory/bluetooth/bt_mac.txt
 
 persist.media.treble_omx=false

@@ -98,8 +98,8 @@ TARGET_LIBINIT_DEFINES_FILE := device/nvidia/shieldtablet/init/init_tn8.cpp
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
-# Zygote whitelist extra paths
-ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",
+# Forced shims
+TARGET_LD_SHIM_LIBS := /system/vendor/bin/glgps_nvidiaTegra2android|/system/lib/libsensor.so:/system/lib/libcutils.so|/system/lib/libcutils_shim.so
 
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
