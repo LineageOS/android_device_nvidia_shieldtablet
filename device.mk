@@ -106,6 +106,9 @@ PRODUCT_PACKAGES += \
     nvaudio_fx.xml
 endif
 
+# Boot Animtion
+TARGET_BOOTANIMATION_HALF_RES := true
+
 # Camera
 ifeq ($(TARGET_TEGRA_CAMERA),nvcamera-t124)
 PRODUCT_PACKAGES += \
