@@ -34,7 +34,6 @@ TARGET_BOARD_INFO_FILE := device/nvidia/shieldtablet/board-info.txt
 TARGET_KERNEL_SOURCE := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG := lineageos_shieldtablet_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
-BOARD_KERNEL_CMDLINE := androidboot.hardware=tn8
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
