@@ -50,11 +50,16 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    fstab.loki \
     fstab.tn8 \
+    init.recovery.loki.rc \
     init.recovery.tn8.rc \
+    init.loki.rc \
     init.tn8.rc \
     init.tn8_common.rc \
+    power.loki.rc \
     power.tn8.rc \
+    ueventd.loki.rc \
     ueventd.tn8.rc
 
 # Permissions
@@ -126,6 +131,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/thermal/thermalhal.loki.xml:$(TARGET_COPY_OUT_VENDOR)/etc/thermalhal.loki.xml \
     $(LOCAL_PATH)/thermal/thermalhal.tn8.xml:$(TARGET_COPY_OUT_VENDOR)/etc/thermalhal.tn8.xml
 
 # Charger

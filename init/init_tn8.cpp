@@ -32,11 +32,12 @@ void vendor_load_properties()
 {
 	// ATM there is no know way to differentiate between wx_na_wf and sb_na_wf or wx_na_wf and wx_un_do. Little is known of wx_un_mo either.
 	//                                              device          name        model               board id  gsm support                               boot device type                 api  dpi
-	std::vector<shield_init::devices> devices = { { "shieldtablet", "wx_na_wf", "SHIELD Tablet",    "0x00ea", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 19, 0 },
-	                                              { "shieldtablet", "wx_un_do", "SHIELD Tablet",    "0x04d2", shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC, 19, 0 },
-	                                              { "shieldtablet", "sb_na_wf", "SHIELD Tablet K1", "0x00ea", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 21, 0 },
-	                                              { "shieldtablet", "wx_na_do", "SHIELD Tablet",    "0x04d2", shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC, 19, 0 },
-	                                              { "shieldtablet", "wx_un_mo", "SHIELD Tablet",    "0x????", shield_init::gsm_support_type::VOICE,     shield_init::boot_dev_type::EMMC, 19, 0 } };
+	std::vector<shield_init::devices> devices = { { "shieldtablet", "wx_na_wf", "SHIELD Tablet",    "0x00ea", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 19, 320 },
+	                                              { "shieldtablet", "wx_un_do", "SHIELD Tablet",    "0x04d2", shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC, 19, 320 },
+	                                              { "shieldtablet", "sb_na_wf", "SHIELD Tablet K1", "0x00ea", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 21, 320 },
+	                                              { "loki",         "loki_p",   "SHIELD Portable",  "0x0000", shield_init::gsm_support_type::NONE,      shield_init::boot_dev_type::EMMC, 19, 240 },
+	                                              { "shieldtablet", "wx_na_do", "SHIELD Tablet",    "0x04d2", shield_init::gsm_support_type::DATA_ONLY, shield_init::boot_dev_type::EMMC, 19, 320 },
+	                                              { "shieldtablet", "wx_un_mo", "SHIELD Tablet",    "0x????", shield_init::gsm_support_type::VOICE,     shield_init::boot_dev_type::EMMC, 19, 320 } };
 	shield_init::build_version sav = { "7.0", "NRD90M", "1928188_1038.3875" };
 
 	shield_init si(devices, false, sav, std::vector<std::string>());
