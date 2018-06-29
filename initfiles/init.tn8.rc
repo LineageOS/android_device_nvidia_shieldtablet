@@ -52,8 +52,3 @@ on property:sys.boot_completed=1
     write /sys/class/tty/ttyS0/console_write_enable 0
     write /sys/block/mmcblk0/queue/read_ahead_kb 512
     write /sys/block/mmcblk0/queue/iostats 1
-
-on firmware_mounts_complete
-    rm /data/misc/wifi/firmware/nvram.txt
-    symlink /system/vendor/firmware/nvram_43241.txt /data/misc/wifi/firmware/nvram.txt
-    symlink /system/vendor/firmware/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd.bin

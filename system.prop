@@ -1,5 +1,4 @@
 ro.opengles.version = 196609
-ro.sf.lcd_density=320
 
 persist.tegra.didim.enable = 1
 persist.tegra.didim.video = 5
