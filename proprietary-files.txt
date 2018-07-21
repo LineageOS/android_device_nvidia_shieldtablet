@@ -89,11 +89,11 @@ etc/hdcpsrm/hdcp2x.srm
 etc/hdcpsrm/hdcp2xtest.srm
 
 # Firmware
-etc/nvram_43241.txt
-etc/firmware/bcm43241.hcd
-etc/firmware/tegra12x/nvhost_tsec.fw
-etc/firmware/tegra12x_xusb_firmware
-etc/firmware/tegra_xusb_firmware
+vendor/firmware/nvram_43241.txt
+vendor/firmware/bcm43241.hcd
+vendor/firmware/tegra12x/nvhost_tsec.fw
+vendor/firmware/tegra12x_xusb_firmware
+vendor/firmware/tegra_xusb_firmware
 vendor/firmware/fw_bcmdhd.bin
 vendor/firmware/gk20a/NETB_img.bin
 vendor/firmware/gk20a/fecs.bin
