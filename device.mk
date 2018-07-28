@@ -33,7 +33,6 @@ endif
 $(call inherit-product, device/nvidia/shield-common/shield.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 ifneq ("$(wildcard vendor/nvidia/shield/shieldtablet.mk)","")
 $(call inherit-product, vendor/nvidia/shield/shieldtablet.mk)
