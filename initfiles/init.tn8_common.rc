@@ -39,6 +39,8 @@ on boot
     setprop nvwfd.hdvideoplayback 0
 
 on init
+    export LD_PRELOAD "libshim_zw.so"
+
     setprop ro.feature.stylus 1
     setprop persist.tegra.cursor.enable 1
     setprop sf.async.cursor.enable 1

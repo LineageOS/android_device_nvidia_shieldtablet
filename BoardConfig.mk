@@ -100,6 +100,9 @@ TARGET_USES_64_BIT_BINDER := true
 # Forced shims
 TARGET_LD_SHIM_LIBS := /system/vendor/bin/glgps_nvidiaTegra2android|/system/lib/libsensor.so:/system/lib/libcutils.so|/system/lib/libcutils_shim.so
 
+# Zygote whitelist extra paths
+ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",
+
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
 -include device/nvidia/shieldtablet/twrp/twrp.mk
