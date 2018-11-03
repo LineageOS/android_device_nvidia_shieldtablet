@@ -56,6 +56,9 @@ DEVICE_MANIFEST_FILE := device/nvidia/shieldtablet/manifest.xml
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/nvidia/shieldtablet/releasetools
+
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
 include device/nvidia/shieldtablet/twrp/twrp.mk
