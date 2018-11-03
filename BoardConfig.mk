@@ -103,6 +103,9 @@ TARGET_LD_SHIM_LIBS := /system/vendor/bin/glgps_nvidiaTegra2android|/system/lib/
 # Zygote whitelist extra paths
 ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",
 
+# Override common releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/nvidia/shieldtablet/releasetools
+
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
 -include device/nvidia/shieldtablet/twrp/twrp.mk
