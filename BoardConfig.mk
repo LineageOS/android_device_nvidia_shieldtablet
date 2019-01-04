@@ -23,7 +23,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1342177280
 TARGET_USERIMAGES_USE_EXT4         := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := shieldtablet
+TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki
 
 # Kernel
 ifneq ($(TARGET_PREBUILT_KERNEL),)
@@ -32,6 +32,7 @@ else
 TARGET_KERNEL_SOURCE    := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG    := lineageos_shieldtablet_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
+BOARD_KERNEL_CMDLINE    := vmalloc=300M
 endif
 
 # Recovery
