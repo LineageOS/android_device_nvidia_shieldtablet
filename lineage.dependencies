@@ -2,5 +2,9 @@
  {
    "repository": "android_device_nvidia_t124-common",
    "target_path": "device/nvidia/t124-common"
+ },
+ {
+   "repository": "android_kernel_nvidia_shield",
+   "target_path": "kernel/nvidia/shield"
  }
 ]

@@ -16,6 +16,9 @@
 
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
 
+# System properties
+include $(LOCAL_PATH)/system_prop.mk
+
 PRODUCT_CHARACTERISTICS  ?= tablet
 PRODUCT_AAPT_CONFIG      := xlarge large
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
