@@ -54,3 +54,6 @@ PRODUCT_PACKAGES += \
     power.tn8.rc \
     power.yellowstone.rc \
     ueventd.tn8.rc
+
+# Wifi
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
