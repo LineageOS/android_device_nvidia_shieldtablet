@@ -1,0 +1,20 @@
+# Android fstab file.
+#<src>                                                  <mnt_point>         <type>    <mnt_flags>                                                                         <fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+/dev/block/platform/sdhci-tegra.3/by-name/APP           /system             ext4      ro                                                     wait
+/dev/block/platform/sdhci-tegra.3/by-name/CAC           /cache              ext4      noatime,nosuid,nodev,data=writeback,nodelalloc         wait
+/dev/block/platform/sdhci-tegra.3/by-name/LNX           /boot               emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/MSC           /misc               emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/UDA           /data               ext4      noatime,nosuid,nodev,data=writeback,noauto_da_alloc    wait,check,encryptable=/dev/block/platform/sdhci-tegra.3/by-name/MDA
+/dev/block/platform/sdhci-tegra.3/by-name/RP3           /usercalib          ext4      noatime,data=writeback                                 wait
+/dev/block/platform/sdhci-tegra.3/by-name/USP           /staging            emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/MDA           /metadata           emmc      defaults                                               defaults
+/dev/block/platform/sdhci-tegra.3/by-name/SOS           /recovery           emmc      defaults                                               defaults
+/devices/platform/sdhci-tegra.2/mmc_host*               auto                vfat      defaults                                               voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/tegra-ehci.0/usb*                              auto                vfat      defaults                                               voldmanaged=usb:auto
+/dev/block/platform/sdhci-tegra.2/by-num/p1             /sdcard             vfat      defaults                                               recoveryonly
+79a35232-07f9-4230-9df3-4256560ddbd2                    /mnt/remote         auto      defaults                                               voldmanaged=remote:auto
+28f3f3fa-9c68-45be-bf54-7580ab57fd21                    /mnt/remote         auto      defaults                                               voldmanaged=remote:auto
+/dev/block/zram0                                        none                swap      defaults	                                             zramsize=536870912

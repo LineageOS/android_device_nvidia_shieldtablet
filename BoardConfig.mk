@@ -33,4 +33,7 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
+#Vendor Init
+TARGET_INIT_VENDOR_LIB := libinit_tegra libinit_tn8
+
 include device/nvidia/t124-common/BoardConfigCommon.mk
