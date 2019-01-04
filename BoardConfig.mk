@@ -25,6 +25,11 @@ TARGET_USERIMAGES_USE_EXT4         := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := shieldtablet
 
+# Kernel
+TARGET_KERNEL_SOURCE    := kernel/nvidia/shield
+TARGET_KERNEL_CONFIG    := lineageos_shieldtablet_defconfig
+BOARD_KERNEL_IMAGE_NAME := zImage
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
