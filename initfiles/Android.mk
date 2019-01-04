@@ -1,6 +1,14 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE        := fstab.ardbeg
+LOCAL_MODULE_TAGS   := optional eng
+LOCAL_MODULE_CLASS  := ETC
+LOCAL_SRC_FILES     := fstab.tn8
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE        := fstab.loki
 LOCAL_MODULE_TAGS   := optional eng
 LOCAL_MODULE_CLASS  := ETC
@@ -17,6 +25,14 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.recovery.ardbeg.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := init.recovery.touch.rc
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.recovery.loki.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
@@ -30,6 +46,15 @@ LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := init.recovery.tn8.rc
 LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE               := init.ardbeg.rc
+LOCAL_MODULE_TAGS          := optional eng
+LOCAL_MODULE_CLASS         := ETC
+LOCAL_SRC_FILES            := init.ardbeg.rc
+LOCAL_VENDOR_MODULE        := true
+LOCAL_MODULE_RELATIVE_PATH := init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -57,6 +82,14 @@ LOCAL_MODULE_CLASS         := ETC
 LOCAL_SRC_FILES            := init.tn8_common.rc
 LOCAL_VENDOR_MODULE        := true
 LOCAL_MODULE_RELATIVE_PATH := init/hw
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE        := power.ardbeg.rc
+LOCAL_MODULE_TAGS   := optional eng
+LOCAL_MODULE_CLASS  := ETC
+LOCAL_SRC_FILES     := power.tn8.rc
+LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
