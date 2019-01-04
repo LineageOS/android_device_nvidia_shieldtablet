@@ -41,11 +41,28 @@ TARGET_KERNEL_CONFIG    := lineageos_shieldtablet_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_CMDLINE    := vmalloc=300M
 
+# Manifest
+DEVICE_MANIFEST_FILE += device/nvidia/shieldtablet/manifest.xml
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_tegra libinit_shield libinit_tn8
+
+# Wifi related defines
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE                := bcmdhd
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
+WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 
 include device/nvidia/t124-common/BoardConfigCommon.mk
 include device/nvidia/icera/BoardConfigIcera.mk
