@@ -19,6 +19,9 @@ $(call inherit-product, device/nvidia/icera/icera.mk)
 $(call inherit-product, device/nvidia/touch/raydium.mk)
 $(call inherit-product, device/nvidia/shield-common/shield.mk)
 
+# System properties
+include $(LOCAL_PATH)/system_prop.mk
+
 PRODUCT_CHARACTERISTICS  := tablet
 PRODUCT_AAPT_CONFIG      := xlarge large
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -51,3 +54,13 @@ PRODUCT_PACKAGES += \
     power.tn8.rc \
     power.yellowstone.rc \
     ueventd.tn8.rc
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor \
+    android.hardware.bluetooth@1.0-impl
