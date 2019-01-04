@@ -23,6 +23,7 @@ on fs
 on post-fs-data
     symlink /system/vendor/bin/FinalTestThresholdManage.ini /data/FinalTestThresholdManage.ini
     symlink /system/vendor/bin/rm_panel_setting.ini /data/rm_panel_setting.ini
+    setprop init.svc.vendor.lkm_loader stopped
 
 on post-fs-data
     # Set SELinux security contexts for NvCPL keylayout files.
