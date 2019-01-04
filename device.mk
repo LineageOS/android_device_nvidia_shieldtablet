@@ -26,3 +26,9 @@ TARGET_SCREEN_HEIGHT     := 1920
 TARGET_SCREEN_WIDTH      := 1200
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+# Kernel
+ifneq ($(TARGET_PREBUILT_KERNEL),)
+PRODUCT_COPY_FILES += \
+    $(TARGET_PREBUILT_KERNEL):kernel
+endif
