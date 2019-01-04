@@ -44,6 +44,14 @@ void vendor_set_usb_product_ids(tegra_init *ti)
 		mDeviceUsbIds["ro.vendor.nv.usb.pid.ptp.adb"]   = "CF05";
 		mDeviceUsbIds["ro.vendor.nv.usb.pid.rndis"]     = "CF08";
 		mDeviceUsbIds["ro.vendor.nv.usb.pid.rndis.adb"] = "CF08";
+	} else if(ti->is_model("yellowstone")) {
+		mCommonUsbIds["ro.vendor.nv.usb.vid"]           = "18D1";
+		mDeviceUsbIds["ro.vendor.nv.usb.pid.mtp"]       = "4D01";
+		mDeviceUsbIds["ro.vendor.nv.usb.pid.mtp.adb"]   = "4D02";
+		mDeviceUsbIds["ro.vendor.nv.usb.pid.ptp"]       = "4D05";
+		mDeviceUsbIds["ro.vendor.nv.usb.pid.ptp.adb"]   = "4D06";
+		mDeviceUsbIds["ro.vendor.nv.usb.pid.rndis"]     = "4D03";
+		mDeviceUsbIds["ro.vendor.nv.usb.pid.rndis.adb"] = "4D04";
 	} else {
 		mDeviceUsbIds["ro.vendor.nv.usb.pid.mtp"]       = "7102";
 		mDeviceUsbIds["ro.vendor.nv.usb.pid.mtp.adb"]   = "7100";
@@ -70,6 +78,7 @@ void vendor_load_properties()
 	                                             { "jetson-tk1",   "jetson-tk1",  "Jetson TK1",        375,    0, tegra_init::boot_dev_type::EMMC, 19,  320 },
 	                                             { "loki",         "loki",        "SHIELD Portable",  2530,  100, tegra_init::boot_dev_type::EMMC, 19,  320 },
 	                                             { "loki",         "loki_p",      "SHIELD Portable",  2530,    0, tegra_init::boot_dev_type::EMMC, 19,  320 },
+	                                             { "yellowstone",  "yellowstone", "Project Tango",    1780,    2, tegra_init::boot_dev_type::EMMC, 19,  320 },
 	                                             { "shieldtablet", "sb_na_wf",    "SHIELD Tablet K1", 1761,  234, tegra_init::boot_dev_type::EMMC, 21,  320 },
 	                                             { "shieldtablet", "wx_na_do",    "SHIELD Tablet",    1761, 1234, tegra_init::boot_dev_type::EMMC, 19,  320 },
 	                                             { "shieldtablet", "wx_un_mo",    "SHIELD Tablet",    1761,    0, tegra_init::boot_dev_type::EMMC, 19,  320 } };
