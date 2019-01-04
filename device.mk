@@ -29,14 +29,18 @@ PRODUCT_PACKAGES += \
     fstab.ardbeg \
     fstab.loki \
     fstab.tn8 \
+    fstab.yellowstone \
     init.recovery.ardbeg.rc \
     init.recovery.loki.rc \
     init.recovery.tn8.rc \
+    init.recovery.yellowstone.rc \
     init.ardbeg.rc \
     init.loki.rc \
     init.tn8.rc \
     init.tn8_common.rc \
+    init.yellowstone.rc \
     power.ardbeg.rc \
     power.loki.rc \
     power.tn8.rc \
+    power.yellowstone.rc \
     ueventd.tn8.rc

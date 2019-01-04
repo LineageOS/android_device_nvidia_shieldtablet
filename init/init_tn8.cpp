@@ -32,14 +32,15 @@ void vendor_load_properties()
 {
 	// ATM there is no know way to differentiate between wx_na_wf and sb_na_wf or wx_na_wf and wx_un_do. Little is known of wx_un_mo either.
 	//                                             device          name        model               id    sku   boot device type                 api  dpi
-	std::vector<tegra_init::devices> devices = { { "shieldtablet", "wx_na_wf", "SHIELD Tablet",    1761,  234, tegra_init::boot_dev_type::EMMC, 19,  320 },
-	                                             { "shieldtablet", "wx_un_do", "SHIELD Tablet",    1761, 1234, tegra_init::boot_dev_type::EMMC, 19,  320 },
-	                                             { "shieldtablet", "sb_na_wf", "SHIELD Tablet K1", 1761,  234, tegra_init::boot_dev_type::EMMC, 21,  320 },
-	                                             { "ardbeg",       "ardbeg",   "Ardbeg",           1780, 1001, tegra_init::boot_dev_type::EMMC, 19,  320 },
-	                                             { "loki",         "loki",     "SHIELD Portable",  2530,  100, tegra_init::boot_dev_type::EMMC, 19,  214 },
-	                                             { "loki",         "loki_p",   "SHIELD Portable",  2530,    0, tegra_init::boot_dev_type::EMMC, 19,  240 },
-	                                             { "shieldtablet", "wx_na_do", "SHIELD Tablet",    1761, 1234, tegra_init::boot_dev_type::EMMC, 19,  320 },
-	                                             { "shieldtablet", "wx_un_mo", "SHIELD Tablet",    1761,    0, tegra_init::boot_dev_type::EMMC, 19,  320 } };
+	std::vector<tegra_init::devices> devices = { { "shieldtablet", "wx_na_wf",    "SHIELD Tablet",    1761,  234, tegra_init::boot_dev_type::EMMC, 19,  320 },
+	                                             { "shieldtablet", "wx_un_do",    "SHIELD Tablet",    1761, 1234, tegra_init::boot_dev_type::EMMC, 19,  320 },
+	                                             { "shieldtablet", "sb_na_wf",    "SHIELD Tablet K1", 1761,  234, tegra_init::boot_dev_type::EMMC, 21,  320 },
+	                                             { "ardbeg",       "ardbeg",      "Ardbeg",           1780, 1001, tegra_init::boot_dev_type::EMMC, 19,  320 },
+	                                             { "loki",         "loki",        "SHIELD Portable",  2530,  100, tegra_init::boot_dev_type::EMMC, 19,  214 },
+	                                             { "loki",         "loki_p",      "SHIELD Portable",  2530,    0, tegra_init::boot_dev_type::EMMC, 19,  240 },
+	                                             { "yellowstone",  "yellowstone", "Project Tango",    1780, 1000, tegra_init::boot_dev_type::EMMC, 19,  320 },
+	                                             { "shieldtablet", "wx_na_do",    "SHIELD Tablet",    1761, 1234, tegra_init::boot_dev_type::EMMC, 19,  320 },
+	                                             { "shieldtablet", "wx_un_mo",    "SHIELD Tablet",    1761,    0, tegra_init::boot_dev_type::EMMC, 19,  320 } };
 	tegra_init::build_version sav = { "7.0", "NRD90M", "1928188_1038.3875" };
 
 	tegra_init ti(devices);
