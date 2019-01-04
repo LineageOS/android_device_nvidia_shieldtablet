@@ -41,3 +41,4 @@ TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 TARGET_INIT_VENDOR_LIB := libinit_tegra libinit_shield libinit_tn8
 
 include device/nvidia/t124-common/BoardConfigCommon.mk
+include device/nvidia/icera/BoardConfigIcera.mk
