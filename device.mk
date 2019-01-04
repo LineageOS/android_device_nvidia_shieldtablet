@@ -31,8 +31,12 @@ PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
 
 # Init related
 PRODUCT_PACKAGES += \
+    fstab.loki \
     fstab.tn8 \
+    init.recovery.loki.rc \
     init.recovery.tn8.rc \
+    init.loki.rc \
     init.tn8.rc \
     init.tn8_common.rc \
+    power.loki.rc \
     power.tn8.rc
