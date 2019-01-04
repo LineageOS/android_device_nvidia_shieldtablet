@@ -1,0 +1,21 @@
+#Copyright (c) 2011-2016, NVIDIA CORPORATION. All rights reserved.
+#
+#NVIDIA Corporation and its licensors retain all intellectual property and
+#proprietary rights in and to this software and related documentation.  Any
+#use, reproduction, disclosure or distribution of this software and related
+#documentation without an express license agreement from NVIDIA Corporation
+#is strictly prohibited.
+
+import /vendor/etc/init/hw/init.tegra_emmc.rc
+import /vendor/etc/init/hw/init.tn8_common.rc
+import /vendor/etc/init/hw/init.t124.rc
+import /vendor/etc/init/hw/init.cal.rc
+import /vendor/etc/init/hw/init.ray_touch.rc
+
+on post-fs-data
+    write /sys/class/gpio/export 61
+    write /sys/class/gpio/gpio61/direction out
+    write /sys/class/gpio/gpio61/value 0
+    chown root system /sys/class/gpio/gpio61/value
+    chmod 0664 /sys/class/gpio/gpio61/value
+    start start-gps
