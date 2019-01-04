@@ -1,0 +1,2 @@
+# Adb compat for older kernels
+sys.usb.ffs.aio_compat=1
