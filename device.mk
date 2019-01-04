@@ -35,16 +35,20 @@ PRODUCT_PACKAGES += \
     fstab.jetson-tk1 \
     fstab.loki \
     fstab.tn8 \
+    fstab.yellowstone \
     init.recovery.ardbeg.rc \
     init.recovery.jetson-tk1.rc \
     init.recovery.loki.rc \
     init.recovery.tn8.rc \
+    init.recovery.yellowstone.rc \
     init.ardbeg.rc \
     init.jetson-tk1.rc \
     init.loki.rc \
     init.tn8.rc \
     init.tn8_common.rc \
+    init.yellowstone.rc \
     power.ardbeg.rc \
     power.jetson-tk1.rc \
     power.loki.rc \
-    power.tn8.rc
+    power.tn8.rc \
+    power.yellowstone.rc
