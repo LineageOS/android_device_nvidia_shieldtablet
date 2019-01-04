@@ -8,6 +8,10 @@
    "target_path": "device/nvidia/t124-common"
  },
  {
+   "repository": "android_device_nvidia_touch",
+   "target_path": "device/nvidia/touch"
+ },
+ {
    "repository": "android_kernel_nvidia_shield",
    "target_path": "kernel/nvidia/shield"
  }

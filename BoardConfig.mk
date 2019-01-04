@@ -42,3 +42,4 @@ TARGET_INIT_VENDOR_LIB := libinit_tegra libinit_shield libinit_tn8
 
 include device/nvidia/t124-common/BoardConfigCommon.mk
 include device/nvidia/icera/BoardConfigIcera.mk
+include device/nvidia/touch/BoardConfigTouch.mk
