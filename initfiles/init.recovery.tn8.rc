@@ -1,4 +1,4 @@
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit device configuration for shieldtablet.
-$(call inherit-product, device/nvidia/shieldtablet/lineage.mk)
-$(call inherit-product, device/nvidia/shieldtablet/full_shieldtablet.mk)
+import init.recovery.ray_touch.rc
+import init.recovery.nv_dev_board.usb.rc
 
-# Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+on boot
+    setprop sys.usb.ffs.aio_compat 1
+    setprop sys.usb.configfs 0
 
-PRODUCT_NAME := lineage_shieldtablet
-PRODUCT_DEVICE := shieldtablet
+    # Needed for touch
+    setprop persist.twrp.rotation 180
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/vendor/factory ro
+
+# Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
+service watchdogd /sbin/watchdogd 10 110
+    class default
+    seclabel u:r:watchdogd:s0
