@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter $(TARGET_DEVICE), shieldtablet),)
+ifeq ($(TARGET_REFERENCE_DEVICE), shieldtablet)
 
 LOCAL_PATH := $(call my-dir)
 
