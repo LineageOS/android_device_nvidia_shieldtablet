@@ -16,6 +16,7 @@
 
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
 $(call inherit-product, device/nvidia/icera/icera.mk)
+$(call inherit-product, device/nvidia/touch/raydium.mk)
 
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
