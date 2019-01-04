@@ -16,7 +16,7 @@
 
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
 
-PRODUCT_CHARACTERISTICS  := tablet
+PRODUCT_CHARACTERISTICS  ?= tablet
 PRODUCT_AAPT_CONFIG      := xlarge large
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 TARGET_SCREEN_HEIGHT     := 1920
