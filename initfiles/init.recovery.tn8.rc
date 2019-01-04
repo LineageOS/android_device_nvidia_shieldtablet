@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,23 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-$(call inherit-product, device/nvidia/t124-common/t124.mk)
+import init.recovery.ray_touch.rc
+import init.recovery.nv_dev_board.usb.rc
 
-PRODUCT_CHARACTERISTICS  ?= tablet
-PRODUCT_AAPT_CONFIG      := xlarge large
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
-TARGET_SCREEN_HEIGHT     := 1920
-TARGET_SCREEN_WIDTH      := 1200
+on boot
+    setprop sys.usb.configfs 0
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+    # Needed for touch
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/factory ro context=u:object_r:factory_file:s0
 
-# Init related
-PRODUCT_PACKAGES += \
-    fstab.tn8 \
-    init.recovery.tn8.rc \
-    init.tn8.rc \
-    init.tn8_common.rc \
-    power.tn8.rc \
-    ueventd.tn8.rc
+# Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
+service watchdogd /sbin/watchdogd 10 110
+    class default
+    seclabel u:r:watchdogd:s0
