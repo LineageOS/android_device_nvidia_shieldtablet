@@ -29,13 +29,17 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # Init related
 PRODUCT_PACKAGES += \
+    fstab.ardbeg \
     fstab.loki \
     fstab.tn8 \
+    init.recovery.ardbeg.rc \
     init.recovery.loki.rc \
     init.recovery.tn8.rc \
+    init.ardbeg.rc \
     init.loki.rc \
     init.tn8.rc \
     init.tn8_common.rc \
+    power.ardbeg.rc \
     power.loki.rc \
     power.tn8.rc
 
