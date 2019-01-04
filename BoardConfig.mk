@@ -25,6 +25,13 @@ TARGET_USERIMAGES_USE_EXT4         := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki,ardbeg,jetson-tk1,yellowstone
 
+# Bluetooth
+ifeq ($(TARGET_TEGRA_BT),bcm)
+BOARD_CUSTOM_BT_CONFIG  := device/nvidia/shieldtablet/comms/vnd_shieldtablet.txt
+BCM_BLUETOOTH_MANTA_BUG := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/nvidia/shieldtablet/comms
+endif
+
 # Fingerprint override
 BUILD_FINGERPRINT := nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_1038.3875:user/release-keys
 
