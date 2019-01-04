@@ -23,7 +23,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1342177280
 TARGET_USERIMAGES_USE_EXT4         := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki
+TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki,ardbeg
 
 # Kernel
 TARGET_KERNEL_SOURCE    := kernel/nvidia/shield
