@@ -26,3 +26,12 @@ TARGET_SCREEN_HEIGHT     := 1920
 TARGET_SCREEN_WIDTH      := 1200
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+# Init related
+PRODUCT_PACKAGES += \
+    fstab.tn8 \
+    init.recovery.tn8.rc \
+    init.tn8.rc \
+    init.tn8_common.rc \
+    power.tn8.rc \
+    ueventd.tn8.rc
