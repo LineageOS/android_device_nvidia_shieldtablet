@@ -103,6 +103,11 @@ PRODUCT_PACKAGES += \
     nvcamera.conf
 endif
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
 # GPS
 PRODUCT_PACKAGES += \
     init.gps.rc \
