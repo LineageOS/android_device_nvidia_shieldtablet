@@ -17,6 +17,7 @@
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
 $(call inherit-product, device/nvidia/icera/icera.mk)
 $(call inherit-product, device/nvidia/touch/raydium.mk)
+$(call inherit-product, device/nvidia/shield-common/shield.mk)
 
 PRODUCT_CHARACTERISTICS  := tablet
 PRODUCT_AAPT_CONFIG      := xlarge large
