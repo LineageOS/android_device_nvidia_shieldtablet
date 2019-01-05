@@ -50,6 +50,11 @@ DEVICE_MANIFEST_FILE := device/nvidia/shieldtablet/manifest.xml
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
+# TWRP Support
+ifeq ($(WITH_TWRP),true)
+include device/nvidia/shieldtablet/twrp/twrp.mk
+endif
+
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
