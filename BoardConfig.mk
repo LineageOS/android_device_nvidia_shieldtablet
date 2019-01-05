@@ -51,6 +51,11 @@ endif
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
+# TWRP Support
+ifeq ($(WITH_TWRP),true)
+include device/nvidia/shieldtablet/twrp/twrp.mk
+endif
+
 include device/nvidia/t124-common/BoardConfigCommon.mk
 include device/nvidia/icera/BoardConfigIcera.mk
 include device/nvidia/touch/BoardConfigTouch.mk
