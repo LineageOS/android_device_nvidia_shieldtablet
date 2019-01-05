@@ -23,6 +23,7 @@ TARGET_REFERENCE_DEVICE ?= shieldtablet
 TARGET_TEGRA_VARIANT    ?= common
 
 TARGET_TEGRA_BT       ?= bcm
+TARGET_TEGRA_GPS      ?= brcm
 TARGET_TEGRA_WIFI     ?= bcm
 
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
@@ -63,7 +64,14 @@ PRODUCT_PACKAGES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml
+    frameworks/native/data/etc/android.hardware.ethernet.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
+# GPS
+PRODUCT_PACKAGES += \
+    init.gps.rc \
+    gps.conf \
+    gpsconfig.xml
 
 # Kernel
 ifneq ($(TARGET_PREBUILT_KERNEL),)
