@@ -112,6 +112,20 @@ PRODUCT_PACKAGES += \
     gps.conf \
     gpsconfig.xml
 
+# Media config
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
+ifeq ($(TARGET_TEGRA_OMX),nvmm-t124)
+PRODUCT_PACKAGES += \
+    media_codecs.xml \
+    media_codecs_performance.xml \
+    media_profiles.xml
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/media_codecs_sw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
+endif
+
 # NVIDIA specific permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.feature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nvidia.feature.xml
