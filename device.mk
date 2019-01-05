@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+TARGET_TEGRA_AUDIO   ?= nvaudio
 TARGET_TEGRA_GPS     ?= brcm
 TARGET_TEGRA_SENSORS ?= fusion520
 
@@ -88,6 +89,15 @@ ifneq ($(PRODUCT_IS_ATV),true)
 	    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
 	    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+endif
+
+# Audio
+ifeq ($(TARGET_TEGRA_AUDIO),nvaudio)
+PRODUCT_PACKAGES += \
+    audioConfig_qvoice_icera_pc400.xml \
+    audio_policy_configuration.xml \
+    nvaudio_conf.xml \
+    nvaudio_fx.xml
 endif
 
 # Bluetooth
