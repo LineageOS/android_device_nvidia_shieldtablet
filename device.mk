@@ -34,6 +34,8 @@ TARGET_SCREEN_WIDTH      := 1200
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
+$(call inherit-product, vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)
+
 PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
     ro.product.vendor.device \
     ro.product.vendor.model \
