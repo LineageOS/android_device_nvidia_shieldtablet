@@ -22,6 +22,7 @@ endif
 TARGET_REFERENCE_DEVICE ?= shieldtablet
 TARGET_TEGRA_VARIANT    ?= common
 
+TARGET_TEGRA_AUDIO    ?= nvaudio
 TARGET_TEGRA_BT       ?= bcm
 TARGET_TEGRA_CAMERA   ?= nvcamera-t124
 TARGET_TEGRA_GPS      ?= brcm
@@ -84,6 +85,15 @@ ifneq ($(PRODUCT_IS_ATV),true)
 	    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
 	    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+endif
+
+# Audio
+ifeq ($(TARGET_TEGRA_AUDIO),nvaudio)
+PRODUCT_PACKAGES += \
+    audioConfig_qvoice_icera_pc400.xml \
+    audio_policy_configuration.xml \
+    nvaudio_conf.xml \
+    nvaudio_fx.xml
 endif
 
 # Camera

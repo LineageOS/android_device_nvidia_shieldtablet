@@ -25,6 +25,9 @@ TARGET_USERIMAGES_USE_EXT4         := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki,ardbeg,jetson-tk1,yellowstone
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # Bluetooth
 ifeq ($(TARGET_TEGRA_BT),bcm)
 BOARD_CUSTOM_BT_CONFIG  := device/nvidia/shieldtablet/comms/vnd_shieldtablet.txt
