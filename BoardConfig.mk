@@ -46,6 +46,11 @@ DEVICE_MANIFEST_FILE := device/nvidia/shieldtablet/manifest.xml
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
+# TWRP Support
+ifeq ($(WITH_TWRP),true)
+include device/nvidia/shieldtablet/twrp/twrp.mk
+endif
+
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_tegra libinit_shield libinit_tn8
 
