@@ -35,6 +35,9 @@ BCM_BLUETOOTH_MANTA_BUG := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/nvidia/shieldtablet/comms
 endif
 
+# Bootloader versions
+TARGET_BOARD_INFO_FILE := device/nvidia/shieldtablet/board-info.txt
+
 # Fingerprint override
 BUILD_FINGERPRINT := nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_1038.3875:user/release-keys
 
