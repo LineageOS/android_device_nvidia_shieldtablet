@@ -27,6 +27,14 @@ TARGET_SCREEN_WIDTH      := 1200
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
+ifneq ("$(wildcard vendor/nvidia/shield/shieldtablet.mk)","")
+$(call inherit-product, vendor/nvidia/shield/shieldtablet.mk)
+else ifneq ("$(wildcard vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)","")
+$(call inherit-product, vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)
+else
+$(error "No proprietary vendor found.")
+endif
+
 # Init related
 PRODUCT_PACKAGES += \
     fstab.ardbeg \
