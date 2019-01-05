@@ -29,6 +29,8 @@ TARGET_SCREEN_WIDTH      := 1200
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
+$(call inherit-product, vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)
+
 # Init related
 PRODUCT_PACKAGES += \
     fstab.ardbeg \
