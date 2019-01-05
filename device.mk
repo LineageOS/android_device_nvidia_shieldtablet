@@ -100,6 +100,10 @@ PRODUCT_PACKAGES += \
     gps.conf \
     gpsconfig.xml
 
+# NVIDIA specific permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/com.nvidia.feature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nvidia.feature.xml
+
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 PRODUCT_PACKAGES += \
