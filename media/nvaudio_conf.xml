@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-2016 NVIDIA Corporation.  All Rights Reserved.
+
+     NVIDIA Corporation and its licensors retain all intellectual property and
+     proprietary rights in and to this software and related documentation.  Any
+     use, reproduction, disclosure or distribution of this software and related
+     documentation without an express license agreement from NVIDIA Corporation
+     is strictly prohibited.
+ */
+-->
+
+<AudioConfigs version="2">
+  <card name="tegrart5639">
+    <pcm_config name="music-playback"
+                device_id="0"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="512"
+                period_count="4"
+                start_threshold="127"
+                stop_threshold="-1"
+                silence_threshold="0"
+                silence_size="-1"
+                avail_min="1"/>
+
+    <pcm_config name="music-capture"
+                device_id="0"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="1024"
+                period_count="4"
+                start_threshold="1"
+                stop_threshold="4096"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="fast-capture"
+                device_id="0"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="128"
+                period_count="4"
+                start_threshold="1"
+                stop_threshold="512"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="bt-sco-playback"
+                device_id="2"
+                rate="8000"
+                channels="1"
+                bps="16"
+                period_size="128"
+                period_count="4"
+                start_threshold="511"
+                stop_threshold="512"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="bt-sco-capture"
+                device_id="2"
+                rate="8000"
+                channels="1"
+                bps="16"
+                period_size="128"
+                period_count="4"
+                start_threshold="511"
+                stop_threshold="512"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="voice-call-playback"
+                device_id="3"
+                rate="16000"
+                channels="2"
+                bps="16"
+                period_size="1024"
+                period_count="4"
+                start_threshold="4095"
+                stop_threshold="4096"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="voice-call-capture"
+                device_id="3"
+                rate="16000"
+                channels="2"
+                bps="16"
+                period_size="1024"
+                period_count="4"
+                start_threshold="4095"
+                stop_threshold="4096"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="bt-voice-call-playback"
+                device_id="4"
+                channels="1"
+                rate="8000"
+                bps="16"
+                period_size="256"
+                period_count="4"
+                start_threshold="1023"
+                stop_threshold="1024"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="bt-voice-call-capture"
+                device_id="4"
+                channels="1"
+                rate="8000"
+                bps="16"
+                period_size="256"
+                period_count="4"
+                start_threshold="1023"
+                stop_threshold="1024"
+                silence_threshold="0"
+                avail_min="1"/>
+
+    <pcm_config name="fast-capture"
+                device_id="0"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="128"
+                period_count="4"
+                start_threshold="1"
+                stop_threshold="512"
+                silence_threshold="0"
+                avail_min="1"
+                devices="builtin-mic|headset-mic"/>
+
+    <param name="capture-init-silence-dmic" val="60"/>
+    <param name="capture-init-silence-hsmic" val="100"/>
+    <param name="nvoice" val="1"/>
+    <!--Speaker protection flag:
+      None -> Disable speaker protection
+      CPU  -> CPU based speaker protection-->
+    <param name="spkprot-flag" val="CPU"/>
+    <param name="low latency devices" val="headphone|headset|speaker"/>
+    <param name="low latency period_size" val="128"/>
+
+    <!-- reset controls -->
+    <ctl name="Int Spk Switch" val="0"/>
+    <ctl name="Int Mic Switch" val="0"/>
+    <ctl name="Headphone Jack Switch" val="0"/>
+    <ctl name="Mic Jack Switch" val="0"/>
+    <ctl name="Codec VMixer Codec Switch" val="1"/>
+    <ctl name="Speaker Playback Volume" val="0x20"/>
+    <ctl name="HP Playback Volume" val="0x1e"/>
+    <ctl name="SPK MIXR DAC R1 Switch" val="1"/>
+    <ctl name="Stereo ADC MIXL ADC1 Switch" val="0"/>
+    <ctl name="Stereo ADC MIXR ADC1 Switch" val="0"/>
+    <ctl name="Stereo ADC MIXL ADC2 Switch" val="0"/>
+    <ctl name="Stereo ADC MIXR ADC2 Switch" val="0"/>
+    <ctl name="ADC Boost Gain" val="0"/>
+    <ctl name="RECMIXL BST1 Switch" val="0"/>
+    <ctl name="RECMIXR BST1 Switch" val="0"/>
+    <ctl name="RECMIXL BST2 Switch" val="0"/>
+    <ctl name="RECMIXR BST2 Switch" val="0"/>
+    <ctl name="ADC IF1 Data Switch" val="Normal"/>
+    <ctl name="ADC Capture Volume" val="0x2f"/>
+    <at node="/dev/ttyACM2" cmd="at%iapvc=" val="0"/>
+    <ctl name="Call Mode Switch" val="0"/>
+
+    <!-- routing specific controls -->
+    <path name="speaker">
+      <ctl name="SPK MIXR DAC R1 Switch" val="1"/>
+      <ctl name="Int Spk Switch" val="1"/>
+    </path>
+
+    <path name="headphone">
+      <ctl name="Headphone Jack Switch" val="1"/>
+    </path>
+
+    <path name="headset">
+      <path name="headphone"/>
+    </path>
+
+    <path name="earpiece">
+      <ctl name="SPK MIXR DAC R1 Switch" val="0"/>
+      <ctl name="Int Spk Switch" val="1"/>
+      <ctl name="Speaker Playback Volume" val="0x11"/>
+    </path>
+
+    <path name="speaker-and-headphone">
+      <path name="speaker"/>
+      <path name="headphone"/>
+    </path>
+
+    <path name="speaker-and-headset">
+      <path name="speaker-and-headphone"/>
+    </path>
+
+    <path name="builtin-mic">
+      <ctl name="Stereo ADC L2 Mux" val="DMIC1"/>
+      <ctl name="Stereo ADC R2 Mux" val="DMIC1"/>
+      <ctl name="Stereo ADC MIXL ADC1 Switch" val="0"/>
+      <ctl name="Stereo ADC MIXR ADC1 Switch" val="0"/>
+      <ctl name="Stereo ADC MIXL ADC2 Switch" val="1"/>
+      <ctl name="Stereo ADC MIXR ADC2 Switch" val="1"/>
+      <ctl name="ADC Boost Gain" val="2"/>
+      <ctl name="DMIC Switch" val="DMIC1"/>
+      <ctl name="Int Mic Switch" val="1"/>
+    </path>
+
+    <path name="headset-mic">
+      <ctl name="ADC Capture Switch" val="1"/>
+      <ctl name="RECMIXL BST1 Switch" val="0"/>
+      <ctl name="RECMIXR BST1 Switch" val="0"/>
+      <ctl name="RECMIXL BST2 Switch" val="1"/>
+      <ctl name="RECMIXR BST2 Switch" val="1"/>
+      <ctl name="Stereo ADC L1 Mux" val="ADC"/>
+      <ctl name="Stereo ADC R1 Mux" val="ADC"/>
+      <ctl name="Stereo ADC MIXL ADC1 Switch" val="1"/>
+      <ctl name="Stereo ADC MIXR ADC1 Switch" val="1"/>
+      <ctl name="Stereo ADC MIXL ADC2 Switch" val="0"/>
+      <ctl name="Stereo ADC MIXR ADC2 Switch" val="0"/>
+      <ctl name="IN2 Mode Control" val="Single ended"/>
+      <ctl name="IN2 Boost" val="1"/>
+      <ctl name="Mic Jack Switch" val="1"/>
+    </path>
+
+    <path name="voice-call-earpiece">
+      <ctl name="Call Mode Switch" val="1"/>
+      <ctl name="SPK MIXR DAC R1 Switch" val="0"/>
+      <at node="/dev/ttyACM2" cmd="at%iaudcnf=" val="0"/>
+      <at node="/dev/ttyACM2" cmd="at%iapvc=" val="1"/>
+      <ctl name="Int Spk Switch" val="1"/>
+      <ctl name="Speaker Playback Volume" val="0x11"/>
+    </path>
+
+    <path name="voice-call-speaker">
+      <ctl name="Call Mode Switch" val="1"/>
+      <ctl name="SPK MIXR DAC R1 Switch" val="0"/>
+      <at node="/dev/ttyACM2" cmd="at%iaudcnf=" val="2"/>
+      <at node="/dev/ttyACM2" cmd="at%iapvc=" val="1"/>
+      <ctl name="Int Spk Switch" val="1"/>
+      <ctl name="Speaker Playback Volume" val="0x1e"/>
+    </path>
+
+    <path name="voice-call-builtin-mic">
+      <ctl name="Stereo ADC L2 Mux" val="DMIC1"/>
+      <ctl name="Stereo ADC R2 Mux" val="DMIC1"/>
+      <ctl name="Stereo ADC MIXL ADC1 Switch" val="0"/>
+      <ctl name="Stereo ADC MIXR ADC1 Switch" val="0"/>
+      <ctl name="Stereo ADC MIXL ADC2 Switch" val="1"/>
+      <ctl name="Stereo ADC MIXR ADC2 Switch" val="1"/>
+      <ctl name="ADC Boost Gain" val="2"/>
+      <ctl name="DMIC Switch" val="DMIC1"/>
+      <ctl name="ADC Capture Volume" val="0x5F"/>
+      <ctl name="Int Mic Switch" val="1"/>
+    </path>
+
+    <path name="voip-speaker">
+      <ctl name="SPK MIXR DAC R1 Switch" val="0"/>
+      <ctl name="Int Spk Switch" val="1"/>
+    </path>
+
+  </card>
+
+  <card name="Tegra">
+    <pcm_config name="hdmi-playback"
+                device_id="3"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="512"
+                period_count="8"
+                start_threshold="4095"
+                stop_threshold="-1"
+                silence_threshold="0"
+                silence_size="-1"
+                avail_min="1"/>
+
+    <param name="HDMI HW Latency" val="50"/>
+  </card>
+
+  <card name="dummy">
+    <pcm_config name="rsubmix-playback"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="1024"
+                period_count="4"/>
+
+    <pcm_config name="rsubmix-capture"
+                rate="48000"
+                channels="2"
+                bps="16"
+                period_size="1024"
+                period_count="4"/>
+  </card>
+
+  <card name="dummy">
+    <pcm_config name="usb-controller-remote-playback"
+                rate="32000"
+                channels="2"
+                bps="16"
+                period_size="512"
+                period_count="2"
+                start_threshold="1023"
+                stop_threshold="-1"
+                silence_threshold="0"
+                silence_size="-1"
+                avail_min="1"/>
+
+    <pcm_config name="usb-controller-remote-capture"
+                rate="16000"
+                channels="1"
+                bps="16"
+                period_size="512"
+                period_count="2"
+                start_threshold="1023"
+                stop_threshold="1024"
+                avail_min="1"/>
+  </card>
+</AudioConfigs>
