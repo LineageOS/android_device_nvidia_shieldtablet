@@ -71,6 +71,14 @@ ifneq ($(PRODUCT_IS_ATV),true)
 	    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 endif
 
+# Audio
+PRODUCT_PACKAGES += \
+    audioConfig_qvoice_icera_pc400.xml \
+    audio_effects.conf \
+    audio_policy.conf \
+    nvaudio_conf.xml \
+    nvaudio_fx.xml
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
