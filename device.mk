@@ -107,6 +107,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     nvcamera.conf
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
 # GPS
 PRODUCT_PACKAGES += \
     init.gps.rc \
