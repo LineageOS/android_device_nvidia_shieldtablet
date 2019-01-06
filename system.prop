@@ -7,6 +7,11 @@ ro.bt.bdaddr_path=/mnt/factory/bluetooth/bt_mac.txt
 # Sensors
 ro.hardware.sensors=default.api_v1.3.mpl520.nvs
 
+# Smartdimmer
+persist.tegra.didim.enable = 1
+persist.tegra.didim.video = 5
+persist.tegra.didim.normal = 3
+
 # USB Vendor and Product ID Definition
 ro.nv.usb.vid=0955
 ro.nv.usb.pid.mtp=CF07
