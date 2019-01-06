@@ -35,6 +35,10 @@ else
 $(error "No proprietary vendor found.")
 endif
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    device/nvidia/shieldtablet/overlay
+
 # Init related
 PRODUCT_PACKAGES += \
     fstab.ardbeg \
