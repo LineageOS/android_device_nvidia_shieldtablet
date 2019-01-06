@@ -123,6 +123,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libcamera_shim \
     libicu_shim
 
 # Thermal
