@@ -35,6 +35,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product, vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    device/nvidia/shieldtablet/overlay
+
 # Init related
 PRODUCT_PACKAGES += \
     fstab.ardbeg \
