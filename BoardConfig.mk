@@ -41,6 +41,9 @@ TARGET_BOARD_INFO_FILE := device/nvidia/shieldtablet/board-info.txt
 # Fingerprint override
 BUILD_FINGERPRINT := nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_1038.3875:user/release-keys
 
+# Hardware overlays
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|device/nvidia/shieldtablet/lineagehw|**/*.java
+
 # Kernel
 ifneq ($(TARGET_PREBUILT_KERNEL),)
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.ko)
