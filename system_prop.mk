@@ -5,3 +5,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/mnt/factory/bluetooth/bt_mac.txt
+
+# USB Vendor and Product ID Definition
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.nv.usb.vid=0955 \
+    ro.nv.usb.pid.mtp=CF07 \
+    ro.nv.usb.pid.mtp.adb=CF05 \
+    ro.nv.usb.pid.rndis=CF08 \
+    ro.nv.usb.pid.rndis.acm.adb=CF08 \
+    ro.nv.usb.pid.rndis.adb=CF08 \
+    ro.nv.usb.pid.ptp=CF07 \
+    ro.nv.usb.pid.ptp.adb=CF05
