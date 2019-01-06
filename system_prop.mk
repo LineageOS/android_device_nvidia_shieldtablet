@@ -2,6 +2,12 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/mnt/factory/bluetooth/bt_mac.txt
 
+# Smartdimmer
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.tegra.didim.enable = 1 \
+    persist.tegra.didim.video = 5 \
+    persist.tegra.didim.normal = 3
+
 # USB Vendor and Product ID Definition
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nv.usb.vid=0955 \
