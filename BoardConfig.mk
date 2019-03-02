@@ -25,6 +25,9 @@ TARGET_USERIMAGES_USE_EXT4         := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki,ardbeg,jetson-tk1,yellowstone
 
+# Fingerprint override
+BUILD_FINGERPRINT := nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_1038.3875:user/release-keys
+
 # Kernel
 TARGET_KERNEL_SOURCE    := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG    := lineageos_shieldtablet_defconfig
