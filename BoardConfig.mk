@@ -23,7 +23,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1342177280
 TARGET_USERIMAGES_USE_EXT4         := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki,ardbeg
+TARGET_OTA_ASSERT_DEVICE := shieldtablet,loki,ardbeg,jetson-tk1
 
 # Kernel
 ifneq ($(TARGET_PREBUILT_KERNEL),)
