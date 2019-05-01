@@ -57,6 +57,9 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_CMDLINE    := vmalloc=300M
 endif
 
+# Light
+include hardware/nvidia/light/BoardLight.mk
+
 # Recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
