@@ -21,6 +21,11 @@ import os
 
 STAGING_PART = '/dev/block/platform/sdhci-tegra.3/by-name/USP'
 
+def FullOTA_InstallEnd(info):
+  info.script.Mount("/system")
+  info.script.AppendExtra('assert(run_program("/tmp/install/bin/variant_blobs.sh") == 0);')
+  info.script.Unmount("/system")
+
 def FullOTA_Assertions(info):
   if 'RADIO/tn8.blob' in info.input_zip.namelist():
     CopyBlobs(info.input_zip, info.output_zip)
