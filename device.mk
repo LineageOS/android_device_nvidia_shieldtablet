@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
     gps.conf \
     gpsconfig.xml
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service-nvidia
+
 # Media config
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
