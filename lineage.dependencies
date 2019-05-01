@@ -24,6 +24,10 @@
    "target_path": "hardware/nvidia/interfaces"
  },
  {
+   "repository": "android_hardware_nvidia_light",
+   "target_path": "hardware/nvidia/light"
+ },
+ {
    "repository": "android_hardware_nvidia_thermal",
    "target_path": "hardware/nvidia/thermal"
  }
