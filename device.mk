@@ -156,5 +156,9 @@ PRODUCT_PACKAGES += \
     thermalhal.tn8.xml \
     thermalhal.yellowstone.xml
 
+# Variant blobs script
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/releasetools/variant_blobs.sh:install/bin/variant_blobs.sh
+
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
