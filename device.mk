@@ -150,3 +150,7 @@ PRODUCT_PACKAGES += \
     thermalhal.loki.xml \
     thermalhal.tn8.xml \
     thermalhal.yellowstone.xml
+
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
