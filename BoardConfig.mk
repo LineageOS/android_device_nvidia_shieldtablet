@@ -38,6 +38,9 @@ endif
 # Bootloader versions
 TARGET_BOARD_INFO_FILE := device/nvidia/shieldtablet/board-info.txt
 
+# Manifest
+DEVICE_MANIFEST_FILE := device/nvidia/shieldtablet/manifest.xml
+
 # Fingerprint override
 BUILD_FINGERPRINT := nvidia/wx_un_do/shieldtablet:7.0/NRD90M/1928188_1038.3875:user/release-keys
 
