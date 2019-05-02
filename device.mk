@@ -157,6 +157,10 @@ PRODUCT_PACKAGES += \
     thermalhal.tn8.xml \
     thermalhal.yellowstone.xml
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 # Variant blobs script
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/releasetools/variant_blobs.sh:install/bin/variant_blobs.sh
