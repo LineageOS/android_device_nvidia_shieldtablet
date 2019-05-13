@@ -48,7 +48,7 @@ JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|device/nvidia/shieldtablet/lineag
 TARGET_KERNEL_SOURCE    := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG    := lineageos_shieldtablet_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
-BOARD_KERNEL_CMDLINE    := vmalloc=300M
+BOARD_KERNEL_CMDLINE    := vmalloc=300M androidboot.selinux=permissive
 
 # Manifest
 DEVICE_MANIFEST_FILE := device/nvidia/shieldtablet/manifest.xml
