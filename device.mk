@@ -169,6 +169,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/releasetools/variant_blobs.sh:install/bin/variant_blobs.sh
 
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2018-01-05
+
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 PRODUCT_PACKAGES += \
