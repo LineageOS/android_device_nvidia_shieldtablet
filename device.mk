@@ -27,6 +27,7 @@ TARGET_TEGRA_BT       ?= bcm
 TARGET_TEGRA_CAMERA   ?= nvcamera-t124
 TARGET_TEGRA_GPS      ?= brcm
 TARGET_TEGRA_OMX      ?= nvmm-t124
+TARGET_TEGRA_PHS      ?= nvphs
 TARGET_TEGRA_POWER    ?= aosp
 TARGET_TEGRA_SENSORS  ?= fusion520
 TARGET_TEGRA_WIFI     ?= bcm
@@ -142,6 +143,12 @@ PRODUCT_PACKAGES += \
 # NVIDIA specific permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.feature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nvidia.feature.xml
+
+# PHS
+ifeq ($(TARGET_TEGRA_PHS),nvphs)
+PRODUCT_PACKAGES += \
+    nvphsd.conf
+endif
 
 # Thermal
 PRODUCT_PACKAGES += \
