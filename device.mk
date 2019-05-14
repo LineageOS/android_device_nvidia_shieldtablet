@@ -16,6 +16,7 @@
 
 TARGET_TEGRA_AUDIO   ?= nvaudio
 TARGET_TEGRA_GPS     ?= brcm
+TARGET_TEGRA_PHS     ?= nvphs
 TARGET_TEGRA_SENSORS ?= fusion520
 
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
@@ -147,6 +148,12 @@ PRODUCT_PACKAGES += \
 # NVIDIA specific permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/com.nvidia.feature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nvidia.feature.xml
+
+# PHS
+ifeq ($(TARGET_TEGRA_PHS),nvphs)
+PRODUCT_PACKAGES += \
+    nvphsd.conf
+endif
 
 # Power
 TARGET_POWERHAL_VARIANT := tegra
