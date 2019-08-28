@@ -1,4 +1,5 @@
 #Copyright (c) 2011-2016, NVIDIA CORPORATION. All rights reserved.
+#Copyright (C) 2019 The LineageOS Project
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -6,18 +7,15 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.cal.rc
-import init.tegra_emmc.rc
-import init.t124.rc
-import init.mmap_topdown.rc
-import init.ray_touch.rc
+import /vendor/etc/init/hw/init.tegra_emmc.rc
+import /vendor/etc/init/hw/init.tn8_common.rc
+import /vendor/etc/init/hw/init.t124.rc
+import /vendor/etc/init/hw/init.cal.rc
+import /vendor/etc/init/hw/init.ray_touch.rc
 
 on fs
-    setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
-    setprop ro.crypto.umount_sd false
-    setprop ro.crypto.fuse_sdcard true
-    setprop ro.gps.gpio 61
-    mount_all /fstab.ardbeg
+    mount_all /vendor/etc/fstab.ardbeg
+    swapon_all /vendor/etc/fstab.ardbeg
 
 on post-fs-data
     write /sys/class/gpio/export 61
@@ -25,13 +23,7 @@ on post-fs-data
     write /sys/class/gpio/gpio61/value 0
     chown root system /sys/class/gpio/gpio61/value
     chmod 0664 /sys/class/gpio/gpio61/value
-    start start-gps
-
-on boot
-    #max resolution supported for Miracast is 1080p, represented interms of macroblocks
-    setprop nvwfd.max_macroblocks 8160
-    #enable Miracast game mode support
-    setprop nvwfd.gamemode 1
+    #start start-gps
 
 # Product specific props
 on init
