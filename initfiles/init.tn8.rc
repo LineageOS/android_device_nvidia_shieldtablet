@@ -43,6 +43,10 @@ on init
     chown system system /sys/power/sysedp/batmon/esr
     chown system system /sys/bus/i2c/devices/1-0040/iio_device/running_mode
 
+on fs
+    mount_all /vendor/etc/fstab.tn8
+    swapon_all /vendor/etc/fstab.tn8
+
 on post-fs
     write /sys/block/mmcblk0/queue/iostats 0
     write /sys/block/mmcblk0/queue/scheduler cfq
