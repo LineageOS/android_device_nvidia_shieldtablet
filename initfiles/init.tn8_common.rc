@@ -19,8 +19,6 @@ on fs
     setprop ro.crypto.umount_sd false
     setprop ro.crypto.fuse_sdcard true
     setprop audio.custompolicy 1
-    mount_all /vendor/etc/fstab.tn8
-    swapon_all /vendor/etc/fstab.tn8
 
 on post-fs-data
     symlink /system/vendor/bin/FinalTestThresholdManage.ini /data/FinalTestThresholdManage.ini
