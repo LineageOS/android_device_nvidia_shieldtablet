@@ -1,4 +1,5 @@
 #Copyright (c) 2011-2016, NVIDIA CORPORATION. All rights reserved.
+#Copyright (C) 2019 The LineageOS Project
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -6,13 +7,11 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.tn8_emmc.rc
+import init.tegra_emmc.rc
 import init.tn8_common.rc
 import init.t124.rc
 import init.cal.rc
-import init.tn8.usb.rc
-import init.ray_st8.rc
-import init.ndiscovery.rc
+import init.ray_touch.rc
 
 on post-fs-data
     write /sys/class/gpio/export 61

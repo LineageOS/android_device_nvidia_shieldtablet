@@ -23,7 +23,7 @@ on fs
     swapon_all /fstab.tn8
 
 on post-fs-data
-    symlink /system/vendor/bin/FinalTestThresholdManage.ini /data/FinalTestThresholdManage.ini	26
+    symlink /system/vendor/bin/FinalTestThresholdManage.ini /data/FinalTestThresholdManage.ini
     symlink /system/vendor/bin/rm_panel_setting.ini /data/rm_panel_setting.ini
 
 on post-fs-data
