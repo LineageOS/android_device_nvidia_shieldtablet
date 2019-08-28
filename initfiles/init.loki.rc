@@ -13,6 +13,10 @@ import /vendor/etc/init/hw/init.t124.rc
 import /vendor/etc/init/hw/init.cal.rc
 import /vendor/etc/init/hw/init.ray_touch.rc
 
+on boot
+    write /sys/devices/platform/host1x/tegradc.0/enable 0
+    write /sys/devices/platform/host1x/tegradc.0/enable 1
+
 on fs
     mount_all /vendor/etc/fstab.loki
     swapon_all /vendor/etc/fstab.loki
