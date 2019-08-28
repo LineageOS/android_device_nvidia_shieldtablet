@@ -1,4 +1,5 @@
 #Copyright (c) 2011-2014 NVIDIA Corporation.  All Rights Reserved.
+#Copyright (C) 2019 The LineageOS Project
 #
 #NVIDIA Corporation and its licensors retain all intellectual property and
 #proprietary rights in and to this software and related documentation.  Any
@@ -6,63 +7,25 @@
 #documentation without an express license agreement from NVIDIA Corporation
 #is strictly prohibited.
 
-import init.t124.rc
-import init.${ro.boot.modem}.rc
-
-on init
-    # Mount a tmpfs into /mnt/tmp for hosting nvram, phs shared memory
-    mkdir /mnt/tmp 0770 system system
-    mount tmpfs tmpfs /mnt/tmp mode=0775,gid=1003
+import /vendor/etc/init/hw/init.tegra_emmc.rc
+import /vendor/etc/init/hw/init.tn8_common.rc
+import /vendor/etc/init/hw/init.t124.rc
+import /vendor/etc/init/hw/init.cal.rc
+import /vendor/etc/init/hw/init.ray_touch.rc
 
 on fs
-    setprop audio.custompolicy 1
-    mount_all /fstab.loki
-
-    export TOUCH_CONF_DIR /mnt/factory/touchscreen
-    export TOUCH_DATA_DIR /data/touchscreen
-    export MPU_CONF_DIR /mnt/factory/mpu
-    export MPU_DATA_DIR /data/mpu
+    mount_all /vendor/etc/fstab.loki
+    swapon_all /vendor/etc/fstab.loki
 
 on post-fs-data
-
-    # create directory for runtime calibration data
-    mkdir /data/touchscreen 0755 system system
-    mkdir /data/mpu 0755 system system
-
-    # Create GPS folders and set its permissions
-    mkdir /data/gps
-    chown gps system /data/gps/
-    chmod 0770 /data/gps/
     setprop ro.hardware.gps mtk
-    start mnld
-
-service set_sensor_perm /system/bin/set_sensor_perm.sh
-    class main
-    user root
-    group root
-    oneshot
+    #start mnld
 
 # mtk gps mnld
-    service mnld /system/xbin/mnld
+    service mnld /vendor/bin/mnld
     socket mnld stream 666 system system
     class main
     disabled
-
-#Raydium touch setting
-service rm_ts_service    /vendor/bin/rm_ts_server
-    class main
-
-
-service charger /charger
-	class charger
-
-on charger
-	setprop persist.sys.usb.config mtp
-	write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/enable 1
-	write /sys/devices/system/cpu/cpuquiet/current_governor runnable
-	write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp -1
-	write /sys/bus/usb/devices/2-1:1.1/state off
-	write /sys/bus/usb/devices/2-1:1.1/state2 off
 
 # Product specific props
 on init
