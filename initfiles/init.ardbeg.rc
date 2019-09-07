@@ -32,3 +32,9 @@ on boot
     setprop nvwfd.max_macroblocks 8160
     #enable Miracast game mode support
     setprop nvwfd.gamemode 1
+
+# Product specific props
+on init
+    setprop ro.product.vendor.device ardbeg
+    setprop ro.product.vendor.model "Ardbeg"
+    setprop ro.product.vendor.name ardbeg
