@@ -29,3 +29,9 @@ on fs
 
     mount_all /vendor/etc/fstab.jetson-tk1
     swapon_all /vendor/etc/fstab.jetson-tk1
+
+# Product specific props
+on init
+    setprop ro.product.vendor.device jetson
+    setprop ro.product.vendor.model "Jetson TK1"
+    setprop ro.product.vendor.name jetson-tk1
