@@ -15,6 +15,11 @@
 import init.recovery.ray_touch.rc
 import init.recovery.nv_dev_board.usb.rc
 
+on init
+    setprop ro.product.vendor.device loki
+    setprop ro.product.vendor.model "SHIELD Portable"
+    setprop ro.product.vendor.name loki_p
+
 on boot
     setprop sys.usb.ffs.aio_compat 1
     setprop sys.usb.configfs 0
