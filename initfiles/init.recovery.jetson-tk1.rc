@@ -19,6 +19,11 @@ on init
     setprop ro.product.vendor.model "Jetson TK1"
     setprop ro.product.vendor.name jetson-tk1
 
+    setprop ro.vendor.nv.usb.vid 0955
+    setprop ro.vendor.nv.usb.pid.adb 7100
+    setprop ro.vendor.nv.usb.pid.mtp 7102
+    setprop ro.vendor.nv.usb.pid.mtp.adb 7100
+
 on boot
     setprop sys.usb.ffs.aio_compat 1
     setprop sys.usb.configfs 0
