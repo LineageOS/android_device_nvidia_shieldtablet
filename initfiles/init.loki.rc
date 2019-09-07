@@ -63,3 +63,9 @@ on charger
 	write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp -1
 	write /sys/bus/usb/devices/2-1:1.1/state off
 	write /sys/bus/usb/devices/2-1:1.1/state2 off
+
+# Product specific props
+on init
+    setprop ro.product.vendor.device loki
+    setprop ro.product.vendor.model "SHIELD Portable"
+    setprop ro.product.vendor.name loki_p
