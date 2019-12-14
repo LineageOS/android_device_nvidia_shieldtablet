@@ -56,6 +56,9 @@ $(call inherit-product, vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     device/nvidia/shieldtablet/overlay
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/nvidia/shieldtablet
+
 # Init related
 PRODUCT_PACKAGES += \
     fstab.ardbeg \

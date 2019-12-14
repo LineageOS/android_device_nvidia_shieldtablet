@@ -15,7 +15,7 @@
 TARGET_TEGRA_POWER ?= lineage
 
 # Unified device support
-TARGET_INIT_VENDOR_LIB := libinit_tn8
+TARGET_INIT_VENDOR_LIB := //device/nvidia/shieldtablet:libinit_tn8
 PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
     ro.product.vendor.device \
     ro.product.vendor.model \
