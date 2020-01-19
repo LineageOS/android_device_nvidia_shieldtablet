@@ -37,6 +37,14 @@ on boot
     setprop nvwfd.max_macroblocks 3600
     #disable 1080p miracast connection for hdvideoplayback
     setprop nvwfd.hdvideoplayback 0
+    # add a cpuset for the camera daemon
+    # we want all the little cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0
+    write /dev/cpuset/camera-daemon/mems 0
+    chown system system /dev/cpuset/camera-daemon
+    chown system system /dev/cpuset/camera-daemon/tasks
+    chmod 0664 /dev/cpuset/camera-daemon/tasks
 
 on init
     setprop ro.feature.stylus 1
