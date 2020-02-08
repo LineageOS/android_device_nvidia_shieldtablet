@@ -30,6 +30,7 @@ TARGET_TEGRA_OMX      ?= nvmm-t124
 TARGET_TEGRA_PHS      ?= nvphs
 TARGET_TEGRA_POWER    ?= aosp
 TARGET_TEGRA_SENSORS  ?= fusion520
+TARGET_TEGRA_WIDEVINE ?= true
 TARGET_TEGRA_WIFI     ?= bcm
 
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
