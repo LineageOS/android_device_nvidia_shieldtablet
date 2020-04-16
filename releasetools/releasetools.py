@@ -19,7 +19,13 @@ import common
 import re
 import os
 
+APP_PART     = '/dev/block/platform/sdhci-tegra.3/by-name/APP'
 STAGING_PART = '/dev/block/platform/sdhci-tegra.3/by-name/USP'
+
+def FullOTA_PostValidate(info):
+  info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "' + APP_PART + '");');
+  info.script.AppendExtra('run_program("/sbin/resize2fs", "' + APP_PART + '");');
+  info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "' + APP_PART + '");');
 
 def FullOTA_InstallEnd(info):
   info.script.Mount("/system")
