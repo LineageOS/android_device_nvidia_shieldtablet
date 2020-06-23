@@ -21,6 +21,12 @@ on post-fs-data
     setprop ro.hardware.gps mtk
     #start mnld
 
+    # LEDs
+    chown system system /sys/class/nvshieldled/2-1:1.1/brightness
+    chown system system /sys/class/nvshieldled/2-1:1.1/brightness2
+    chown system system /sys/class/nvshieldled/2-1:1.1/state
+    chown system system /sys/class/nvshieldled/2-1:1.1/state2
+
 # mtk gps mnld
     service mnld /vendor/bin/mnld
     socket mnld stream 666 system system
