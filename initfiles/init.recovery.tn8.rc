@@ -23,6 +23,10 @@ on boot
     setprop persist.twrp.rotation 180
     mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/vendor/factory ro
 
+on fs
+    wait /dev/block/platform/sdhci-tegra.3
+    symlink /dev/block/platform/sdhci-tegra.3 /dev/block/bootdevice
+
 # Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
 service watchdogd /sbin/watchdogd 10 110
     class default
