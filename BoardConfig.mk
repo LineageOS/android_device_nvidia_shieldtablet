@@ -58,9 +58,6 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_CMDLINE    := vmalloc=450M
 endif
 
-# Light
-include hardware/nvidia/light/BoardLight.mk
-
 # Recovery
 LZMA_RAMDISK_TARGETS  := recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
@@ -76,4 +73,3 @@ endif
 include device/nvidia/t124-common/BoardConfigCommon.mk
 include device/nvidia/icera/BoardConfigIcera.mk
 include device/nvidia/touch/BoardConfigTouch.mk
-include vendor/nvidia/shieldtablet/BoardConfigVendor.mk
