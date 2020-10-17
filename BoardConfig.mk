@@ -55,6 +55,9 @@ BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_CMDLINE    := vmalloc=450M
 endif
 
+# Legacy memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Recovery
 LZMA_RAMDISK_TARGETS  := recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
