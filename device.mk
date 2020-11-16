@@ -16,7 +16,7 @@
 
 # Only include Shield apps for first party targets
 ifneq ($(filter $(word 2,$(subst _, ,$(TARGET_PRODUCT))), shieldtablet jetson),)
-$(call inherit-product, device/nvidia/shield-common/shield.mk)
+include device/nvidia/shield-common/shield.mk
 endif
 
 TARGET_REFERENCE_DEVICE ?= shieldtablet
@@ -35,9 +35,9 @@ TARGET_TEGRA_WIDEVINE ?= true
 TARGET_TEGRA_WIFI     ?= bcm
 TARGET_TEGRA_WIREGUARD ?= compat
 
-$(call inherit-product, device/nvidia/t124-common/t124.mk)
-$(call inherit-product, device/nvidia/icera/icera.mk)
-$(call inherit-product, device/nvidia/touch/raydium.mk)
+include device/nvidia/t124-common/t124.mk
+include device/nvidia/icera/icera.mk
+include device/nvidia/touch/raydium.mk
 
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
@@ -50,7 +50,7 @@ TARGET_SCREEN_WIDTH      := 1200
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-$(call inherit-product, vendor/nvidia/shieldtablet/shieldtablet-vendor.mk)
+$(call inherit-product, device/nvidia/shieldtablet/vendor/shieldtablet-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \

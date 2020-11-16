@@ -1,4 +1,4 @@
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit device configuration for shieldtablet.
-include device/nvidia/shieldtablet/lineage.mk
-$(call inherit-product, device/nvidia/shieldtablet/full_shieldtablet.mk)
+LOCAL_PATH := device/nvidia/shieldtablet/vendor/bcm_firmware
+COMMON_BCM_PATH := device/nvidia/tegra-common/vendor/bcm_firmware
 
-# Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, $(COMMON_BCM_PATH)/bcm43241/device-bcm.mk)
+$(call inherit-product, $(LOCAL_PATH)/nvram.mk)
 
-PRODUCT_NAME := lineage_shieldtablet
-PRODUCT_DEVICE := shieldtablet
+PRODUCT_PACKAGES += \
+    bcm43241 \
+    bcm43341 \
+    fw_bcmdhd_43341

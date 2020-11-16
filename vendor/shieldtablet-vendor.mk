@@ -1,4 +1,4 @@
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit device configuration for shieldtablet.
-include device/nvidia/shieldtablet/lineage.mk
-$(call inherit-product, device/nvidia/shieldtablet/full_shieldtablet.mk)
-
-# Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
-PRODUCT_NAME := lineage_shieldtablet
-PRODUCT_DEVICE := shieldtablet
+$(call inherit-product, device/nvidia/t124-common/vendor/t124.mk)
+$(call inherit-product, device/nvidia/t124-common/vendor/t124-by-flags.mk)
+$(call inherit-product, device/nvidia/tegra-common/vendor/common-by-flags.mk)
+$(call inherit-product, device/nvidia/shieldtablet/vendor/bcm_firmware/bcm.mk)
+$(call inherit-product, device/nvidia/shield-common/vendor/shield-by-flags.mk)
