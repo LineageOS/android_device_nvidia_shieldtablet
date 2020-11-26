@@ -28,6 +28,10 @@
    "target_path": "hardware/nvidia/light"
  },
  {
+   "repository": "android_hardware_nvidia_memtrack",
+   "target_path": "hardware/nvidia/memtrack"
+ },
+ {
    "repository": "android_hardware_nvidia_power",
    "target_path": "hardware/nvidia/power"
  },
