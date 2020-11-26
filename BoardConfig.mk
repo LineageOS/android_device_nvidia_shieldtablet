@@ -55,6 +55,7 @@ TARGET_KERNEL_SOURCE    := kernel/nvidia/shield
 TARGET_KERNEL_CONFIG    := lineageos_shieldtablet_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_CMDLINE    := vmalloc=450M
+BOARD_KERNEL_CMDLINE    := androidboot.selinux=permissive
 endif
 
 # Light
