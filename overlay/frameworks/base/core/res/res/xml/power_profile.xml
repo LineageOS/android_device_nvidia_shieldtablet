@@ -19,21 +19,21 @@
 <device name="Android">
   <!-- All values are in mA except as noted -->
   <item name="none">0</item>
-  <item name="screen.on">272.8</item>
-  <item name="screen.full">441.6</item>
-  <item name="bluetooth.active">12.6</item>
+  <item name="screen.on">250</item>
+  <item name="screen.full">483</item>
+  <item name="bluetooth.active">53.29</item>
       <!--
       Bluetooth file transfer
       -->
-  <item name="bluetooth.on">1.6</item>
-  <item name="wifi.on">3.3</item>
-  <item name="wifi.active">46.5</item>
-  <item name="wifi.scan">24.0</item>
-  <item name="dsp.audio">6.4</item>
-  <item name="dsp.video">41.3</item>
-  <item name="gps.on">7.6</item>
-  <item name="radio.active">190.8</item>
-  <item name="radio.scanning">0</item>
+  <item name="bluetooth.on">0.71</item>
+  <item name="wifi.on">1.28</item>
+  <item name="wifi.active">238.45</item>
+  <item name="wifi.scan">122.31</item>
+  <item name="dsp.audio">49.41</item>
+  <item name="dsp.video">121.54</item>
+  <item name="gps.on">42.92</item>
+  <item name="radio.active">342.13</item>
+  <item name="radio.scanning">3.75</item>
   <array name="radio.on"> <!-- Strength 0 to BINS-1 (4) -->
       <value>13.2</value>
   </array>
@@ -68,32 +68,32 @@
   <item name="cpu.idle">19.1</item>
   <!-- Power consumption at different speeds -->
   <array name="cpu.core_power.cluster0">
-      <value>2.18</value>
-      <value>6.64</value>
-      <value>26.97</value>
-      <value>38.08</value>
-      <value>64.77</value>
-      <value>76.89</value>
-      <value>93.08</value>
-      <value>110.11</value>
-      <value>113.78</value>
-      <value>124.65</value>
-      <value>146.20</value>
-      <value>169.03</value>
-      <value>204.08</value>
-      <value>225.45</value>
-      <value>238.32</value>
-      <value>272.67</value>
-      <value>314.20</value>
-      <value>364.45</value>
-      <value>406.17</value>
-      <value>481.07</value>
-      <value>567.05</value>
+      <value>38.69</value>
+      <value>31.49</value>
+      <value>38.26</value>
+      <value>44.23</value>
+      <value>77.09</value>
+      <value>95</value>
+      <value>110.55</value>
+      <value>124.19</value>
+      <value>136.14</value>
+      <value>145.32</value>
+      <value>164.60</value>
+      <value>190.61</value>
+      <value>219.27</value>
+      <value>232.93</value>
+      <value>265.28</value>
+      <value>304.87</value>
+      <value>344.96</value>
+      <value>395.28</value>
+      <value>432.72</value>
+      <value>424.82</value>
+      <value>430.65</value>
   </array>
 
   <!-- This is the battery capacity in mAh -->
-  <item name="battery.capacity">5200</item>
+  <item name="battery.capacity">5100</item>
       <!--
-      Battery capacity is 5200 mAH (at 3.8 Volts)
+      Battery capacity is 5100 mAH (at 3.8 Volts)
       -->
 </device>
