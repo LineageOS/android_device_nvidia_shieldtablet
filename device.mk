@@ -33,6 +33,7 @@ TARGET_TEGRA_POWER    ?= aosp
 TARGET_TEGRA_SENSORS  ?= fusion520
 TARGET_TEGRA_WIDEVINE ?= true
 TARGET_TEGRA_WIFI     ?= bcm
+TARGET_TEGRA_WIREGUARD ?= compat
 
 $(call inherit-product, device/nvidia/t124-common/t124.mk)
 $(call inherit-product, device/nvidia/icera/icera.mk)
