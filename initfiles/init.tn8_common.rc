@@ -84,3 +84,6 @@ on charger
     write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/enable 1
     write /sys/devices/system/cpu/cpuquiet/current_governor runnable
     write /sys/devices/system/cpu/cpuquiet/tegra_cpuquiet/no_lp -1
+
+on property:ro.radio.noril=true
+    exec -- pm disable com.android.messaging
