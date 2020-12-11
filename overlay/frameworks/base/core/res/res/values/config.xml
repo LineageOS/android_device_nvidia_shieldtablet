@@ -174,10 +174,6 @@
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- Is the device capable of hot swapping an UICC Card -->
-    <add-resource type="bool" name="config_hotswapCapable"/>
-    <bool name="config_hotswapCapable">true</bool>
-
     <!-- MMS user agent string -->
     <add-resource type="string" name="config_mms_user_agent"/>
     <string name="config_mms_user_agent" translatable="false">Shield Tablet</string>
@@ -222,4 +218,10 @@
 
     <!-- Keep chosen default camera app pinned in memory for faster launching -->
     <bool name="config_pinnerCameraApp">true</bool>
+
+    <!-- This device is not "voice capable"; it's data-only. -->
+    <bool name="config_voice_capable">false</bool>
+
+    <!-- This device allows sms service. -->
+    <bool name="config_sms_capable">false</bool>
 </resources>
