@@ -164,6 +164,9 @@ PRODUCT_PACKAGES += \
     thermalhal.tn8.xml \
     thermalhal.yellowstone.xml
 
+# Treble workaround
+PRODUCT_PACKAGES += $(PRODUCT_PACKAGES_SHIPPING_API_LEVEL_29)
+
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
