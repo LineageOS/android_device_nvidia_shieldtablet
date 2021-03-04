@@ -61,6 +61,7 @@ endif
 include hardware/nvidia/light/BoardLight.mk
 
 # Recovery
+LZMA_RAMDISK_TARGETS  := recovery
 TARGET_RECOVERY_FSTAB := device/nvidia/shieldtablet/initfiles/fstab.tn8
 
 # Releasetools
