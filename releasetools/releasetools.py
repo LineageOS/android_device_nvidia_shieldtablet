@@ -23,9 +23,8 @@ APP_PART     = '/dev/block/platform/sdhci-tegra.3/by-name/APP'
 STAGING_PART = '/dev/block/platform/sdhci-tegra.3/by-name/USP'
 
 def FullOTA_PostValidate(info):
-  info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "' + APP_PART + '");');
-  info.script.AppendExtra('run_program("/sbin/resize2fs", "' + APP_PART + '");');
-  info.script.AppendExtra('run_program("/sbin/e2fsck", "-fy", "' + APP_PART + '");');
+  if 'INSTALL/bin/resize2fs_static' in info.input_zip.namelist():
+    info.script.AppendExtra('run_program("/tmp/install/bin/resize2fs_static", "' + APP_PART + '");');
 
 def FullOTA_Assertions(info):
   if 'RADIO/tn8.blob' in info.input_zip.namelist():
