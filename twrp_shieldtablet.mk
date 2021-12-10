@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,9 +11,14 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_shieldtablet.mk \
-    $(LOCAL_DIR)/lineage_shieldtablet.mk \
-    $(LOCAL_DIR)/twrp_shieldtablet.mk
+# Inherit some common twrp stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# Inherit device configuration for shieldtablet.
+include device/nvidia/shieldtablet/lineage.mk
+$(call inherit-product, device/nvidia/shieldtablet/full_shieldtablet.mk)
+
+PRODUCT_NAME := twrp_shieldtablet
+PRODUCT_DEVICE := shieldtablet
+LINEAGE_BUILD := shieldtablet
