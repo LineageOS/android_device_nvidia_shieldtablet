@@ -36,8 +36,6 @@ TARGET_TEGRA_WIDEVINE ?= true
 TARGET_TEGRA_WIFI     ?= bcm
 TARGET_TEGRA_WIREGUARD ?= compat
 
-TARGET_TEGRA_AUDIO_VERSION ?= 2.0
-
 include device/nvidia/t124-common/t124.mk
 include device/nvidia/icera/icera.mk
 include device/nvidia/touch/raydium.mk
