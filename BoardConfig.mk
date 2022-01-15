@@ -53,7 +53,7 @@ ifneq ($(TARGET_PREBUILT_KERNEL),)
 BOARD_VENDOR_KERNEL_MODULES += $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.ko)
 else
 TARGET_KERNEL_SOURCE    := kernel/nvidia/shield
-TARGET_KERNEL_CONFIG    := lineageos_shieldtablet_defconfig
+TARGET_KERNEL_CONFIG    := tegra12_android_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_CMDLINE    := vmalloc=450M
 endif
