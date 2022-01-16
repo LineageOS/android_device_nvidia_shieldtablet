@@ -21,6 +21,7 @@ on boot
 
     # Needed for touch
     setprop persist.twrp.rotation 180
+    setprop ro.minui.default_rotation "ROTATION_DOWN"
     mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/vendor/factory ro
 
 # Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
