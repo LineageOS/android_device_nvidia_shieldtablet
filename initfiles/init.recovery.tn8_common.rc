@@ -1,4 +1,4 @@
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,17 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import init.recovery.ray_touch.rc
-import init.recovery.nv_dev_board.usb.rc
-
-on boot
-    setprop sys.usb.ffs.aio_compat 1
-    setprop sys.usb.configfs 0
-
-    # Needed for touch
-    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/FCT /mnt/vendor/factory ro
+import init.recovery.usb.rc
 
 # Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
-service watchdogd /sbin/watchdogd 10 110
+service watchdogd /system/bin/watchdogd 10 110
     class default
     seclabel u:r:watchdogd:s0
