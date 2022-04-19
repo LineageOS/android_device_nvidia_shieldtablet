@@ -12,13 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import init.recovery.nv_dev_board.usb.rc
-
-on boot
-    setprop sys.usb.ffs.aio_compat 1
-    setprop sys.usb.configfs 0
-
-# Thie yields each tegra wdt expiration to be at 30 secs and fourth expiration for reboot at 120 secs.
-service watchdogd /sbin/watchdogd 10 110
-    class default
-    seclabel u:r:watchdogd:s0
+import init.recovery.tn8_common.rc

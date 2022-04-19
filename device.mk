@@ -72,6 +72,7 @@ PRODUCT_PACKAGES += \
     init.recovery.jetson-tk1.rc \
     init.recovery.loki.rc \
     init.recovery.tn8.rc \
+    init.recovery.tn8_common.rc \
     init.ardbeg.rc \
     init.jetson-tk1.rc \
     init.loki.rc \
