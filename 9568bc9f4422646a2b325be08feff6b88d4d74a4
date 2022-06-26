@@ -22,6 +22,30 @@
       },
       "revId": "9568bc9f4422646a2b325be08feff6b88d4d74a4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbbc8907_d1a40728",
+        "filename": "twrp/twrp.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 14048
+      },
+      "writtenOn": "2022-06-26T04:47:41Z",
+      "side": 1,
+      "message": "The twrp build system uses a different ramdisk compression flag as compared to lineage. And twrp decidedly needs compressed to fit in 16 MB these days.",
+      "parentUuid": "3c90bd05_0c5345d7",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 22
+      },
+      "revId": "9568bc9f4422646a2b325be08feff6b88d4d74a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
