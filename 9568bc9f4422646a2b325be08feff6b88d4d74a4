@@ -46,6 +46,42 @@
       },
       "revId": "9568bc9f4422646a2b325be08feff6b88d4d74a4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c98a776_1725d1e4",
+        "filename": "twrp/twrp.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-06-26T05:31:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c90bd05_0c5345d7",
+      "revId": "9568bc9f4422646a2b325be08feff6b88d4d74a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f9790e7_e5f7b560",
+        "filename": "twrp/twrp.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-06-26T05:31:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbbc8907_d1a40728",
+      "revId": "9568bc9f4422646a2b325be08feff6b88d4d74a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
