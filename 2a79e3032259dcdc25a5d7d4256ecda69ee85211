@@ -3,6 +3,29 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "042c2679_d73484be",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2022-06-26T09:10:42Z",
+      "side": 1,
+      "message": "Ideally you should set shipping API level from the source of your device-specific (shieldtablet) blobs",
+      "range": {
+        "startLine": 9,
+        "startChar": 48,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "2a79e3032259dcdc25a5d7d4256ecda69ee85211",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "21bb5c35_325cea1c",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
