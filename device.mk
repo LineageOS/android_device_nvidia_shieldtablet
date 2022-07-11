@@ -31,10 +31,10 @@ TARGET_TEGRA_MEMTRACK ?= lineage
 TARGET_TEGRA_OMX      ?= nvmm-t124
 TARGET_TEGRA_PHS      ?= nvphs
 TARGET_TEGRA_POWER    ?= aosp
-TARGET_TEGRA_SENSORS  ?= fusion520
+#TARGET_TEGRA_SENSORS  ?= fusion520
 TARGET_TEGRA_WIDEVINE ?= true
 TARGET_TEGRA_WIFI     ?= bcm
-TARGET_TEGRA_WIREGUARD ?= compat
+#TARGET_TEGRA_WIREGUARD ?= compat
 
 include device/nvidia/t124-common/t124.mk
 include device/nvidia/icera/icera.mk
